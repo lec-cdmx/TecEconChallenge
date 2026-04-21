@@ -1043,6 +1043,158 @@
       transform: none;
     }
 
+    /* ── MODALS ── */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(7,10,18,0.88);
+      backdrop-filter: blur(6px);
+      z-index: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .modal-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .modal {
+      background: var(--ink-mid);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 4px;
+      max-width: 640px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 3rem;
+      position: relative;
+      transform: translateY(16px);
+      transition: transform 0.3s ease;
+    }
+    .modal-overlay.open .modal {
+      transform: translateY(0);
+    }
+    .modal-close {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      background: none;
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      color: var(--gold);
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.2s;
+    }
+    .modal-close:hover { border-color: var(--gold); }
+    .modal-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+    .modal-title {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+    .modal-divider {
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+      margin: 1.2rem 0 1.8rem;
+    }
+    .modal-body p {
+      font-size: 0.93rem;
+      color: var(--cream-dim);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+    .modal-body strong {
+      color: var(--cream);
+      font-weight: 500;
+    }
+    .modal-wip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 2px;
+      padding: 0.4rem 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+    .modal-wip::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold-dim);
+    }
+    .modal-section {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(201,168,76,0.1);
+    }
+    .modal-section h4 {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
+    }
+    .modal-section p {
+      font-size: 0.88rem;
+      color: var(--cream-dim);
+      line-height: 1.7;
+    }
+
+    /* trigger links */
+    .modal-trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(201,168,76,0.3);
+      padding-bottom: 1px;
+      cursor: pointer;
+      background: none;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      font-family: var(--sans);
+      transition: border-color 0.2s, color 0.2s;
+      margin-top: 1rem;
+    }
+    .modal-trigger:hover { border-color: var(--gold); color: #e0bc5a; }
+
+    /* subtle external links */
+    .ext-link {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(201,168,76,0.25);
+      transition: border-color 0.2s;
+    }
+    .ext-link:hover { border-color: var(--gold); }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       nav { padding: 1rem 1.5rem; }
@@ -1121,7 +1273,8 @@
           <p>El Tec Econ Challenge es una competencia nacional de análisis económico para estudiantes de prepa. El reto entrega a cada equipo un <strong>caso económico hipotético simulado</strong>: datos, reportes y documentos construidos expresamente para la competencia.</p>
           <p>Los equipos analizan el caso, construyen un argumento económico fundamentado y lo defienden ante un jurado compuesto por académicos e investigadores del Tec y de otras instituciones de prestigio.</p>
           <p>El contenido es economía en sentido estricto: razonamiento sobre mercados, variables macroeconómicas y comportamiento de agentes.</p>
-          <p>La competencia está abierta a cualquier estudiante de preparatoria en México, independientemente de la carrera que aspire a estudiar.</p>
+          <p>La competencia está abierta a cualquier estudiante de prepa en México, independientemente de la carrera que aspire a estudiar.</p>
+          <button class="modal-trigger" onclick="openModal('modal-materiales')">Ver materiales del caso ↗</button>
         </div>
 
         <div class="reto-phases reveal">
@@ -1150,7 +1303,7 @@
             <div class="phase-num">04</div>
             <div class="phase-content">
               <h4>Entrega y defensa</h4>
-              <p>Documento escrito más presentación ante jurado en la final presencial en la Escuela de Gobierno y Transformación Pública del Tec de Monterrey.</p>
+              <p>Documento escrito más presentación ante jurado en la final presencial en Tec Mixcoac.</p>
             </div>
           </div>
         </div>
@@ -1190,7 +1343,7 @@
             <div class="timeline-dot">4</div>
             <div class="timeline-period">Feb – Mar 2027</div>
             <div class="timeline-label">Final presencial</div>
-            <div class="timeline-desc">Presentaciones y defensa ante jurado en la Escuela de Gobierno y Transformación Pública del Tec de Monterrey, Ciudad de México.</div>
+            <div class="timeline-desc">Presentaciones y defensa ante jurado en Tec Mixcoac, Ciudad de México.</div>
           </div>
           <div class="timeline-item">
             <div class="timeline-dot">5</div>
@@ -1284,6 +1437,7 @@
           <p>Durante el período de desarrollo, cada equipo tiene acceso a dos formas de acompañamiento académico que no existen en ninguna otra competencia del país.</p>
           <p>Las <strong>sesiones mensuales</strong> son encuentros virtuales con profesores e investigadores del programa de Economía del Tec: una presentación corta a cargo de un académico del programa, seguida de tiempo abierto para orientar a los equipos y resolver dudas sobre el caso.</p>
           <p>El <strong>sistema de coaches</strong> permite a cada equipo designar a un asesor de su elección que actúa como guía metodológico: revisa borradores, da retroalimentación y orienta el análisis sin resolver el caso por el equipo.</p>
+          <button class="modal-trigger" onclick="openModal('modal-profesores')">Conoce a los académicos del programa ↗</button>
         </div>
 
         <div class="sessions-list reveal">
@@ -1390,8 +1544,9 @@
 
       <div class="final-grid">
         <div class="final-text reveal">
-          <p>Los 7 equipos finalistas serán convocados a la <strong>final presencial en la Escuela de Gobierno y Transformación Pública del Tec de Monterrey</strong>, donde defenderán su caso ante el jurado en una sesión de preguntas y respuestas.</p>
+          <p>Los 7 equipos finalistas serán convocados a la <strong>final presencial en Tec Mixcoac</strong>, donde defenderán su caso ante el jurado en una sesión de preguntas y respuestas.</p>
           <p>El cierre de la competencia es el <strong>desayuno de premiación</strong>: un evento de alto nivel donde cada mesa tiene un anfitrión asignado del ecosistema de Economía del Tec, creando conversaciones genuinas entre los finalistas, sus familias y figuras de primer nivel del sector.</p>
+          <button class="modal-trigger" onclick="openModal('modal-anfitriones')">Ver perfil de anfitriones ↗</button>
         </div>
 
         <div class="anfitriones reveal">
@@ -1453,7 +1608,7 @@
         <div class="programa-stats reveal">
           <div class="stat-card">
             <div class="stat-num">#1</div>
-            <div class="stat-label">En México en Economía y Econometría, QS World Rankings by Subject 2026</div>
+            <div class="stat-label">En México en Economía y Econometría, <a href="https://www.topuniversities.com/university-subject-rankings/economics-econometrics?countries=mx" target="_blank" class="ext-link">QS World Rankings by Subject 2026</a></div>
           </div>
           <div class="stat-card">
             <div class="stat-num">95-100%</div>
@@ -1471,8 +1626,8 @@
 
         <div class="programa-text reveal">
           <p>El Tec Econ Challenge es una iniciativa de la Dirección del Programa de Licenciatura en Economía de la Escuela de Ciencias Sociales y Gobierno, coordinada desde los campus Ciudad de México, Santa Fe y Estado de México.</p>
-          <p>El programa de Economía del Tec es el número 1 en México según el QS World University Rankings by Subject 2026, con una empleabilidad de egresados superior al 95%.</p>
-          <p>La competencia está diseñada para mostrar lo que distingue al programa: rigor analítico, investigación de frontera y una red de egresados en los lugares más relevantes de la economía mexicana e internacional.</p>
+          <p>El programa de Economía del Tec es el número 1 en México según el <a href="https://www.topuniversities.com/university-subject-rankings/economics-econometrics?countries=mx" target="_blank" class="ext-link">QS World University Rankings by Subject 2026</a>, con una empleabilidad de egresados superior al 95%.</p>
+          <p>La competencia está diseñada para mostrar lo que distingue al programa: rigor analítico, investigación de frontera y una red de egresados en los lugares más relevantes de la economía mexicana e internacional. <a href="https://tec.mx/es/ciencias-sociales-y-gobierno/licenciatura-en-economia?gclsrc=aw.ds&gad_source=1" target="_blank" class="ext-link">Conoce la licenciatura.</a></p>
         </div>
       </div>
     </div>
@@ -1526,7 +1681,7 @@
             ¿Dónde es la final presencial?
             <span class="faq-icon">+</span>
           </button>
-          <div class="faq-answer">La final presencial y el desayuno de premiación se realizarán en la Escuela de Gobierno y Transformación Pública del Tec de Monterrey, en Ciudad de México, entre febrero y marzo de 2027. Los 7 equipos finalistas recibirán todos los detalles con anticipación.</div>
+          <div class="faq-answer">La final presencial y el desayuno de premiación se realizarán en el campus Tec Mixcoac, en Ciudad de México, entre febrero y marzo de 2027. Los 7 equipos finalistas recibirán todos los detalles con anticipación.</div>
         </div>
         <div class="faq-item reveal">
           <button class="faq-question" onclick="toggleFaq(this)">
@@ -1565,15 +1720,76 @@
         </div>
         <div class="footer-contact">
           Coordinación: Marco Méndez Atienza<br>
-          Director de Programa de Economía, Campus Ciudad de México<br>
+          Director de Programa de LEC, Campus CDMX<br>
           <a href="mailto:marco.mendez@tec.mx">marco.mendez@tec.mx</a>
         </div>
       </div>
     </div>
   </footer>
 
+  <!-- MODAL: MATERIALES -->
+  <div class="modal-overlay" id="modal-materiales">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('modal-materiales')">×</button>
+      <p class="modal-label">El reto</p>
+      <h3 class="modal-title">Materiales del caso</h3>
+      <div class="modal-divider"></div>
+      <div class="modal-wip">Contenido en preparación</div>
+      <div class="modal-body">
+        <p>Cada equipo recibirá un paquete completo de materiales construidos expresamente para la competencia. El contenido será publicado en la convocatoria oficial de agosto 2026.</p>
+        <p>El paquete incluirá:</p>
+      </div>
+      <div class="modal-section">
+        <h4>Documento base del caso</h4>
+        <p>Descripción del escenario económico, actores involucrados y la pregunta central que los equipos deben responder.</p>
+      </div>
+      <div class="modal-section">
+        <h4>Documentos de apoyo simulados</h4>
+        <p>Reportes, notas periodísticas y extractos de informes construidos para el caso, con posiciones e información complementaria.</p>
+      </div>
+      <div class="modal-section">
+        <h4>Paquete de datos</h4>
+        <p>Series de tiempo y tablas de indicadores de contexto con notas metodológicas para guiar el análisis.</p>
+      </div>
+      <div class="modal-section">
+        <h4>Guía de evaluación</h4>
+        <p>Rúbrica detallada publicada desde el inicio, con los cinco criterios de evaluación y su ponderación.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: PROFESORES -->
+  <div class="modal-overlay" id="modal-profesores">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('modal-profesores')">×</button>
+      <p class="modal-label">Acompañamiento</p>
+      <h3 class="modal-title">Académicos del programa</h3>
+      <div class="modal-divider"></div>
+      <div class="modal-wip">Perfiles en preparación</div>
+      <div class="modal-body">
+        <p>Las sesiones mensuales estarán a cargo de profesores e investigadores del <a href="https://tec.mx/es/ciencias-sociales-y-gobierno/licenciatura-en-economia?gclsrc=aw.ds&gad_source=1" target="_blank" class="ext-link">programa de Licenciatura en Economía del Tec</a>, el programa número 1 en México según el <a href="https://www.topuniversities.com/university-subject-rankings/economics-econometrics?countries=mx" target="_blank" class="ext-link">QS World Rankings by Subject 2026</a>.</p>
+        <p>Los perfiles de los académicos participantes serán publicados en la convocatoria oficial de agosto 2026.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: ANFITRIONES -->
+  <div class="modal-overlay" id="modal-anfitriones">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('modal-anfitriones')">×</button>
+      <p class="modal-label">Desayuno de premiación</p>
+      <h3 class="modal-title">Anfitriones e invitados</h3>
+      <div class="modal-divider"></div>
+      <div class="modal-wip">Perfiles en preparación</div>
+      <div class="modal-body">
+        <p>El desayuno de premiación reunirá a los equipos finalistas y sus familias con figuras destacadas del ecosistema de Economía del Tec: autoridades académicas, líderes de industria y gobierno, e investigadores de primer nivel.</p>
+        <p>Los perfiles completos de los anfitriones e invitados confirmados serán publicados conforme avance la organización del evento.</p>
+      </div>
+    </div>
+  </div>
+
   <script>
-    // ── SCROLL REVEAL ──
+    // SCROLL REVEAL
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
@@ -1585,7 +1801,7 @@
     }, { threshold: 0.1 });
     reveals.forEach(el => observer.observe(el));
 
-    // ── FAQ TOGGLE ──
+    // FAQ TOGGLE
     function toggleFaq(btn) {
       const item = btn.parentElement;
       const isOpen = item.classList.contains('open');
@@ -1593,16 +1809,34 @@
       if (!isOpen) item.classList.add('open');
     }
 
-    // ── FORM HANDLER ──
-    // Reemplaza FORM_URL con el link de tu Google Form
-    const FORM_URL = 'https://forms.office.com/r/kVN2psmqqz';
+    // MODALS
+    function openModal(id) {
+      document.getElementById(id).classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.querySelectorAll('.modal-overlay').forEach(overlay => {
+      overlay.addEventListener('click', function(e) {
+        if (e.target === this) closeModal(this.id);
+      });
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal-overlay.open').forEach(m => closeModal(m.id));
+      }
+    });
 
+    // FORM HANDLER
+    const FORM_URL = 'https://forms.office.com/r/kVN2psmqqz';
     function handleForm(e, inputId) {
       e.preventDefault();
       window.open(FORM_URL, '_blank');
     }
 
-    // ── NAV ACTIVE ──
+    // NAV SCROLL
     window.addEventListener('scroll', () => {
       const nav = document.querySelector('nav');
       nav.style.borderBottomColor = window.scrollY > 50
