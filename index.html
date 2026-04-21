@@ -1600,15 +1600,11 @@
 
     // ── FORM HANDLER ──
     // Reemplaza FORM_URL con el link de tu Google Form
-    const FORM_URL = 'https://docs.google.com/forms/d/e/TU_FORM_ID_AQUI/viewform';
+    const FORM_URL = 'https://forms.office.com/r/kVN2psmqqz';
 
     function handleForm(e, inputId) {
       e.preventDefault();
-      // Redirige al Google Form cuando esté listo
-      // Por ahora muestra confirmación
-      const input = document.getElementById(inputId);
-      const parent = input.parentElement;
-      parent.innerHTML = '<p style="color: var(--gold); font-family: var(--serif); font-size: 1.1rem; font-style: italic; padding: 0.9rem 0;">¡Listo! Te avisamos en agosto. 🎓</p>';
+      window.open(FORM_URL, '_blank');
     }
 
     // ── NAV ACTIVE ──
