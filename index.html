@@ -1195,6 +1195,167 @@
     }
     .ext-link:hover { border-color: var(--gold); }
 
+    /* ── TOGGLE INTRO ── */
+    #intro-toggle {
+      padding: 6rem 0;
+      border-top: 1px solid rgba(201,168,76,0.1);
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+      background: var(--ink-mid);
+    }
+
+    .toggle-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .toggle-header p {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .toggle-buttons {
+      display: inline-flex;
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .toggle-btn {
+      padding: 0.85rem 2rem;
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: var(--cream-dim);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: background 0.25s, color 0.25s;
+      white-space: nowrap;
+    }
+
+    .toggle-btn:first-child {
+      border-right: 1px solid rgba(201,168,76,0.25);
+    }
+
+    .toggle-btn.active {
+      background: var(--gold);
+      color: var(--ink);
+    }
+
+    .toggle-btn:not(.active):hover {
+      background: rgba(201,168,76,0.08);
+      color: var(--cream);
+    }
+
+    .toggle-panel {
+      display: none;
+    }
+    .toggle-panel.active {
+      display: block;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+      margin-top: 0;
+    }
+
+    .intro-text h3 {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    .intro-text h3 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .intro-text p {
+      font-size: 1rem;
+      color: var(--cream-dim);
+      line-height: 1.8;
+      margin-bottom: 1.1rem;
+    }
+
+    .intro-text strong {
+      color: var(--cream);
+      font-weight: 500;
+    }
+
+    .intro-cta {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.85rem 2rem;
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink);
+      background: var(--gold);
+      border-radius: 2px;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s;
+    }
+    .intro-cta:hover { background: #e0bc5a; }
+
+    .intro-highlights {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .highlight-card {
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+      padding: 1.2rem 1.4rem;
+      border: 1px solid rgba(201,168,76,0.1);
+      border-radius: 3px;
+      background: rgba(255,255,255,0.02);
+      transition: border-color 0.2s;
+    }
+    .highlight-card:hover { border-color: rgba(201,168,76,0.3); }
+
+    .highlight-icon {
+      font-size: 1.3rem;
+      line-height: 1;
+      padding-top: 0.1rem;
+    }
+
+    .highlight-text h5 {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 0.2rem;
+    }
+
+    .highlight-text p {
+      font-size: 0.83rem;
+      color: var(--cream-dim);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .toggle-buttons { flex-direction: column; }
+      .toggle-btn:first-child { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.25); }
+      .intro-grid { grid-template-columns: 1fr; gap: 3rem; }
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       nav { padding: 1rem 1.5rem; }
@@ -1261,6 +1422,105 @@
     <p class="hero-note">Convocatoria oficial: agosto 2026. Te notificamos en cuanto abra.</p>
   </section>
 
+  <!-- INTRO TOGGLE -->
+  <section id="intro-toggle">
+    <div class="container">
+      <div class="toggle-header reveal">
+        <p>¿Cuál es tu perfil?</p>
+        <div class="toggle-buttons">
+          <button class="toggle-btn active" onclick="switchPanel('explorar')">Estoy explorando qué estudiar</button>
+          <button class="toggle-btn" onclick="switchPanel('economia')">Me interesa Economía</button>
+        </div>
+      </div>
+
+      <!-- PANEL A: Explorador -->
+      <div class="toggle-panel active" id="panel-explorar">
+        <div class="intro-grid">
+          <div class="intro-text reveal">
+            <h3>No necesitas saber de economía<br>para <em>ganar esto.</em></h3>
+            <p>El Tec Econ Challenge es un reto de razonamiento, argumentación y análisis. No se memoriza ni se resuelven fórmulas: se lee un caso real, se piensa con claridad y se defiende una postura ante un jurado de expertos.</p>
+            <p>Si te gusta debatir, entender por qué pasan las cosas, trabajar en equipo y resolver problemas complejos, este concurso es para ti, sin importar qué carrera tengas en mente.</p>
+            <p>Participar es <strong>completamente gratuito</strong>. Puedes ganar hasta <strong>$30,000 MXN</strong> y llegar a una final presencial en Ciudad de México con académicos y líderes del sector.</p>
+            <button class="intro-cta" onclick="handleForm(event, '')">Quiero registrarme</button>
+          </div>
+          <div class="intro-highlights reveal">
+            <div class="highlight-card">
+              <div class="highlight-icon">🧠</div>
+              <div class="highlight-text">
+                <h5>Sin conocimientos previos requeridos</h5>
+                <p>Los materiales del caso incluyen todo lo que necesitas para participar. Lo que se evalúa es tu razonamiento, no lo que ya sabes.</p>
+              </div>
+            </div>
+            <div class="highlight-card">
+              <div class="highlight-icon">🏆</div>
+              <div class="highlight-text">
+                <h5>Premios reales</h5>
+                <p>$30,000 MXN al primer lugar, $20,000 al segundo y $10,000 al tercero. Más reconocimiento formal para tu preparatoria.</p>
+              </div>
+            </div>
+            <div class="highlight-card">
+              <div class="highlight-icon">👥</div>
+              <div class="highlight-text">
+                <h5>Compites en equipo</h5>
+                <p>De 3 a 5 integrantes. Pueden ser de distintos salones o turnos. Cada equipo puede tener un coach que los acompañe durante el proceso.</p>
+              </div>
+            </div>
+            <div class="highlight-card">
+              <div class="highlight-icon">📍</div>
+              <div class="highlight-text">
+                <h5>Final presencial en CDMX</h5>
+                <p>Los 7 equipos finalistas son convocados a Ciudad de México para defender su caso ante un jurado de alto nivel.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL B: Interesado en Economía -->
+      <div class="toggle-panel" id="panel-economia">
+        <div class="intro-grid">
+          <div class="intro-text reveal">
+            <h3>El programa <em>#1 en México</em><br>te pone a prueba.</h3>
+            <p>El Tec Econ Challenge es la competencia de análisis económico del programa de Economía del Tec, el <a href="https://www.topuniversities.com/university-subject-rankings/economics-econometrics?countries=mx" target="_blank" class="ext-link">número 1 en México según el QS World Rankings 2026</a>.</p>
+            <p>El reto replica la forma en que trabajan los economistas: un caso con datos reales, actores en conflicto y una pregunta sin respuesta obvia. Tu equipo analiza, construye un argumento y lo defiende ante un jurado de investigadores y líderes del sector.</p>
+            <p>Es una oportunidad de conocer de cerca el programa, sus académicos y la red de <strong>ExaTecs que están en los lugares más relevantes de la economía mexicana</strong>, antes de cualquier proceso de admisión.</p>
+            <button class="intro-cta" onclick="handleForm(event, '')">Quiero registrarme</button>
+          </div>
+          <div class="intro-highlights reveal">
+            <div class="highlight-card">
+              <div class="highlight-icon">📊</div>
+              <div class="highlight-text">
+                <h5>Economía aplicada, no memorística</h5>
+                <p>El reto evalúa razonamiento económico genuino: cómo lees un mercado, qué variables importan, cómo se construye un argumento con datos.</p>
+              </div>
+            </div>
+            <div class="highlight-card">
+              <div class="highlight-icon">🎓</div>
+              <div class="highlight-text">
+                <h5>Sesiones con académicos del programa</h5>
+                <p>Durante el proceso tendrás acceso a sesiones mensuales con profesores e investigadores del programa de Economía del Tec.</p>
+              </div>
+            </div>
+            <div class="highlight-card">
+              <div class="highlight-icon">🌐</div>
+              <div class="highlight-text">
+                <h5>Una red que abre puertas</h5>
+                <p>Los finalistas conviven en la premiación con ExaTecs en Banxico, Barclays, el Colmex, el CIDE y más. Es la red del programa en persona.</p>
+              </div>
+            </div>
+            <div class="highlight-card">
+              <div class="highlight-icon">🏅</div>
+              <div class="highlight-text">
+                <h5>Premios y reconocimiento</h5>
+                <p>Hasta $30,000 MXN para el equipo ganador, más constancia institucional y difusión pública para tu preparatoria.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- EL RETO -->
   <section id="reto">
     <div class="container">
@@ -1303,7 +1563,7 @@
             <div class="phase-num">04</div>
             <div class="phase-content">
               <h4>Entrega y defensa</h4>
-              <p>Documento escrito más presentación ante jurado en la final presencial en la Escuela de Gobierno y Transformación Pública del Tec de Monterrey</p>
+              <p>Documento escrito más presentación ante jurado en la final presencial en Tec Mixcoac.</p>
             </div>
           </div>
         </div>
@@ -1343,7 +1603,7 @@
             <div class="timeline-dot">4</div>
             <div class="timeline-period">Feb – Mar 2027</div>
             <div class="timeline-label">Final presencial</div>
-            <div class="timeline-desc">Presentaciones y defensa ante jurado en la Escuela de Gobierno y Transformación Pública del Tec de Monterrey, Ciudad de México.</div>
+            <div class="timeline-desc">Presentaciones y defensa ante jurado en Tec Mixcoac, Ciudad de México.</div>
           </div>
           <div class="timeline-item">
             <div class="timeline-dot">5</div>
@@ -1544,7 +1804,7 @@
 
       <div class="final-grid">
         <div class="final-text reveal">
-          <p>Los 7 equipos finalistas serán convocados a la <strong>final presencial en la Escuela de Gobierno y Transformación Pública del Tec de Monterrey</strong>, donde defenderán su caso ante el jurado en una sesión de preguntas y respuestas.</p>
+          <p>Los 7 equipos finalistas serán convocados a la <strong>final presencial en Tec Mixcoac</strong>, donde defenderán su caso ante el jurado en una sesión de preguntas y respuestas.</p>
           <p>El cierre de la competencia es el <strong>desayuno de premiación</strong>: un evento de alto nivel donde cada mesa tiene un anfitrión asignado del ecosistema de Economía del Tec, creando conversaciones genuinas entre los finalistas, sus familias y figuras de primer nivel del sector.</p>
           <button class="modal-trigger" onclick="openModal('modal-anfitriones')">Ver perfil de anfitriones ↗</button>
         </div>
@@ -1681,7 +1941,7 @@
             ¿Dónde es la final presencial?
             <span class="faq-icon">+</span>
           </button>
-          <div class="faq-answer">La final presencial y el desayuno de premiación se realizarán en la Escuela de Gobierno y Transformación Pública del Tec de Monterrey, en Ciudad de México, entre febrero y marzo de 2027. Los 7 equipos finalistas recibirán todos los detalles con anticipación.</div>
+          <div class="faq-answer">La final presencial y el desayuno de premiación se realizarán en el campus Tec Mixcoac, en Ciudad de México, entre febrero y marzo de 2027. Los 7 equipos finalistas recibirán todos los detalles con anticipación.</div>
         </div>
         <div class="faq-item reveal">
           <button class="faq-question" onclick="toggleFaq(this)">
@@ -1720,7 +1980,7 @@
         </div>
         <div class="footer-contact">
           Coordinación: Marco Méndez Atienza<br>
-          Director de Programa de Economía, Campus CDMX<br>
+          Director de Programa de LEC, Campus CDMX<br>
           <a href="mailto:marco.mendez@tec.mx">marco.mendez@tec.mx</a>
         </div>
       </div>
@@ -1789,6 +2049,14 @@
   </div>
 
   <script>
+    // TOGGLE INTRO
+    function switchPanel(panel) {
+      document.querySelectorAll('.toggle-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('panel-' + panel).classList.add('active');
+      event.currentTarget.classList.add('active');
+    }
+
     // SCROLL REVEAL
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
