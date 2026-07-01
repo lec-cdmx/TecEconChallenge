@@ -1285,11 +1285,6 @@
     }
     .mat-btn.mat-btn-solid:hover { background: #e0bc5a; }
 
-    .mat-btn-code {
-      font-size: 0.68rem;
-      opacity: 0.75;
-    }
-
     /* vista de detalle / visor embebido */
     .mat-viewer-header {
       display: flex;
@@ -1313,6 +1308,50 @@
       border: 1px solid rgba(201,168,76,0.2);
       border-radius: 3px;
       background: var(--white);
+    }
+
+    /* botón grande para abrir el explorador de materiales */
+    .materiales-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.2rem;
+      width: 100%;
+      margin-top: 1.8rem;
+      padding: 1.5rem 2rem;
+      background: rgba(201,168,76,0.07);
+      border: 1px solid rgba(201,168,76,0.35);
+      border-radius: 4px;
+      cursor: pointer;
+      text-align: left;
+      font-family: var(--sans);
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .materiales-cta:hover {
+      background: rgba(201,168,76,0.14);
+      border-color: var(--gold);
+    }
+    .materiales-cta-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    .materiales-cta-title {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--cream);
+    }
+    .materiales-cta-sub {
+      font-size: 0.82rem;
+      color: var(--cream-dim);
+      line-height: 1.5;
+    }
+    .materiales-cta-arrow {
+      font-size: 1.6rem;
+      line-height: 1;
+      color: var(--gold);
+      flex-shrink: 0;
     }
 
     /* trigger links */
@@ -1684,7 +1723,13 @@
           <p>Los equipos analizan el caso, construyen un argumento económico fundamentado y lo defienden ante un jurado compuesto por académicos e investigadores del Tec y de otras instituciones de prestigio.</p>
           <p>El contenido es economía en sentido estricto: razonamiento sobre mercados, variables macroeconómicas y comportamiento de agentes.</p>
           <p>La competencia está abierta a cualquier estudiante de prepa en México, independientemente de la carrera que aspire a estudiar.</p>
-          <button class="modal-trigger" onclick="openModal('modal-materiales')">Ver materiales del caso ↗</button>
+          <button class="materiales-cta" onclick="openModal('modal-materiales')">
+            <span class="materiales-cta-text">
+              <span class="materiales-cta-title">Ver materiales del caso</span>
+              <span class="materiales-cta-sub">Documento base, contexto, documentos institucionales y datos construidos para la competencia.</span>
+            </span>
+            <span class="materiales-cta-arrow">↗</span>
+          </button>
         </div>
 
         <div class="reto-phases reveal">
@@ -1868,7 +1913,7 @@
           <div class="session-item">
             <div class="session-month">3</div>
             <div class="session-info">
-              <h5>Acompañamiento y avances · Octubre</h5>
+              <h5>Acompañamiento y avances · Diciembre</h5>
               <p>Presentación académica. Revisión de borradores y Q&amp;A abierto con el equipo.</p>
             </div>
           </div>
@@ -2258,11 +2303,11 @@
         label: 'Datos',
         folder: '02_Datos',
         files: [
-          { archivo: '01_salario_minimo_mensual.xlsx', titulo: 'Salario mínimo, serie mensual', descripcion: 'Salario nominal, inflación y salario real, 2018–2024.', codigoR: '01_serie_mensual_salario_minimo.R' },
-          { archivo: '02_empleo_formal_trimestral.xlsx', titulo: 'Empleo formal, serie trimestral', descripcion: 'Empleo por sector con detalle del quiebre de 2020.', codigoR: '02_empleo_formal_trimestral.R' },
-          { archivo: '03_informalidad_trimestral.xlsx', titulo: 'Informalidad, serie trimestral', descripcion: 'Tasa de informalidad por sector.', codigoR: '03_informalidad_trimestral.R' },
-          { archivo: '04_panel_pymes_textiles.xlsx', titulo: 'Panel de empresas textiles', descripcion: '80 empresas, datos anuales 2018–2024, PyMEs y grandes.', codigoR: '04_panel_pymes_textiles.R' },
-          { archivo: '05_encuesta_trabajadores_microdatos.xlsx', titulo: 'Microdatos de encuesta laboral', descripcion: '520 encuestados, nivel individuo.', codigoR: '05_encuesta_trabajadores_microdatos.R' }
+          { archivo: '01_salario_minimo_mensual.xlsx', titulo: 'Salario mínimo, serie mensual', descripcion: 'Salario nominal, inflación y salario real, 2018–2024.' },
+          { archivo: '02_empleo_formal_trimestral.xlsx', titulo: 'Empleo formal, serie trimestral', descripcion: 'Empleo por sector con detalle del quiebre de 2020.' },
+          { archivo: '03_informalidad_trimestral.xlsx', titulo: 'Informalidad, serie trimestral', descripcion: 'Tasa de informalidad por sector.' },
+          { archivo: '04_panel_pymes_textiles.xlsx', titulo: 'Panel de empresas textiles', descripcion: '80 empresas, datos anuales 2018–2024, PyMEs y grandes.' },
+          { archivo: '05_encuesta_trabajadores_microdatos.xlsx', titulo: 'Microdatos de encuesta laboral', descripcion: '520 encuestados, nivel individuo.' }
         ]
       }
     ];
@@ -2278,6 +2323,15 @@
     }
     function matOfficeViewerUrl(rawUrl) {
       return 'https://view.officeapps.live.com/op/embed.aspx?src=' + encodeURIComponent(rawUrl);
+    }
+    // raw.githubusercontent.com sirve los PDFs con cabeceras que fuerzan la
+    // descarga en vez de mostrarlos en un <iframe>; se usa el visor de Google
+    // Docs como proxy de renderizado, igual que Office Online para los .xlsx.
+    function matGoogleViewerUrl(rawUrl) {
+      return 'https://docs.google.com/viewer?embedded=true&url=' + encodeURIComponent(rawUrl);
+    }
+    function matEmbedUrl(rawUrl, isXlsx) {
+      return isXlsx ? matOfficeViewerUrl(rawUrl) : matGoogleViewerUrl(rawUrl);
     }
 
     // Construye pestañas, tarjetas y visores del explorador dentro de #materiales-explorer.
@@ -2317,7 +2371,6 @@
             + '<div class="mat-card-actions">'
               + '<button class="mat-btn mat-btn-solid" onclick="matView(\'' + tab.id + '\', ' + idx + ')">Ver</button>'
               + '<a class="mat-btn" href="' + url + '" target="_blank" rel="noopener">Descargar</a>'
-              + (file.codigoR ? '<a class="mat-btn mat-btn-code" href="' + matFileUrl(tab.folder, file.codigoR) + '" target="_blank" rel="noopener">Ver código (R)</a>' : '')
             + '</div>'
           + '</div>';
         });
@@ -2334,7 +2387,7 @@
       const tab = MATERIALES_TABS.find(t => t.id === tabId);
       const file = tab.files[idx];
       const url = matFileUrl(tab.folder, file.archivo);
-      const embedSrc = matIsXlsx(file.archivo) ? matOfficeViewerUrl(url) : url;
+      const embedSrc = matEmbedUrl(url, matIsXlsx(file.archivo));
 
       const grid = document.getElementById('mat-grid-' + tabId);
       const viewer = document.getElementById('mat-viewer-' + tabId);
