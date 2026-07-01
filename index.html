@@ -210,10 +210,45 @@
     .hero-form {
       display: flex;
       gap: 0;
-      max-width: 480px;
+      flex: 1;
+      min-width: 280px;
+      width: 100%;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      max-width: 700px;
       width: 100%;
       opacity: 0;
       animation: fadeUp 0.9s 0.9s forwards;
+    }
+
+    .hero-pdf-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.9rem 1.4rem;
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(201,168,76,0.06);
+      border: 1px solid rgba(201,168,76,0.4);
+      border-radius: 2px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .hero-pdf-btn:hover {
+      background: rgba(201,168,76,0.14);
+      border-color: var(--gold);
     }
 
     .hero-form input {
@@ -413,7 +448,7 @@
 
     .timeline-items {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 1rem;
       position: relative;
     }
@@ -1556,7 +1591,9 @@
       .timeline-track { display: none; }
       .socios-grid { grid-template-columns: 1fr 1fr; }
       .programa-stats { grid-template-columns: 1fr 1fr; }
-      .hero-form, .registro-form { flex-direction: column; }
+      .hero-actions { flex-direction: column; }
+      .registro-form { flex-direction: column; }
+      .hero-form { flex-direction: column; }
       .hero-form input, .registro-form input { border-right: 1px solid rgba(201,168,76,0.3); border-bottom: none; border-radius: 2px 2px 0 0; }
       .hero-form button, .registro-form button { border-radius: 0 0 2px 2px; }
     }
@@ -1594,7 +1631,7 @@
       </div>
       <div class="badge-sep"></div>
       <div class="badge">
-        <div class="badge-num">8</div>
+        <div class="badge-num">6</div>
         <div class="badge-label">meses de reto</div>
       </div>
       <div class="badge-sep"></div>
@@ -1604,11 +1641,16 @@
       </div>
     </div>
 
-    <form class="hero-form" onsubmit="handleForm(event, 'hero-email')">
-      <input type="email" id="hero-email" placeholder="Tu correo electrónico" required />
-      <button type="submit">Registro oficial</button>
-    </form>
-    <p class="hero-note">Convocatoria oficial: agosto 2026. Te notificamos en cuanto abra.</p>
+    <div class="hero-actions">
+      <a class="hero-pdf-btn" href="https://raw.githubusercontent.com/lec-cdmx/TecEconChallenge/main/00_Convocatoria/convocatoria_oficial.pdf" target="_blank" rel="noopener">
+        📄 Convocatoria oficial (PDF)
+      </a>
+      <form class="hero-form" onsubmit="handleForm(event, 'hero-email')">
+        <input type="email" id="hero-email" placeholder="Tu correo electrónico" required />
+        <button type="submit">Registro oficial</button>
+      </form>
+    </div>
+    <p class="hero-note">Convocatoria oficial: septiembre 2026. Te notificamos en cuanto abra.</p>
   </section>
 
   <!-- INTRO TOGGLE -->
@@ -1770,7 +1812,7 @@
   <section id="cronograma">
     <div class="container">
       <p class="section-label reveal">Cronograma</p>
-      <h2 class="section-title reveal">8 meses de <em>actividad continua</em></h2>
+      <h2 class="section-title reveal">6 meses de <em>actividad continua</em></h2>
       <div class="divider reveal"></div>
 
       <div class="timeline reveal">
@@ -1778,13 +1820,13 @@
         <div class="timeline-items">
           <div class="timeline-item">
             <div class="timeline-dot active">1</div>
-            <div class="timeline-period">Agosto 2026</div>
+            <div class="timeline-period">Sep – Oct 2026</div>
             <div class="timeline-label">Convocatoria</div>
-            <div class="timeline-desc">Lanzamiento nacional. Apertura de inscripciones y publicación de materiales.</div>
+            <div class="timeline-desc">Apertura de inscripciones en septiembre. Cierre de convocatoria y publicación de materiales en octubre.</div>
           </div>
           <div class="timeline-item">
             <div class="timeline-dot">2</div>
-            <div class="timeline-period">Ago – Nov 2026</div>
+            <div class="timeline-period">Oct – Dic 2026</div>
             <div class="timeline-label">Desarrollo</div>
             <div class="timeline-desc">Trabajo en equipos con sesiones mensuales de acompañamiento y acceso a coaches.</div>
           </div>
@@ -1796,15 +1838,9 @@
           </div>
           <div class="timeline-item">
             <div class="timeline-dot">4</div>
-            <div class="timeline-period">Feb – Mar 2027</div>
-            <div class="timeline-label">Final presencial</div>
-            <div class="timeline-desc">Presentaciones y defensa ante jurado en Escuela de Gobierno y Transformación Pública del Tec de Monterrey, Ciudad de México.</div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot">5</div>
-            <div class="timeline-period">Feb – Mar 2027</div>
-            <div class="timeline-label">Premiación</div>
-            <div class="timeline-desc">Desayuno de premiación con anfitriones, jurado, finalistas y familias.</div>
+            <div class="timeline-period">Febrero 2027</div>
+            <div class="timeline-label">Final y premiación</div>
+            <div class="timeline-desc">Defensa ante jurado y desayuno de premiación, el mismo día, en Escuela de Gobierno y Transformación Pública del Tec de Monterrey, Ciudad de México.</div>
           </div>
         </div>
       </div>
@@ -1899,14 +1935,14 @@
           <div class="session-item">
             <div class="session-month">1</div>
             <div class="session-info">
-              <h5>Sesión de apertura · Agosto</h5>
+              <h5>Sesión de apertura · Octubre</h5>
               <p>Presentación del caso. Conceptos clave. Introducción al formato de evaluación.</p>
             </div>
           </div>
           <div class="session-item">
             <div class="session-month">2</div>
             <div class="session-info">
-              <h5>Acompañamiento y avances · Septiembre</h5>
+              <h5>Acompañamiento y avances · Noviembre</h5>
               <p>Presentación académica y retroalimentación sobre el estado del análisis.</p>
             </div>
           </div>
@@ -1920,7 +1956,7 @@
           <div class="session-item">
             <div class="session-month">4</div>
             <div class="session-info">
-              <h5>Preparación para la final · Noviembre</h5>
+              <h5>Preparación para la final · Enero</h5>
               <p>Tips para la defensa oral y simulacro ante jurado.</p>
             </div>
           </div>
@@ -1994,13 +2030,13 @@
   <section id="final">
     <div class="container">
       <p class="section-label reveal">Final y premiación</p>
-      <h2 class="section-title reveal">Ciudad de México, <em>marzo 2027</em></h2>
+      <h2 class="section-title reveal">Ciudad de México, <em>febrero 2027</em></h2>
       <div class="divider reveal"></div>
 
       <div class="final-grid">
         <div class="final-text reveal">
           <p>Los 7 equipos finalistas serán convocados a la <strong>final presencial en Escuela de Gobierno y Transformación Pública del Tec de Monterrey</strong>, donde defenderán su caso ante el jurado en una sesión de preguntas y respuestas.</p>
-          <p>El cierre de la competencia es el <strong>desayuno de premiación</strong>: un evento de alto nivel donde cada mesa tiene un anfitrión asignado del ecosistema de Economía del Tec, creando conversaciones genuinas entre los finalistas, sus familias y figuras de primer nivel del sector.</p>
+          <p>El mismo día se realiza el <strong>desayuno de premiación</strong>: un evento de alto nivel donde cada mesa tiene un anfitrión asignado del ecosistema de Economía del Tec, creando conversaciones genuinas entre los finalistas, sus familias y figuras de primer nivel del sector.</p>
           <button class="modal-trigger" onclick="openModal('modal-anfitriones')">Ver perfil de anfitriones ↗</button>
         </div>
 
@@ -2136,14 +2172,14 @@
             ¿Dónde es la final presencial?
             <span class="faq-icon">+</span>
           </button>
-          <div class="faq-answer">La final presencial y el desayuno de premiación se realizarán en el campus Escuela de Gobierno y Transformación Pública del Tec de Monterrey, en Ciudad de México, entre febrero y marzo de 2027. Los 7 equipos finalistas recibirán todos los detalles con anticipación.</div>
+          <div class="faq-answer">La final presencial y el desayuno de premiación se realizarán el mismo día, en el campus Escuela de Gobierno y Transformación Pública del Tec de Monterrey, en Ciudad de México, en febrero de 2027. Los 7 equipos finalistas recibirán todos los detalles con anticipación.</div>
         </div>
         <div class="faq-item reveal">
           <button class="faq-question" onclick="toggleFaq(this)">
             ¿Cuándo abre la convocatoria?
             <span class="faq-icon">+</span>
           </button>
-          <div class="faq-answer">La convocatoria oficial se lanza en agosto de 2026. Puedes registrar tu correo arriba para recibir una notificación en cuanto abra la inscripción.</div>
+          <div class="faq-answer">La convocatoria oficial se lanza en septiembre de 2026 y cierra en octubre. Puedes registrar tu correo arriba para recibir una notificación en cuanto abra la inscripción.</div>
         </div>
       </div>
     </div>
@@ -2154,13 +2190,13 @@
     <div class="container">
       <p class="section-label reveal" style="text-align:center">Primera edición · 2026–2027</p>
       <h2 class="registro-title reveal">¿Tu equipo tiene <em>lo que se necesita?</em></h2>
-      <p class="registro-sub reveal">Regístrense para recibir la convocatoria oficial en agosto de 2026.</p>
+      <p class="registro-sub reveal">Regístrense para recibir la convocatoria oficial en septiembre de 2026.</p>
 
       <form class="registro-form reveal" onsubmit="handleForm(event, 'registro-email')">
         <input type="email" id="registro-email" placeholder="Correo del capitán del equipo" required />
         <button type="submit">Registrarme</button>
       </form>
-      <p class="registro-note reveal">La convocatoria con el formulario completo de inscripción abre en agosto 2026.</p>
+      <p class="registro-note reveal">La convocatoria con el formulario completo de inscripción abre en septiembre 2026.</p>
     </div>
   </section>
 
@@ -2194,7 +2230,7 @@
       <div id="materiales-wip">
         <div class="modal-wip">Contenido en preparación</div>
         <div class="modal-body">
-          <p>Cada equipo recibirá un paquete completo de materiales construidos expresamente para la competencia. El contenido será publicado en la convocatoria oficial de agosto 2026.</p>
+          <p>Cada equipo recibirá un paquete completo de materiales construidos expresamente para la competencia. El contenido será publicado en la convocatoria oficial de septiembre 2026.</p>
           <p>El paquete incluirá:</p>
         </div>
         <div class="modal-section">
@@ -2230,7 +2266,7 @@
       <div class="modal-wip">Perfiles en preparación</div>
       <div class="modal-body">
         <p>Las sesiones mensuales estarán a cargo de profesores e investigadores del <a href="https://tec.mx/es/ciencias-sociales-y-gobierno/licenciatura-en-economia?gclsrc=aw.ds&gad_source=1" target="_blank" class="ext-link">programa de Licenciatura en Economía del Tec</a>, el programa número 1 en México según el <a href="https://www.topuniversities.com/university-subject-rankings/economics-econometrics?countries=mx" target="_blank" class="ext-link">QS World Rankings by Subject 2026</a>.</p>
-        <p>Los perfiles de los académicos participantes serán publicados en la convocatoria oficial de agosto 2026.</p>
+        <p>Los perfiles de los académicos participantes serán publicados en la convocatoria oficial de septiembre 2026.</p>
       </div>
     </div>
   </div>
@@ -2268,7 +2304,8 @@
         label: 'Convocatoria',
         folder: '00_Convocatoria',
         files: [
-          { archivo: 'convocatoria_oficial.pdf', titulo: 'Convocatoria oficial', descripcion: 'Bases completas del concurso: elegibilidad, fechas, formato y proceso de registro.' }
+          { archivo: 'convocatoria_oficial.pdf', titulo: 'Convocatoria oficial', descripcion: 'Bases completas del concurso: elegibilidad, fechas, formato y proceso de registro.' },
+          { archivo: 'guia_participante.pdf', titulo: 'Guía del participante', descripcion: 'Cómo abordar el caso, las cuatro preguntas del memo, formato del entregable y qué evalúa el jurado.' }
         ]
       },
       {
