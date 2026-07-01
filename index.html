@@ -1165,6 +1165,195 @@
       line-height: 1.7;
     }
 
+    /* ── MATERIALES: modal ampliado ── */
+    .modal.modal-large {
+      max-width: 900px;
+      max-height: 90vh;
+    }
+
+    /* pestañas del explorador (mismo patrón visual que #intro-toggle) */
+    .mat-tabs {
+      display: inline-flex;
+      flex-wrap: wrap;
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+    .mat-tab-btn {
+      padding: 0.75rem 1.4rem;
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--cream-dim);
+      background: transparent;
+      border: none;
+      border-right: 1px solid rgba(201,168,76,0.25);
+      cursor: pointer;
+      transition: background 0.25s, color 0.25s;
+      white-space: nowrap;
+    }
+    .mat-tab-btn:last-child { border-right: none; }
+    .mat-tab-btn.active {
+      background: var(--gold);
+      color: var(--ink);
+    }
+    .mat-tab-btn:not(.active):hover {
+      background: rgba(201,168,76,0.08);
+      color: var(--cream);
+    }
+
+    .mat-panel { display: none; }
+    .mat-panel.active { display: block; }
+
+    .mat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .mat-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      padding: 1.2rem 1.4rem;
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 3px;
+      background: rgba(255,255,255,0.02);
+      transition: border-color 0.2s;
+    }
+    .mat-card:hover { border-color: rgba(201,168,76,0.35); }
+
+    .mat-card-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+    }
+
+    .mat-card-icon {
+      font-size: 1.2rem;
+      line-height: 1;
+      padding-top: 0.1rem;
+    }
+
+    .mat-card-title {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--cream);
+      line-height: 1.25;
+    }
+
+    .mat-card-desc {
+      font-size: 0.8rem;
+      color: var(--cream-dim);
+      line-height: 1.5;
+    }
+
+    .mat-card-actions {
+      display: flex;
+      gap: 0.6rem;
+      margin-top: 0.2rem;
+      flex-wrap: wrap;
+    }
+
+    .mat-btn {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.45rem 0.9rem;
+      border-radius: 2px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+      border: 1px solid rgba(201,168,76,0.3);
+      background: transparent;
+      color: var(--gold);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .mat-btn:hover { border-color: var(--gold); background: rgba(201,168,76,0.08); }
+
+    .mat-btn.mat-btn-solid {
+      background: var(--gold);
+      color: var(--ink);
+      border-color: var(--gold);
+    }
+    .mat-btn.mat-btn-solid:hover { background: #e0bc5a; }
+
+    /* vista de detalle / visor embebido */
+    .mat-viewer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .mat-viewer-title {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--cream);
+    }
+
+    .mat-viewer-frame {
+      width: 100%;
+      height: 62vh;
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 3px;
+      background: var(--white);
+    }
+
+    /* botón grande para abrir el explorador de materiales */
+    .materiales-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.2rem;
+      width: 100%;
+      margin-top: 1.8rem;
+      padding: 1.5rem 2rem;
+      background: rgba(201,168,76,0.07);
+      border: 1px solid rgba(201,168,76,0.35);
+      border-radius: 4px;
+      cursor: pointer;
+      text-align: left;
+      font-family: var(--sans);
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .materiales-cta:hover {
+      background: rgba(201,168,76,0.14);
+      border-color: var(--gold);
+    }
+    .materiales-cta-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    .materiales-cta-title {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--cream);
+    }
+    .materiales-cta-sub {
+      font-size: 0.82rem;
+      color: var(--cream-dim);
+      line-height: 1.5;
+    }
+    .materiales-cta-arrow {
+      font-size: 1.6rem;
+      line-height: 1;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
     /* trigger links */
     .modal-trigger {
       display: inline-flex;
@@ -1534,7 +1723,13 @@
           <p>Los equipos analizan el caso, construyen un argumento económico fundamentado y lo defienden ante un jurado compuesto por académicos e investigadores del Tec y de otras instituciones de prestigio.</p>
           <p>El contenido es economía en sentido estricto: razonamiento sobre mercados, variables macroeconómicas y comportamiento de agentes.</p>
           <p>La competencia está abierta a cualquier estudiante de prepa en México, independientemente de la carrera que aspire a estudiar.</p>
-          <button class="modal-trigger" onclick="openModal('modal-materiales')">Ver materiales del caso ↗</button>
+          <button class="materiales-cta" onclick="openModal('modal-materiales')">
+            <span class="materiales-cta-text">
+              <span class="materiales-cta-title">Ver materiales del caso</span>
+              <span class="materiales-cta-sub">Documento base, contexto, documentos institucionales y datos construidos para la competencia.</span>
+            </span>
+            <span class="materiales-cta-arrow">↗</span>
+          </button>
         </div>
 
         <div class="reto-phases reveal">
@@ -1718,7 +1913,7 @@
           <div class="session-item">
             <div class="session-month">3</div>
             <div class="session-info">
-              <h5>Acompañamiento y avances · Octubre</h5>
+              <h5>Acompañamiento y avances · Diciembre</h5>
               <p>Presentación académica. Revisión de borradores y Q&amp;A abierto con el equipo.</p>
             </div>
           </div>
@@ -1989,32 +2184,39 @@
 
   <!-- MODAL: MATERIALES -->
   <div class="modal-overlay" id="modal-materiales">
-    <div class="modal">
+    <div class="modal" id="modal-materiales-inner">
       <button class="modal-close" onclick="closeModal('modal-materiales')">×</button>
       <p class="modal-label">El reto</p>
       <h3 class="modal-title">Materiales del caso</h3>
       <div class="modal-divider"></div>
-      <div class="modal-wip">Contenido en preparación</div>
-      <div class="modal-body">
-        <p>Cada equipo recibirá un paquete completo de materiales construidos expresamente para la competencia. El contenido será publicado en la convocatoria oficial de agosto 2026.</p>
-        <p>El paquete incluirá:</p>
+
+      <!-- Estado "en preparación": visible mientras MATERIALES_DISPONIBLES es false -->
+      <div id="materiales-wip">
+        <div class="modal-wip">Contenido en preparación</div>
+        <div class="modal-body">
+          <p>Cada equipo recibirá un paquete completo de materiales construidos expresamente para la competencia. El contenido será publicado en la convocatoria oficial de agosto 2026.</p>
+          <p>El paquete incluirá:</p>
+        </div>
+        <div class="modal-section">
+          <h4>Documento base del caso</h4>
+          <p>Descripción del escenario económico, actores involucrados y la pregunta central que los equipos deben responder.</p>
+        </div>
+        <div class="modal-section">
+          <h4>Documentos de apoyo simulados</h4>
+          <p>Reportes, notas periodísticas y extractos de informes construidos para el caso, con posiciones e información complementaria.</p>
+        </div>
+        <div class="modal-section">
+          <h4>Paquete de datos</h4>
+          <p>Series de tiempo y tablas de indicadores de contexto con notas metodológicas para guiar el análisis.</p>
+        </div>
+        <div class="modal-section">
+          <h4>Guía de evaluación</h4>
+          <p>Rúbrica detallada publicada desde el inicio, con los cinco criterios de evaluación y su ponderación.</p>
+        </div>
       </div>
-      <div class="modal-section">
-        <h4>Documento base del caso</h4>
-        <p>Descripción del escenario económico, actores involucrados y la pregunta central que los equipos deben responder.</p>
-      </div>
-      <div class="modal-section">
-        <h4>Documentos de apoyo simulados</h4>
-        <p>Reportes, notas periodísticas y extractos de informes construidos para el caso, con posiciones e información complementaria.</p>
-      </div>
-      <div class="modal-section">
-        <h4>Paquete de datos</h4>
-        <p>Series de tiempo y tablas de indicadores de contexto con notas metodológicas para guiar el análisis.</p>
-      </div>
-      <div class="modal-section">
-        <h4>Guía de evaluación</h4>
-        <p>Rúbrica detallada publicada desde el inicio, con los cinco criterios de evaluación y su ponderación.</p>
-      </div>
+
+      <!-- Explorador de materiales: construido dinámicamente solo si MATERIALES_DISPONIBLES es true -->
+      <div id="materiales-explorer"></div>
     </div>
   </div>
 
@@ -2049,6 +2251,178 @@
   </div>
 
   <script>
+    // ====== CANDADO DE MATERIALES ======
+    // true  = muestra el explorador completo de materiales.
+    // false = muestra el mensaje "contenido en preparación" (estado actual del sitio).
+    // Cambiar manualmente esta línea antes de cada despliegue.
+    const MATERIALES_DISPONIBLES = true;
+
+    // Base de URLs raw del repo público del caso
+    const MATERIALES_REPO_BASE = 'https://raw.githubusercontent.com/lec-cdmx/TecEconChallenge/main/';
+
+    // Inventario de materiales, organizado por pestaña/carpeta.
+    // Editar esta lista (no el marcado) para agregar o modificar archivos.
+    const MATERIALES_TABS = [
+      {
+        id: 'convocatoria',
+        label: 'Convocatoria',
+        folder: '00_Convocatoria',
+        files: [
+          { archivo: 'convocatoria_oficial.pdf', titulo: 'Convocatoria oficial', descripcion: 'Bases completas del concurso: elegibilidad, fechas, formato y proceso de registro.' }
+        ]
+      },
+      {
+        id: 'contexto',
+        label: 'Contexto',
+        folder: '01_Contexto',
+        files: [
+          { archivo: '01_reporte_CONASAM_balance_2018_2024.pdf', titulo: 'Reporte técnico CONASAM', descripcion: 'Balance oficial de indicadores 2018–2024. Fuente primaria de cifras del caso.' },
+          { archivo: '02_nota_favorable_recuperacion_salarial.pdf', titulo: 'Nota periodística: recuperación salarial', descripcion: 'Cobertura favorable del balance del incremento salarial.' },
+          { archivo: '03_nota_critica_costos_ocultos.pdf', titulo: 'Columna de opinión: costos ocultos', descripcion: 'Lectura crítica desde una perspectiva empresarial.' },
+          { archivo: '04_reportaje_textil_bajio.pdf', titulo: 'Reportaje de campo: textil del Bajío', descripcion: 'Crónica con testimonios directos de trabajadores y empresarios.' },
+          { archivo: '05_comunicado_CONAPYME.pdf', titulo: 'Comunicado de CONAPYME', descripcion: 'Postura oficial de la cámara empresarial de PyMEs.' },
+          { archivo: '06_comunicado_FNT.pdf', titulo: 'Comunicado del FNT', descripcion: 'Postura oficial del sindicato favorable al incremento.' },
+          { archivo: '07_informe_observatorio_trabajo_digno.pdf', titulo: 'Policy brief: Observatorio de Trabajo Digno', descripcion: 'Análisis independiente con hallazgos mixtos.' },
+          { archivo: '08_resumen_encuesta_trabajadores_pymes.pdf', titulo: 'Encuesta a trabajadores y PyMEs', descripcion: 'Resultados de percepción y condiciones laborales en campo.' }
+        ]
+      },
+      {
+        id: 'institucionales',
+        label: 'Documentos institucionales',
+        folder: '03_Documentos institucionales',
+        files: [
+          { archivo: '09_dictamen_tecnico_interno_CONASAM.pdf', titulo: 'Dictamen técnico interno, CONASAM', descripcion: 'Documento de trabajo no público, insumo del reporte oficial.' },
+          { archivo: '10_comparecencia_CONAPYME_comision_legislativa.pdf', titulo: 'Comparecencia legislativa', descripcion: 'Versión estenográfica ante comisión de trabajo.' },
+          { archivo: '11_solicitud_transparencia_respuesta_INDEEL.pdf', titulo: 'Solicitud de transparencia e INDEEL', descripcion: 'Trámite de acceso a información y respuesta institucional.' },
+          { archivo: '12_nota_tecnica_CEMEL.pdf', titulo: 'Nota técnica, CEMEL', descripcion: 'Working paper académico sobre identificación causal.' },
+          { archivo: '13_minuta_mesa_dialogo_tripartita.pdf', titulo: 'Minuta de mesa de diálogo', descripcion: 'Acta de negociación entre autoridad, empresas y sindicato.' }
+        ]
+      },
+      {
+        id: 'datos',
+        label: 'Datos',
+        folder: '02_Datos',
+        files: [
+          { archivo: '01_salario_minimo_mensual.xlsx', titulo: 'Salario mínimo, serie mensual', descripcion: 'Salario nominal, inflación y salario real, 2018–2024.' },
+          { archivo: '02_empleo_formal_trimestral.xlsx', titulo: 'Empleo formal, serie trimestral', descripcion: 'Empleo por sector con detalle del quiebre de 2020.' },
+          { archivo: '03_informalidad_trimestral.xlsx', titulo: 'Informalidad, serie trimestral', descripcion: 'Tasa de informalidad por sector.' },
+          { archivo: '04_panel_pymes_textiles.xlsx', titulo: 'Panel de empresas textiles', descripcion: '80 empresas, datos anuales 2018–2024, PyMEs y grandes.' },
+          { archivo: '05_encuesta_trabajadores_microdatos.xlsx', titulo: 'Microdatos de encuesta laboral', descripcion: '520 encuestados, nivel individuo.' }
+        ]
+      }
+    ];
+
+    function matFileUrl(folder, archivo) {
+      return MATERIALES_REPO_BASE + encodeURIComponent(folder) + '/' + encodeURIComponent(archivo);
+    }
+    function matIsXlsx(name) {
+      return /\.xlsx$/i.test(name);
+    }
+    function matIcon(name) {
+      return matIsXlsx(name) ? '📊' : '📄';
+    }
+    function matOfficeViewerUrl(rawUrl) {
+      return 'https://view.officeapps.live.com/op/embed.aspx?src=' + encodeURIComponent(rawUrl);
+    }
+    // raw.githubusercontent.com sirve los PDFs con cabeceras que fuerzan la
+    // descarga en vez de mostrarlos en un <iframe>; se usa el visor de Google
+    // Docs como proxy de renderizado, igual que Office Online para los .xlsx.
+    function matGoogleViewerUrl(rawUrl) {
+      return 'https://docs.google.com/viewer?embedded=true&url=' + encodeURIComponent(rawUrl);
+    }
+    function matEmbedUrl(rawUrl, isXlsx) {
+      return isXlsx ? matOfficeViewerUrl(rawUrl) : matGoogleViewerUrl(rawUrl);
+    }
+
+    // Construye pestañas, tarjetas y visores del explorador dentro de #materiales-explorer.
+    // Solo se invoca cuando MATERIALES_DISPONIBLES es true (ver matInit más abajo).
+    function matRenderExplorer() {
+      const container = document.getElementById('materiales-explorer');
+      if (!container) return;
+
+      let tabsHtml = '<div class="mat-tabs">';
+      MATERIALES_TABS.forEach((tab, i) => {
+        tabsHtml += '<button class="mat-tab-btn' + (i === 0 ? ' active' : '') + '" data-mat-tab="' + tab.id + '" onclick="matSwitchTab(\'' + tab.id + '\')">' + tab.label + '</button>';
+      });
+      tabsHtml += '</div>';
+
+      let panelsHtml = '';
+      MATERIALES_TABS.forEach((tab, i) => {
+        panelsHtml += '<div class="mat-panel' + (i === 0 ? ' active' : '') + '" id="mat-panel-' + tab.id + '">'
+          + '<div class="mat-grid" id="mat-grid-' + tab.id + '"></div>'
+          + '<div class="mat-viewer" id="mat-viewer-' + tab.id + '" style="display:none;"></div>'
+          + '</div>';
+      });
+
+      container.innerHTML = tabsHtml + panelsHtml;
+
+      MATERIALES_TABS.forEach(tab => {
+        const grid = document.getElementById('mat-grid-' + tab.id);
+        let html = '';
+        tab.files.forEach((file, idx) => {
+          const url = matFileUrl(tab.folder, file.archivo);
+          const icon = matIcon(file.archivo);
+          html += '<div class="mat-card">'
+            + '<div class="mat-card-top">'
+              + '<div class="mat-card-icon">' + icon + '</div>'
+              + '<div class="mat-card-title">' + file.titulo + '</div>'
+            + '</div>'
+            + '<div class="mat-card-desc">' + file.descripcion + '</div>'
+            + '<div class="mat-card-actions">'
+              + '<button class="mat-btn mat-btn-solid" onclick="matView(\'' + tab.id + '\', ' + idx + ')">Ver</button>'
+              + '<a class="mat-btn" href="' + url + '" target="_blank" rel="noopener">Descargar</a>'
+            + '</div>'
+          + '</div>';
+        });
+        grid.innerHTML = html;
+      });
+    }
+
+    function matSwitchTab(tabId) {
+      document.querySelectorAll('.mat-tab-btn').forEach(b => b.classList.toggle('active', b.dataset.matTab === tabId));
+      document.querySelectorAll('.mat-panel').forEach(p => p.classList.toggle('active', p.id === 'mat-panel-' + tabId));
+    }
+
+    function matView(tabId, idx) {
+      const tab = MATERIALES_TABS.find(t => t.id === tabId);
+      const file = tab.files[idx];
+      const url = matFileUrl(tab.folder, file.archivo);
+      const embedSrc = matEmbedUrl(url, matIsXlsx(file.archivo));
+
+      const grid = document.getElementById('mat-grid-' + tabId);
+      const viewer = document.getElementById('mat-viewer-' + tabId);
+
+      viewer.innerHTML = '<div class="mat-viewer-header">'
+        + '<button class="mat-btn" onclick="matBackToList(\'' + tabId + '\')">← Volver a la lista</button>'
+        + '<div class="mat-viewer-title">' + file.titulo + '</div>'
+        + '<a class="mat-btn mat-btn-solid" href="' + url + '" target="_blank" rel="noopener">Descargar</a>'
+        + '</div>'
+        + '<iframe class="mat-viewer-frame" src="' + embedSrc + '"></iframe>';
+
+      grid.style.display = 'none';
+      viewer.style.display = 'block';
+    }
+
+    function matBackToList(tabId) {
+      document.getElementById('mat-grid-' + tabId).style.display = 'grid';
+      const viewer = document.getElementById('mat-viewer-' + tabId);
+      viewer.style.display = 'none';
+      viewer.innerHTML = '';
+    }
+
+    // Activa el explorador únicamente si el candado está abierto.
+    // Con MATERIALES_DISPONIBLES = false no se toca el DOM: el modal
+    // conserva exactamente el estado "en preparación" ya existente.
+    function matInit() {
+      if (!MATERIALES_DISPONIBLES) return;
+      const modal = document.getElementById('modal-materiales-inner');
+      const wip = document.getElementById('materiales-wip');
+      if (modal) modal.classList.add('modal-large');
+      if (wip) wip.style.display = 'none';
+      matRenderExplorer();
+    }
+    matInit();
+
     // TOGGLE INTRO
     function switchPanel(panel) {
       document.querySelectorAll('.toggle-panel').forEach(p => p.classList.remove('active'));
