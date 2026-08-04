@@ -2650,15 +2650,10 @@
         id: 'datos', label: 'Datos',
         files: [
           { archivo: '01_salario_minimo_mensual.xlsx', folder: '02_Datos', titulo: '01 · Salario mínimo mensual', descripcion: 'Serie mensual utilizada para estudiar la magnitud y evolución real de la política.', nivel: 'Base de datos', tiempo: 'Variable' },
-          { archivo: '01_serie_mensual_salario_minimo.R', folder: '02_Datos', titulo: '01 · Código R: salario mínimo', descripcion: 'Código de apoyo para importar, transformar y visualizar la serie mensual.', nivel: 'Código opcional', tiempo: 'Descarga' },
           { archivo: '02_empleo_formal_trimestral.xlsx', folder: '02_Datos', titulo: '02 · Empleo formal trimestral', descripcion: 'Serie trimestral de empleo formal con desagregaciones pertinentes para el caso.', nivel: 'Base de datos', tiempo: 'Variable' },
-          { archivo: '02_empleo_formal_trimestral.R', folder: '02_Datos', titulo: '02 · Código R: empleo formal', descripcion: 'Código de apoyo para explorar la serie trimestral de empleo.', nivel: 'Código opcional', tiempo: 'Descarga' },
           { archivo: '03_informalidad_trimestral.xlsx', folder: '02_Datos', titulo: '03 · Informalidad trimestral', descripcion: 'Indicadores trimestrales de informalidad para examinar posibles márgenes de ajuste.', nivel: 'Base de datos', tiempo: 'Variable' },
-          { archivo: '03_informalidad_trimestral.R', folder: '02_Datos', titulo: '03 · Código R: informalidad', descripcion: 'Código de apoyo para explorar y visualizar la informalidad.', nivel: 'Código opcional', tiempo: 'Descarga' },
           { archivo: '04_panel_pymes_textiles.xlsx', folder: '02_Datos', titulo: '04 · Panel de PyMEs textiles', descripcion: 'Panel empresarial para analizar empleo, costos, productividad y heterogeneidad.', nivel: 'Base de datos', tiempo: 'Variable' },
-          { archivo: '04_panel_pymes_textiles.R', folder: '02_Datos', titulo: '04 · Código R: panel de PyMEs', descripcion: 'Código de apoyo para trabajar con el panel empresarial.', nivel: 'Código opcional', tiempo: 'Descarga' },
           { archivo: '05_encuesta_trabajadores_microdatos.xlsx', folder: '02_Datos', titulo: '05 · Microdatos de trabajadores', descripcion: 'Microdatos individuales para analizar resultados y diferencias entre grupos.', nivel: 'Base de datos', tiempo: 'Variable' },
-          { archivo: '05_encuesta_trabajadores_microdatos.R', folder: '02_Datos', titulo: '05 · Código R: microdatos', descripcion: 'Código de apoyo para importar, resumir y visualizar la encuesta.', nivel: 'Código opcional', tiempo: 'Descarga' }
         ]
       },
       {
@@ -2673,17 +2668,20 @@
       }
     ];
 
+    function matEncodedPath(folder, archivo) {
+      return [folder, archivo].join('/').split('/').map(encodeURIComponent).join('/');
+    }
     function matFileUrl(folder, archivo) {
-      const path = [folder, archivo].join('/').split('/').map(encodeURIComponent).join('/');
-      return MATERIALES_REPO_BASE + path;
+      return MATERIALES_REPO_BASE + matEncodedPath(folder, archivo);
+    }
+    function matSiteUrl(folder, archivo) {
+      return matEncodedPath(folder, archivo);
     }
     function matIsXlsx(name) { return /\.xlsx$/i.test(name || ''); }
     function matIsPdf(name) { return /\.pdf$/i.test(name || ''); }
-    function matIsCode(name) { return /\.(r|py|do|md|txt)$/i.test(name || ''); }
     function matCanPreview(name) { return matIsPdf(name) || matIsXlsx(name); }
-    function matIcon(name) { return matIsXlsx(name) ? 'DATOS' : (matIsCode(name) ? 'CÓDIGO' : 'PDF'); }
+    function matIcon(name) { return matIsXlsx(name) ? 'DATOS' : 'PDF'; }
     function matOfficeViewerUrl(rawUrl) { return 'https://view.officeapps.live.com/op/embed.aspx?src=' + encodeURIComponent(rawUrl); }
-    function matEmbedUrl(rawUrl, name) { return matIsXlsx(name) ? matOfficeViewerUrl(rawUrl) : rawUrl; }
 
     function matRenderExplorer() {
       const container = document.getElementById('materiales-explorer');
@@ -2713,7 +2711,11 @@
               + (file.tiempo ? '<span class="mat-meta-pill muted">' + file.tiempo + '</span>' : '')
             + '</div>'
             + (available
-              ? '<div class="mat-card-actions">' + (matCanPreview(file.archivo) ? '<button class="mat-btn mat-btn-solid" onclick="matView(\'' + tab.id + '\', ' + idx + ')">Ver</button>' : '') + '<a class="mat-btn" href="' + url + '" target="_blank" rel="noopener">Descargar</a></div>'
+              ? '<div class="mat-card-actions">'
+                + (matIsPdf(file.archivo)
+                  ? '<a class="mat-btn mat-btn-solid" href="' + matSiteUrl(file.folder, file.archivo) + '" target="_blank" rel="noopener">Ver</a>'
+                  : (matIsXlsx(file.archivo) ? '<button class="mat-btn mat-btn-solid" onclick="matView(\'' + tab.id + '\', ' + idx + ')">Ver</button>' : ''))
+                + '<a class="mat-btn" href="' + matSiteUrl(file.folder, file.archivo) + '" download>Descargar</a></div>'
               : '<div class="mat-coming">' + (file.estado || 'Próximamente') + '</div>')
           + '</div>';
         });
@@ -2730,11 +2732,20 @@
       const tab = MATERIALES_TABS.find(t => t.id === tabId);
       const file = tab.files[idx];
       if (!file || !file.archivo) return;
-      const url = matFileUrl(file.folder, file.archivo);
-      const embedSrc = matEmbedUrl(url, file.archivo);
+
+      if (matIsPdf(file.archivo)) {
+        window.open(matSiteUrl(file.folder, file.archivo), '_blank', 'noopener');
+        return;
+      }
+
+      if (!matIsXlsx(file.archivo)) return;
+
+      const rawUrl = matFileUrl(file.folder, file.archivo);
+      const embedSrc = matOfficeViewerUrl(rawUrl);
+      const downloadUrl = matSiteUrl(file.folder, file.archivo);
       const grid = document.getElementById('mat-grid-' + tabId);
       const viewer = document.getElementById('mat-viewer-' + tabId);
-      viewer.innerHTML = '<div class="mat-viewer-header"><button class="mat-btn" onclick="matBackToList(\'' + tabId + '\')">← Volver a la lista</button><div class="mat-viewer-title">' + file.titulo + '</div><a class="mat-btn mat-btn-solid" href="' + url + '" target="_blank" rel="noopener">Descargar</a></div><iframe class="mat-viewer-frame" src="' + embedSrc + '"></iframe>';
+      viewer.innerHTML = '<div class="mat-viewer-header"><button class="mat-btn" onclick="matBackToList(\'' + tabId + '\')">← Volver a la lista</button><div class="mat-viewer-title">' + file.titulo + '</div><a class="mat-btn mat-btn-solid" href="' + downloadUrl + '" download>Descargar</a></div><iframe class="mat-viewer-frame" src="' + embedSrc + '" title="Vista previa de ' + file.titulo + '"></iframe>';
       grid.style.display = 'none';
       viewer.style.display = 'block';
     }
