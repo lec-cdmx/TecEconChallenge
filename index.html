@@ -1554,9 +1554,14 @@
     .highlight-card:hover { border-color: rgba(201,168,76,0.3); }
 
     .highlight-icon {
-      font-size: 1.3rem;
+      min-width: 2rem;
+      font-family: var(--serif);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
       line-height: 1;
-      padding-top: 0.1rem;
+      color: var(--gold);
+      padding-top: 0.2rem;
     }
 
     .highlight-text h5 {
@@ -1749,7 +1754,7 @@
     .causal-box li, .coach-guide-box li { margin-bottom: 0.35rem; }
 
     /* ── TIMELINE OVERRIDE ── */
-    .timeline-items { grid-template-columns: repeat(5, 1fr); }
+    .timeline-items { grid-template-columns: repeat(4, 1fr); }
     .timeline-note {
       margin-top: 2rem;
       padding: 1rem 1.2rem;
@@ -1975,7 +1980,7 @@
 
     <div class="hero-actions">
       <button type="button" class="hero-pdf-btn" onclick="openModal('modal-materiales')">
-        Convocatoria y materiales · en preparación
+        Convocatoria y materiales · septiembre 2026
       </button>
       <form class="hero-form" onsubmit="handleForm(event, 'hero-email')">
         <input type="email" id="hero-email" placeholder="Tu correo electrónico" required />
@@ -2007,30 +2012,30 @@
           </div>
           <div class="intro-highlights reveal">
             <div class="highlight-card">
-              <div class="highlight-icon">🧠</div>
+              <div class="highlight-icon">01</div>
               <div class="highlight-text">
                 <h5>Marco conceptual incluido</h5>
                 <p>La ruta esencial explica los conceptos y el orden recomendado para abordar el caso.</p>
               </div>
             </div>
             <div class="highlight-card">
-              <div class="highlight-icon">👥</div>
+              <div class="highlight-icon">02</div>
               <div class="highlight-text">
                 <h5>Equipos de la misma preparatoria</h5>
                 <p>De 3 a 5 integrantes. Una misma preparatoria puede registrar más de un equipo.</p>
               </div>
             </div>
             <div class="highlight-card">
-              <div class="highlight-icon">📊</div>
+              <div class="highlight-icon">03</div>
               <div class="highlight-text">
-                <h5>Datos con propósito</h5>
+                <h5>Uso de datos</h5>
                 <p>Cada entrega deberá usar al menos una base proporcionada y una visualización propia.</p>
               </div>
             </div>
             <div class="highlight-card">
-              <div class="highlight-icon">📍</div>
+              <div class="highlight-icon">04</div>
               <div class="highlight-text">
-                <h5>Final presencial en CDMX</h5>
+                <h5>Final presencial en Ciudad de México</h5>
                 <p>Los 7 equipos finalistas presentan y responden preguntas ante un jurado.</p>
               </div>
             </div>
@@ -2041,36 +2046,36 @@
       <div class="toggle-panel" id="panel-economia">
         <div class="intro-grid">
           <div class="intro-text reveal">
-            <h3>Economía aplicada:<br><em>teoría, evidencia y decisiones.</em></h3>
+            <h3>Economía aplicada:<br><em>teoría, evidencia y argumentos.</em></h3>
             <p>El reto replica una parte central del trabajo económico: entender un problema, distinguir argumentos plausibles, interpretar evidencia y reconocer lo que los datos sí y no permiten concluir.</p>
             <p>Todos los equipos resuelven el mismo caso. La comparación se centra en la calidad del razonamiento, no en la cantidad de herramientas técnicas utilizadas.</p>
-            <p>Durante el proceso conocerás a profesores e investigadores del programa de Economía del Tec. La integración final de jurados, ExaTecs, socios e invitados será anunciada cuando esté confirmada.</p>
+            <p>Durante el proceso participarás en sesiones con profesores e investigadores del programa de Economía del Tec.</p>
             <button class="intro-cta" onclick="handleForm(event, '')">Quiero registrarme</button>
           </div>
           <div class="intro-highlights reveal">
             <div class="highlight-card">
-              <div class="highlight-icon">📚</div>
+              <div class="highlight-icon">01</div>
               <div class="highlight-text">
-                <h5>Una ruta jerarquizada</h5>
+                <h5>Materiales organizados por prioridad</h5>
                 <p>Materiales esenciales, bases obligatorias y documentos de profundización claramente separados.</p>
               </div>
             </div>
             <div class="highlight-card">
-              <div class="highlight-icon">🔎</div>
+              <div class="highlight-icon">02</div>
               <div class="highlight-text">
                 <h5>Correlación y causalidad</h5>
                 <p>Una sección accesible ayuda a interpretar evidencia causal sin exigir técnicas avanzadas.</p>
               </div>
             </div>
             <div class="highlight-card">
-              <div class="highlight-icon">⚖️</div>
+              <div class="highlight-icon">03</div>
               <div class="highlight-text">
                 <h5>Rúbricas publicadas</h5>
                 <p>Documento escrito y defensa final se evalúan con criterios y ponderaciones diferentes.</p>
               </div>
             </div>
             <div class="highlight-card">
-              <div class="highlight-icon">🎓</div>
+              <div class="highlight-icon">04</div>
               <div class="highlight-text">
                 <h5>Acompañamiento con límites claros</h5>
                 <p>Los coaches orientan el proceso, pero el análisis y la autoría pertenecen al equipo.</p>
@@ -2091,7 +2096,7 @@
 
       <div class="reto-grid">
         <div class="reto-text reveal">
-          <p>El Tec Econ Challenge es una competencia nacional para estudiantes del último año de preparatoria en México. Todos los equipos reciben el <strong>mismo caso económico hipotético simulado</strong>, con documentos, fuentes y bases de datos construidos expresamente para la competencia.</p>
+          <p>El Tec Econ Challenge es una competencia nacional para estudiantes del último año de preparatoria en México. Todos los equipos reciben el <strong>mismo caso económico simulado</strong>, con documentos, fuentes y bases de datos construidos expresamente para la competencia.</p>
           <p>Cada equipo delimita el problema, interpreta la evidencia, construye una postura y presenta un documento escrito. Los equipos finalistas defienden su análisis presencialmente ante el jurado.</p>
           <p>Los integrantes deben pertenecer a la <strong>misma preparatoria</strong>. Una institución puede registrar más de un equipo, sujeto al cupo general de la competencia.</p>
           <button class="materiales-cta" onclick="document.getElementById('materiales').scrollIntoView({behavior:'smooth'})">
@@ -2150,7 +2155,7 @@
       <p class="section-label reveal">Ruta de materiales</p>
       <h2 class="section-title reveal">Lo esencial primero.<br><em>Profundiza después.</em></h2>
       <div class="divider reveal"></div>
-      <p class="section-lead reveal">La página separa los materiales por función y nivel de prioridad. La ruta evita que los equipos confundan documentos obligatorios con lecturas complementarias y permite estimar mejor la carga de trabajo.</p>
+      <p class="section-lead reveal">Los materiales están organizados por función y nivel de prioridad. Cada documento indica si es obligatorio, complementario o de profundización, así como su propósito y tiempo estimado de revisión.</p>
 
       <div class="roadmap-grid reveal">
         <article class="roadmap-card">
@@ -2169,21 +2174,21 @@
           <div class="roadmap-step">03</div>
           <h3>Datos</h3>
           <p>Bases del caso con notas metodológicas. Cada equipo debe utilizar al menos una base y crear una tabla o visualización propia.</p>
-          <div class="roadmap-meta"><span class="status-pill">Mínimo exigible</span><span class="status-pill muted">Evidencia</span></div>
+          <div class="roadmap-meta"><span class="status-pill">Requisito</span><span class="status-pill muted">Evidencia</span></div>
         </article>
         <article class="roadmap-card">
           <div class="roadmap-step">04</div>
           <h3>Profundización</h3>
           <p>Documentos institucionales, lecturas adicionales e identificación causal para equipos que quieran ampliar o contrastar su análisis.</p>
-          <div class="roadmap-meta"><span class="status-pill">Opcional</span><span class="status-pill muted">Nivel avanzado</span></div>
+          <div class="roadmap-meta"><span class="status-pill">Opcional</span><span class="status-pill muted">Ampliación</span></div>
         </article>
       </div>
 
       <div class="material-detail-grid reveal">
         <div class="causal-box">
-          <span class="status-pill">Nueva sección</span>
-          <h3>Identificación causal, sin econometría avanzada</h3>
-          <p>El objetivo no es que los equipos apliquen una técnica sofisticada, sino que aprendan a distinguir entre una relación observada y una explicación causal.</p>
+          <span class="status-pill">Concepto clave</span>
+          <h3>Correlación e identificación causal</h3>
+          <p>Esta sección ofrece criterios para distinguir entre una relación observada y una explicación causal, sin requerir herramientas econométricas avanzadas.</p>
           <ul>
             <li>Separar correlación de causalidad.</li>
             <li>Identificar explicaciones alternativas y factores simultáneos.</li>
@@ -2192,9 +2197,9 @@
           </ul>
         </div>
         <div class="coach-guide-box">
-          <span class="status-pill">Documento por preparar</span>
+          <span class="status-pill">Acompañamiento académico</span>
           <h3>Guía del coach</h3>
-          <p>La guía establecerá responsabilidades y límites comunes para reducir diferencias de acompañamiento entre equipos.</p>
+          <p>La guía del coach establecerá responsabilidades y límites comunes para asegurar condiciones de acompañamiento comparables entre los equipos.</p>
           <ul>
             <li>Puede formular preguntas, revisar borradores y orientar métodos.</li>
             <li>No puede escribir, analizar datos ni decidir la postura del equipo.</li>
@@ -2205,8 +2210,8 @@
 
       <button class="materiales-cta reveal" onclick="openModal('modal-materiales')">
         <span class="materiales-cta-text">
-          <span class="materiales-cta-title">Abrir explorador de materiales</span>
-          <span class="materiales-cta-sub">Las descargas permanecerán bloqueadas hasta que la convocatoria, las guías y las rúbricas sean actualizadas.</span>
+          <span class="materiales-cta-title">Consultar ruta de materiales</span>
+          <span class="materiales-cta-sub">Los documentos oficiales se publicarán junto con la convocatoria en septiembre de 2026.</span>
         </span>
         <span class="materiales-cta-arrow">↗</span>
       </button>
@@ -2217,7 +2222,7 @@
   <section id="cronograma">
     <div class="container">
       <p class="section-label reveal">Cronograma</p>
-      <h2 class="section-title reveal">Seis meses con <em>diciembre protegido</em></h2>
+      <h2 class="section-title reveal">Del registro a <em>la final</em></h2>
       <div class="divider reveal"></div>
 
       <div class="timeline reveal">
@@ -2236,12 +2241,6 @@
             <div class="timeline-desc">Lectura, análisis de datos, sesiones académicas y trabajo con el coach.</div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-dot pause">—</div>
-            <div class="timeline-period">Diciembre 2026</div>
-            <div class="timeline-label">Periodo protegido</div>
-            <div class="timeline-desc">Sin entregas obligatorias ni sesiones programadas. El trabajo autónomo es opcional.</div>
-          </div>
-          <div class="timeline-item">
             <div class="timeline-dot">3</div>
             <div class="timeline-period">Enero 2027</div>
             <div class="timeline-label">Entrega y evaluación</div>
@@ -2254,7 +2253,7 @@
             <div class="timeline-desc">Defensa presencial y desayuno de cortesía en Ciudad de México.</div>
           </div>
         </div>
-        <div class="timeline-note"><strong>Fechas exactas por confirmar.</strong> La convocatoria oficial indicará el cierre de inscripciones, la fecha límite de entrega y el día de la final. No se aceptarán entregas posteriores a la fecha y hora establecidas.</div>
+        <div class="timeline-note">La convocatoria oficial establecerá las fechas de cierre de inscripciones, entrega, publicación de finalistas y final presencial. No se aceptarán entregas posteriores a la fecha y hora señaladas.</div>
       </div>
     </div>
   </section>
@@ -2268,25 +2267,13 @@
 
       <div class="premios-grid">
         <div class="podium reveal">
-          <div class="prize-card first"><div class="prize-place">🥇 Primer lugar</div><div class="prize-amount">$30,000 MXN</div></div>
-          <div class="prize-card"><div class="prize-place">🥈 Segundo lugar</div><div class="prize-amount">$20,000 MXN</div></div>
-          <div class="prize-card"><div class="prize-place">🥉 Tercer lugar</div><div class="prize-amount">$10,000 MXN</div></div>
+          <div class="prize-card first"><div class="prize-place">Primer lugar</div><div class="prize-amount">$30,000 MXN</div></div>
+          <div class="prize-card"><div class="prize-place">Segundo lugar</div><div class="prize-amount">$20,000 MXN</div></div>
+          <div class="prize-card"><div class="prize-place">Tercer lugar</div><div class="prize-amount">$10,000 MXN</div></div>
           <div class="prize-card"><div class="prize-place">Coach del equipo ganador</div><div class="prize-amount">$5,000 MXN</div></div>
         </div>
 
         <div class="recognitions reveal">
-          <div class="recognition-item">
-            <div class="recognition-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></div>
-            <div class="recognition-text"><h5>Constancia institucional</h5><p>Carta de reconocimiento para la preparatoria de cada equipo finalista.</p></div>
-          </div>
-          <div class="recognition-item">
-            <div class="recognition-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></div>
-            <div class="recognition-text"><h5>Difusión pública</h5><p>Mención en canales institucionales, sujeta a autorizaciones de imagen y participación.</p></div>
-          </div>
-          <div class="recognition-item">
-            <div class="recognition-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></div>
-            <div class="recognition-text"><h5>Encuentro académico</h5><p>Invitación para los equipos ganadores a una actividad de la comunidad de Economía del Tec, sujeta a confirmación.</p></div>
-          </div>
           <div class="recognition-item">
             <div class="recognition-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></div>
             <div class="recognition-text"><h5>Reconocimiento al coach</h5><p>Carta de reconocimiento para el coach del equipo ganador.</p></div>
@@ -2308,13 +2295,12 @@
           <p>Cada equipo elige y registra a su coach. Su función es acompañar el proceso con preguntas, orientación metodológica y retroalimentación, sin sustituir el trabajo intelectual de los estudiantes.</p>
           <p>La <strong>guía del coach</strong> establecerá ejemplos concretos de acompañamiento permitido y no permitido. El equipo seguirá siendo responsable de las decisiones, el análisis, la redacción y la presentación.</p>
           <p>Las sesiones académicas serán virtuales y comunes para todos los equipos. Las preguntas de interés general podrán incorporarse a la sección pública de aclaraciones.</p>
-          <button class="modal-trigger" onclick="openModal('modal-profesores')">Académicos participantes · por confirmar ↗</button>
+          <button class="modal-trigger" onclick="openModal('modal-profesores')">Información sobre las sesiones académicas ↗</button>
         </div>
 
         <div class="sessions-list reveal">
           <div class="session-item"><div class="session-month">1</div><div class="session-info"><h5>Apertura · Octubre</h5><p>Presentación del caso, ruta de materiales, reglas y rúbrica del documento escrito.</p></div></div>
           <div class="session-item"><div class="session-month">2</div><div class="session-info"><h5>Análisis y datos · Noviembre</h5><p>Interpretación de evidencia, visualizaciones e introducción accesible a identificación causal.</p></div></div>
-          <div class="session-item"><div class="session-month">—</div><div class="session-info"><h5>Diciembre protegido</h5><p>Sin sesión obligatoria ni entrega programada.</p></div></div>
           <div class="session-item"><div class="session-month">3</div><div class="session-info"><h5>Cierre y dudas · Enero</h5><p>Preguntas finales sobre formato, fuentes, integridad académica y entrega.</p></div></div>
           <div class="session-item"><div class="session-month">4</div><div class="session-info"><h5>Preparación para la final · Febrero</h5><p>Sesión exclusiva para finalistas: estructura de presentación y práctica de preguntas.</p></div></div>
         </div>
@@ -2331,8 +2317,8 @@
 
       <div class="jurado-intro">
         <div class="jurado-text reveal">
-          <p>La evaluación del documento escrito y la defensa final usan criterios diferentes. Las ponderaciones se publicarán desde la convocatoria para que los equipos conozcan exactamente qué se espera en cada etapa.</p>
-          <p>La revisión preliminar se organizará por folio, sin mostrar el nombre de la preparatoria en el documento evaluado. La composición del jurado y de los invitados será publicada únicamente cuando esté confirmada.</p>
+          <p>El documento escrito y la defensa final se evaluarán con rúbricas distintas. Las ponderaciones se publicarán desde la convocatoria para que los equipos conozcan los criterios de cada etapa.</p>
+          <p>Los documentos se identificarán mediante folio y no mostrarán el nombre de la preparatoria durante la evaluación preliminar. La integración del jurado se dará a conocer antes del inicio de la evaluación.</p>
           <div class="rubric-toggle">
             <button class="rubric-btn active" onclick="switchRubric('escrita', this)">Documento escrito</button>
             <button class="rubric-btn" onclick="switchRubric('final', this)">Defensa final</button>
@@ -2363,16 +2349,16 @@
 
       <div class="evaluation-principles reveal">
         <div class="principle-card"><h4>Comparabilidad</h4><p>Todos los equipos trabajan con el mismo caso y los mismos mínimos de evidencia.</p></div>
-        <div class="principle-card"><h4>Calibración</h4><p>El jurado recibirá criterios comunes y ejemplos de desempeño antes de evaluar.</p></div>
-        <div class="principle-card"><h4>Trazabilidad</h4><p>Las fuentes, datos, apoyos externos y usos de IA deberán declararse.</p></div>
+        <div class="principle-card"><h4>Criterios comunes</h4><p>El jurado contará con descriptores y ejemplos de desempeño para aplicar la rúbrica de manera consistente.</p></div>
+        <div class="principle-card"><h4>Transparencia</h4><p>Las fuentes, los datos, los apoyos externos y el uso de herramientas de inteligencia artificial deberán declararse.</p></div>
       </div>
 
       <div class="socios-section reveal">
-        <p class="socios-title">Jurado, socios, ExaTecs e invitados · por confirmar</p>
+        <p class="socios-title">Participación académica y profesional</p>
         <div class="pending-grid">
-          <div class="pending-card"><h4>Jurado académico</h4><p>Profesores e investigadores del Tec y de otras instituciones. Integración en proceso.</p></div>
-          <div class="pending-card"><h4>Sector y ExaTecs</h4><p>Participantes con experiencia pública, privada y social. Invitaciones en proceso.</p></div>
-          <div class="pending-card"><h4>Anfitriones del desayuno</h4><p>Perfiles y mesas se anunciarán después de recibir confirmación formal.</p></div>
+          <div class="pending-card"><h4>Jurado académico</h4><p>Estará integrado por profesores e investigadores del Tec de Monterrey y de otras instituciones. Su composición se publicará antes de la evaluación.</p></div>
+          <div class="pending-card"><h4>Sector y ExaTecs</h4><p>La participación de representantes de los sectores público, privado y social, así como de egresados, se anunciará conforme se confirmen las invitaciones.</p></div>
+          <div class="pending-card"><h4>Anfitriones e invitados</h4><p>El programa del desayuno de premiación y la lista de invitados se comunicarán a los equipos finalistas.</p></div>
         </div>
       </div>
     </div>
@@ -2388,7 +2374,7 @@
       <div class="policy-grid reveal">
         <article class="policy-card">
           <h3>Documento escrito</h3>
-          <p>La versión de trabajo contempla un máximo de <strong>15 páginas</strong>. La convocatoria definirá el conteo de portada, referencias y anexos, así como el formato de archivo.</p>
+          <p>La convocatoria oficial establecerá la extensión máxima, el formato del archivo y el tratamiento de portada, referencias y anexos.</p>
           <ul><li>Entrega única dentro del plazo.</li><li>No se aceptan entregas tardías.</li><li>La versión enviada será la versión evaluada.</li></ul>
         </article>
         <article class="policy-card">
@@ -2396,13 +2382,13 @@
           <ul><li>Usar al menos una base proporcionada por la competencia.</li><li>Incluir al menos una tabla o visualización elaborada por el equipo.</li><li>Explicar qué muestran los datos y qué no permiten concluir.</li><li>Citar claramente todas las fuentes externas.</li></ul>
         </article>
         <article class="policy-card">
-          <h3>Plagio e inteligencia artificial</h3>
-          <p>La IA puede apoyar tareas delimitadas, pero no sustituir la autoría ni el razonamiento del equipo.</p>
-          <ul><li>Permitido: lluvia de ideas, revisión de redacción, apoyo técnico o programación.</li><li>No permitido: generar íntegramente el análisis, inventar datos o referencias, ni ocultar su uso.</li><li>El equipo declarará qué herramientas utilizó y para qué.</li></ul>
+          <h3>Autoría e inteligencia artificial</h3>
+          <p>Las herramientas de inteligencia artificial podrán utilizarse únicamente como apoyo complementario y no podrán sustituir el análisis ni la autoría del equipo.</p>
+          <ul><li>Usos permitidos: lluvia de ideas, revisión de redacción, apoyo técnico o programación.</li><li>Usos no permitidos: generar íntegramente el análisis, fabricar datos o referencias, u ocultar el uso de estas herramientas.</li><li>El equipo deberá declarar qué herramientas utilizó y con qué propósito.</li></ul>
         </article>
       </div>
 
-      <div class="policy-alert reveal"><strong>Verificación académica.</strong> El equipo organizador podrá realizar revisiones de similitud, fuentes, trazabilidad de archivos y consistencia de autoría mediante software académico. Cualquier señal será revisada por la organización antes de determinar un incumplimiento.</div>
+      <div class="policy-alert reveal"><strong>Integridad académica.</strong> La organización podrá revisar la similitud del texto, la correspondencia de las fuentes, la trazabilidad de los archivos y la consistencia de autoría. Cualquier posible incumplimiento será analizado antes de emitir una resolución.</div>
     </div>
   </section>
 
@@ -2418,7 +2404,7 @@
           <p>Los 7 equipos finalistas serán convocados a la <strong>Escuela de Gobierno y Transformación Pública del Tec de Monterrey</strong>, donde presentarán su análisis y responderán preguntas del jurado.</p>
           <p>La defensa y el <strong>desayuno de premiación</strong> se realizarán el mismo día. El desayuno será de cortesía para los finalistas y sus familiares registrados; el número de acompañantes se confirmará por razones de capacidad.</p>
           <p>La competencia <strong>no cubre traslado ni alojamiento</strong>. Estos gastos corresponden a los equipos, sus familias o sus instituciones.</p>
-          <button class="modal-trigger" onclick="openModal('modal-anfitriones')">Anfitriones e invitados · por confirmar ↗</button>
+          <button class="modal-trigger" onclick="openModal('modal-anfitriones')">Información sobre el desayuno de premiación ↗</button>
         </div>
 
         <div class="final-facts reveal">
@@ -2448,8 +2434,8 @@
 
         <div class="programa-text reveal">
           <p>El Tec Econ Challenge es una iniciativa del Programa de Licenciatura en Economía de la Escuela de Ciencias Sociales y Gobierno, coordinada desde los campus Ciudad de México, Santa Fe y Estado de México.</p>
-          <p>La competencia busca acercar a estudiantes de preparatoria a una forma rigurosa y accesible de hacer economía: definir preguntas, utilizar evidencia, contrastar explicaciones y comunicar decisiones.</p>
-          <p>La integración de académicos, jurados, ExaTecs, socios e invitados será anunciada conforme existan confirmaciones formales. <a href="https://tec.mx/es/ciencias-sociales-y-gobierno/licenciatura-en-economia?gclsrc=aw.ds&gad_source=1" target="_blank" class="ext-link">Conoce la licenciatura.</a></p>
+          <p>La competencia busca acercar a estudiantes de preparatoria a una forma rigurosa y accesible de hacer economía: definir preguntas, utilizar evidencia, contrastar explicaciones y comunicar conclusiones.</p>
+          <p>Los nombres y perfiles de académicos, jurados, ExaTecs, socios e invitados se publicarán una vez confirmada su participación. <a href="https://tec.mx/es/ciencias-sociales-y-gobierno/licenciatura-en-economia?gclsrc=aw.ds&gad_source=1" target="_blank" class="ext-link">Conoce la licenciatura.</a></p>
         </div>
       </div>
     </div>
@@ -2470,10 +2456,10 @@
         <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Cuántas personas puede tener un equipo?<span class="faq-icon">+</span></button><div class="faq-answer">Entre 3 y 5 estudiantes. No se aceptan participantes individuales ni equipos de más de 5 integrantes.</div></div>
         <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Cómo se asigna al coach?<span class="faq-icon">+</span></button><div class="faq-answer">El propio equipo elige y registra a su coach. El coach orienta el proceso y puede revisar avances, pero no puede resolver el caso, realizar el análisis ni escribir la entrega.</div></div>
         <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Se necesitan conocimientos avanzados de economía?<span class="faq-icon">+</span></button><div class="faq-answer">No. La ruta esencial incluye el marco conceptual requerido. La evaluación premia la calidad del razonamiento y la interpretación de evidencia, no el uso de técnicas avanzadas por sí mismas.</div></div>
-        <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Qué extensión tendrá el documento?<span class="faq-icon">+</span></button><div class="faq-answer">La versión de trabajo contempla un máximo de 15 páginas. La convocatoria oficial definirá si la portada, referencias y anexos forman parte de ese límite, así como el formato del archivo.</div></div>
+        <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Qué extensión tendrá el documento?<span class="faq-icon">+</span></button><div class="faq-answer">La convocatoria oficial establecerá la extensión máxima, el formato del archivo y el tratamiento de portada, referencias y anexos.</div></div>
         <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Qué uso de datos es obligatorio?<span class="faq-icon">+</span></button><div class="faq-answer">Cada equipo deberá utilizar al menos una base proporcionada e incluir al menos una tabla o visualización elaborada por el propio equipo, acompañada de una interpretación y de sus limitaciones.</div></div>
         <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Se puede utilizar inteligencia artificial?<span class="faq-icon">+</span></button><div class="faq-answer">Sí, únicamente como apoyo delimitado, por ejemplo para lluvia de ideas, revisión de redacción o asistencia técnica. No puede sustituir el análisis ni la autoría del equipo. Todo uso deberá declararse y toda información deberá verificarse.</div></div>
-        <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Qué ocurre con el plagio o las fuentes inventadas?<span class="faq-icon">+</span></button><div class="faq-answer">El plagio, la fabricación de datos o referencias y la ocultación de ayuda externa constituyen incumplimientos. La organización podrá realizar verificaciones mediante software académico y revisión de fuentes y archivos.</div></div>
+        <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Qué ocurre con el plagio o las fuentes inventadas?<span class="faq-icon">+</span></button><div class="faq-answer">El plagio, la fabricación de datos o referencias y la ocultación de ayuda externa constituyen incumplimientos. La organización podrá revisar la similitud del texto, las fuentes y los archivos entregados.</div></div>
         <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Se aceptan entregas tardías?<span class="faq-icon">+</span></button><div class="faq-answer">No. La plataforma cerrará en la fecha y hora establecidas. El equipo debe prever tiempo suficiente para completar la carga del archivo.</div></div>
         <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Qué pasa si un integrante abandona el equipo?<span class="faq-icon">+</span></button><div class="faq-answer">El equipo debe comunicarse inmediatamente con la organización. Cualquier cambio deberá ser autorizado y mantener las condiciones de elegibilidad del equipo.</div></div>
         <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Tiene costo participar?<span class="faq-icon">+</span></button><div class="faq-answer">No. La inscripción y las sesiones académicas son gratuitas. Para la final, la organización no cubre traslado, alojamiento ni viáticos.</div></div>
@@ -2489,7 +2475,7 @@
     <div class="container">
       <p class="section-label reveal" style="text-align:center">Primera edición · 2026–2027</p>
       <h2 class="registro-title reveal">¿Tu equipo tiene <em>lo que se necesita?</em></h2>
-      <p class="registro-sub reveal">Registra el correo del capitán para recibir la convocatoria oficial, las fechas definitivas y el aviso cuando se habiliten los materiales actualizados.</p>
+      <p class="registro-sub reveal">Registra el correo del capitán para recibir la convocatoria oficial, las fechas definitivas y el aviso de publicación de los materiales.</p>
       <form class="registro-form reveal" onsubmit="handleForm(event, 'registro-email')">
         <input type="email" id="registro-email" placeholder="Correo del capitán del equipo" required />
         <button type="submit">Registrarme</button>
@@ -2517,10 +2503,10 @@
       <h3 class="modal-title">Convocatoria y documentos</h3>
       <div class="modal-divider"></div>
       <div id="materiales-wip">
-        <div class="modal-wip">Actualización en curso</div>
+        <div class="modal-wip">Publicación en septiembre de 2026</div>
         <div class="modal-body">
-          <p>Las descargas están temporalmente bloqueadas mientras se actualizan la convocatoria, la guía del participante, las rúbricas, la guía del coach y las políticas de integridad académica.</p>
-          <p>La versión pública se organizará en cuatro rutas: <strong>Empieza aquí</strong>, <strong>Paquete esencial</strong>, <strong>Datos</strong> y <strong>Profundización</strong>.</p>
+          <p>La convocatoria, la guía del participante, las rúbricas, la guía del coach y los materiales del caso se publicarán en septiembre de 2026.</p>
+          <p>Los documentos estarán organizados en cuatro rutas: <strong>Empieza aquí</strong>, <strong>Paquete esencial</strong>, <strong>Datos</strong> y <strong>Profundización</strong>.</p>
         </div>
         <div class="modal-section"><h4>Mapa de materiales</h4><p>Orden de lectura, prioridad, propósito y tiempo estimado de cada documento, incorporados directamente en esta página.</p></div>
         <div class="modal-section"><h4>Identificación causal</h4><p>Explicación accesible sobre correlación, causalidad, comparaciones y límites de la evidencia.</p></div>
@@ -2538,8 +2524,8 @@
       <p class="modal-label">Acompañamiento académico</p>
       <h3 class="modal-title">Académicos participantes</h3>
       <div class="modal-divider"></div>
-      <div class="modal-wip">Por confirmar</div>
-      <div class="modal-body"><p>Las sesiones estarán a cargo de profesores e investigadores del programa de Economía del Tec. Los nombres, temas y fechas se publicarán únicamente después de contar con confirmación formal.</p></div>
+      <div class="modal-wip">Próxima publicación</div>
+      <div class="modal-body"><p>Las sesiones estarán a cargo de profesores e investigadores del programa de Economía del Tec. El programa de sesiones, con nombres, temas y fechas, se publicará en esta página conforme se confirmen las participaciones.</p></div>
     </div>
   </div>
 
@@ -2550,13 +2536,12 @@
       <p class="modal-label">Desayuno de premiación</p>
       <h3 class="modal-title">Anfitriones e invitados</h3>
       <div class="modal-divider"></div>
-      <div class="modal-wip">Por confirmar</div>
-      <div class="modal-body"><p>La composición de anfitriones, ExaTecs, socios e invitados se anunciará conforme se reciban confirmaciones formales. La ausencia de nombres en esta versión evita presentar participaciones que todavía no están comprometidas.</p></div>
+      <div class="modal-wip">Próxima publicación</div>
+      <div class="modal-body"><p>Los anfitriones, ExaTecs, socios e invitados se anunciarán conforme se confirmen las participaciones. El programa definitivo se comunicará a los equipos finalistas.</p></div>
     </div>
   </div>
 
   <script>
-    // Mantener en false hasta que la segunda iteración de documentos esté publicada.
     const MATERIALES_DISPONIBLES = false;
     const MATERIALES_REPO_BASE = 'https://raw.githubusercontent.com/lec-cdmx/TecEconChallenge/main/';
 
@@ -2566,9 +2551,9 @@
         files: [
           { archivo: 'convocatoria_oficial.pdf', folder: '00_Convocatoria', titulo: 'Convocatoria oficial', descripcion: 'Elegibilidad, fechas, formato, registro y reglas completas.', nivel: 'Obligatorio', tiempo: '15 min' },
           { archivo: 'guia_participante.pdf', folder: '00_Convocatoria', titulo: 'Guía del participante', descripcion: 'Ruta para abordar el caso, preguntas, entregable y criterios de evaluación.', nivel: 'Obligatorio', tiempo: '20 min' },
-          { titulo: 'Mapa de materiales', descripcion: 'Orden de lectura, prioridad y tiempo estimado de cada archivo.', nivel: 'Obligatorio', estado: 'En preparación' },
-          { titulo: 'Guía del coach', descripcion: 'Funciones, límites y declaración de acompañamiento.', nivel: 'Coach', estado: 'En preparación' },
-          { titulo: 'Rúbricas completas', descripcion: 'Descriptores de desempeño para documento escrito y defensa final.', nivel: 'Obligatorio', estado: 'En preparación' }
+          { titulo: 'Mapa de materiales', descripcion: 'Orden de lectura, prioridad y tiempo estimado de cada archivo.', nivel: 'Obligatorio', estado: 'Próxima publicación' },
+          { titulo: 'Guía del coach', descripcion: 'Funciones, límites y declaración de acompañamiento.', nivel: 'Coach', estado: 'Próxima publicación' },
+          { titulo: 'Rúbricas completas', descripcion: 'Descriptores de desempeño para documento escrito y defensa final.', nivel: 'Obligatorio', estado: 'Próxima publicación' }
         ]
       },
       {
@@ -2593,7 +2578,7 @@
       {
         id: 'profundizacion', label: 'Profundización',
         files: [
-          { titulo: 'Introducción a identificación causal', descripcion: 'Correlación, comparación, explicaciones alternativas y límites de inferencia.', nivel: 'Avanzado', estado: 'En preparación' },
+          { titulo: 'Introducción a identificación causal', descripcion: 'Correlación, comparación, explicaciones alternativas y límites de inferencia.', nivel: 'Avanzado', estado: 'Próxima publicación' },
           { archivo: '12_nota_tecnica_CEMEL.pdf', folder: '03_Documentos institucionales', titulo: 'Nota técnica CEMEL', descripcion: 'Documento académico sobre identificación causal.', nivel: 'Avanzado', tiempo: '30 min' },
           { archivo: '09_dictamen_tecnico_interno_CONASAM.pdf', folder: '03_Documentos institucionales', titulo: 'Dictamen técnico interno', descripcion: 'Insumo institucional con información adicional.', nivel: 'Opcional', tiempo: '15 min' },
           { archivo: '10_comparecencia_CONAPYME_comision_legislativa.pdf', folder: '03_Documentos institucionales', titulo: 'Comparecencia legislativa', descripcion: 'Argumentos presentados ante una comisión.', nivel: 'Opcional', tiempo: '15 min' },
