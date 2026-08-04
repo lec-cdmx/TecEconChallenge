@@ -1929,6 +1929,56 @@
       .rubric-btn { flex: 1; padding: 0.8rem 0.7rem; }
     }
 
+
+    /* ── ACCESO RESTRINGIDO PARA JURADO ── */
+    #acceso-jurado {
+      padding: 6rem 0;
+      background: var(--ink-mid);
+      border-top: 1px solid rgba(201,168,76,0.1);
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+    }
+    .jury-access-card {
+      display: grid;
+      grid-template-columns: 1.4fr auto;
+      gap: 2rem;
+      align-items: center;
+      padding: 2rem 2.2rem;
+      border: 1px solid rgba(201,168,76,0.28);
+      border-radius: 4px;
+      background: rgba(201,168,76,0.05);
+      margin-top: 2rem;
+    }
+    .jury-access-card h3 {
+      font-family: var(--serif);
+      font-size: 1.45rem;
+      color: var(--cream);
+      margin-bottom: .45rem;
+    }
+    .jury-access-card p { color: var(--cream-dim); font-size: .92rem; line-height: 1.7; }
+    .jury-login { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: 1.2rem; }
+    .jury-login input {
+      min-width: 250px; flex: 1; padding: .8rem 1rem; font-family: var(--sans);
+      color: var(--cream); background: rgba(255,255,255,.06);
+      border: 1px solid rgba(201,168,76,.3); border-radius: 2px; outline: none;
+    }
+    .jury-login input:focus { border-color: var(--gold); }
+    .jury-access-message { min-height: 1.4rem; margin-top: .7rem; font-size: .8rem; color: var(--cream-dim); }
+    .jury-access-message.error { color: #efb0aa; }
+    .jury-access-message.success { color: #b9dfc9; }
+    .jury-files { display: none; margin-top: 1.4rem; gap: .8rem; flex-wrap: wrap; }
+    .jury-files.visible { display: flex; }
+    .lock-symbol {
+      width: 74px; height: 74px; border-radius: 50%; border: 1px solid rgba(201,168,76,.35);
+      display: flex; align-items: center; justify-content: center; color: var(--gold);
+      font-family: var(--serif); font-size: 1rem; letter-spacing: .08em;
+    }
+    @media (max-width: 768px) {
+      .jury-access-card { grid-template-columns: 1fr; }
+      .lock-symbol { display: none; }
+      .jury-login { flex-direction: column; }
+      .jury-login input { min-width: 0; width: 100%; }
+    }
+
   </style>
 </head>
 
@@ -1945,6 +1995,7 @@
       <li><a href="#materiales">Materiales</a></li>
       <li><a href="#cronograma">Cronograma</a></li>
       <li><a href="#jurado">Evaluación</a></li>
+      <li><a href="#acceso-jurado">Acceso jurado</a></li>
       <li><a href="#final">Final</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
@@ -1980,14 +2031,14 @@
 
     <div class="hero-actions">
       <button type="button" class="hero-pdf-btn" onclick="openModal('modal-materiales')">
-        Convocatoria y materiales · septiembre 2026
+        Consultar convocatoria y materiales
       </button>
       <form class="hero-form" onsubmit="handleForm(event, 'hero-email')">
         <input type="email" id="hero-email" placeholder="Tu correo electrónico" required />
         <button type="submit">Registro oficial</button>
       </form>
     </div>
-    <p class="hero-note"><strong>Cupo limitado.</strong> La convocatoria oficial abre en septiembre de 2026. El registro de correo permite recibir el aviso; la participación se confirma al completar la inscripción oficial.</p>
+    <p class="hero-note"><strong>Consulta la convocatoria oficial.</strong> Revisa las reglas, la ruta de materiales y los requisitos de participación antes de registrar a tu equipo.</p>
   </section>
 
   <!-- INTRO TOGGLE -->
@@ -2199,7 +2250,7 @@
         <div class="coach-guide-box">
           <span class="status-pill">Acompañamiento académico</span>
           <h3>Guía del coach</h3>
-          <p>La guía del coach establecerá responsabilidades y límites comunes para asegurar condiciones de acompañamiento comparables entre los equipos.</p>
+          <p>La guía del coach establece responsabilidades y límites comunes para asegurar condiciones de acompañamiento comparables entre los equipos.</p>
           <ul>
             <li>Puede formular preguntas, revisar borradores y orientar métodos.</li>
             <li>No puede escribir, analizar datos ni decidir la postura del equipo.</li>
@@ -2211,7 +2262,7 @@
       <button class="materiales-cta reveal" onclick="openModal('modal-materiales')">
         <span class="materiales-cta-text">
           <span class="materiales-cta-title">Consultar ruta de materiales</span>
-          <span class="materiales-cta-sub">Los documentos oficiales se publicarán junto con la convocatoria en septiembre de 2026.</span>
+          <span class="materiales-cta-sub">Consulta y descarga la convocatoria, las guías, los documentos del caso y las bases de datos.</span>
         </span>
         <span class="materiales-cta-arrow">↗</span>
       </button>
@@ -2293,7 +2344,7 @@
       <div class="coaches-grid">
         <div class="coaches-text reveal">
           <p>Cada equipo elige y registra a su coach. Su función es acompañar el proceso con preguntas, orientación metodológica y retroalimentación, sin sustituir el trabajo intelectual de los estudiantes.</p>
-          <p>La <strong>guía del coach</strong> establecerá ejemplos concretos de acompañamiento permitido y no permitido. El equipo seguirá siendo responsable de las decisiones, el análisis, la redacción y la presentación.</p>
+          <p>La <strong>guía del coach</strong> presenta ejemplos concretos de acompañamiento permitido y no permitido. El equipo seguirá siendo responsable de las decisiones, el análisis, la redacción y la presentación.</p>
           <p>Las sesiones académicas serán virtuales y comunes para todos los equipos. Las preguntas de interés general podrán incorporarse a la sección pública de aclaraciones.</p>
           <button class="modal-trigger" onclick="openModal('modal-profesores')">Información sobre las sesiones académicas ↗</button>
         </div>
@@ -2317,7 +2368,7 @@
 
       <div class="jurado-intro">
         <div class="jurado-text reveal">
-          <p>El documento escrito y la defensa final se evaluarán con rúbricas distintas. Las ponderaciones se publicarán desde la convocatoria para que los equipos conozcan los criterios de cada etapa.</p>
+          <p>El documento escrito y la defensa final se evaluarán con rúbricas distintas. Las ponderaciones y los descriptores de desempeño están disponibles desde la convocatoria para que los equipos conozcan los criterios de cada etapa.</p>
           <p>Los documentos se identificarán mediante folio y no mostrarán el nombre de la preparatoria durante la evaluación preliminar. La integración del jurado se dará a conocer antes del inicio de la evaluación.</p>
           <div class="rubric-toggle">
             <button class="rubric-btn active" onclick="switchRubric('escrita', this)">Documento escrito</button>
@@ -2360,6 +2411,32 @@
           <div class="pending-card"><h4>Sector y ExaTecs</h4><p>La participación de representantes de los sectores público, privado y social, así como de egresados, se anunciará conforme se confirmen las invitaciones.</p></div>
           <div class="pending-card"><h4>Anfitriones e invitados</h4><p>El programa del desayuno de premiación y la lista de invitados se comunicarán a los equipos finalistas.</p></div>
         </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ACCESO RESTRINGIDO PARA JURADO -->
+  <section id="acceso-jurado">
+    <div class="container">
+      <p class="section-label reveal">Acceso restringido</p>
+      <h2 class="section-title reveal">Instrumentos operativos<br><em>para el jurado.</em></h2>
+      <div class="divider reveal"></div>
+      <div class="jury-access-card reveal">
+        <div>
+          <h3>Documentos de evaluación</h3>
+          <p>Esta sección reúne los instrumentos de captura y consolidación destinados al jurado y al equipo organizador. La rúbrica oficial permanece disponible públicamente en la ruta de materiales.</p>
+          <div class="jury-login">
+            <input id="jury-password" type="password" autocomplete="current-password" placeholder="Contraseña de acceso" aria-label="Contraseña de acceso para jurado">
+            <button class="mat-btn mat-btn-solid" type="button" onclick="unlockJuryFiles()">Ingresar</button>
+          </div>
+          <div id="jury-access-message" class="jury-access-message" aria-live="polite"></div>
+          <div id="jury-files" class="jury-files">
+            <a class="mat-btn mat-btn-solid" href="00_Convocatoria/Tec_Econ_Challenge_formato_operativo_evaluacion.xlsx" target="_blank" rel="noopener">Descargar formato operativo</a>
+            <a class="mat-btn" href="00_Convocatoria/rubrica.pdf" target="_blank" rel="noopener">Consultar rúbrica oficial</a>
+          </div>
+        </div>
+        <div class="lock-symbol" aria-hidden="true">JURADO</div>
       </div>
     </div>
   </section>
@@ -2474,8 +2551,8 @@
   <section id="registro">
     <div class="container">
       <p class="section-label reveal" style="text-align:center">Primera edición · 2026–2027</p>
-      <h2 class="registro-title reveal">¿Tu equipo tiene <em>lo que se necesita?</em></h2>
-      <p class="registro-sub reveal">Registra el correo del capitán para recibir la convocatoria oficial, las fechas definitivas y el aviso de publicación de los materiales.</p>
+      <h2 class="registro-title reveal">Registra a <em>tu equipo.</em></h2>
+      <p class="registro-sub reveal">Consulta la convocatoria y completa el registro oficial dentro del periodo establecido.</p>
       <form class="registro-form reveal" onsubmit="handleForm(event, 'registro-email')">
         <input type="email" id="registro-email" placeholder="Correo del capitán del equipo" required />
         <button type="submit">Registrarme</button>
@@ -2500,12 +2577,12 @@
     <div class="modal" id="modal-materiales-inner">
       <button class="modal-close" onclick="closeModal('modal-materiales')">×</button>
       <p class="modal-label">Ruta de materiales</p>
-      <h3 class="modal-title">Convocatoria y documentos</h3>
+      <h3 class="modal-title">Biblioteca de materiales</h3>
       <div class="modal-divider"></div>
       <div id="materiales-wip">
-        <div class="modal-wip">Publicación en septiembre de 2026</div>
+        <div class="modal-wip">Materiales disponibles</div>
         <div class="modal-body">
-          <p>La convocatoria, la guía del participante, las rúbricas, la guía del coach y los materiales del caso se publicarán en septiembre de 2026.</p>
+          <p>La biblioteca reúne la convocatoria, las guías, la rúbrica, los documentos del caso y las bases de datos disponibles para los equipos.</p>
           <p>Los documentos estarán organizados en cuatro rutas: <strong>Empieza aquí</strong>, <strong>Paquete esencial</strong>, <strong>Datos</strong> y <strong>Profundización</strong>.</p>
         </div>
         <div class="modal-section"><h4>Mapa de materiales</h4><p>Orden de lectura, prioridad, propósito y tiempo estimado de cada documento, incorporados directamente en esta página.</p></div>
@@ -2542,58 +2619,69 @@
   </div>
 
   <script>
-    const MATERIALES_DISPONIBLES = false;
+    const MATERIALES_DISPONIBLES = true;
     const MATERIALES_REPO_BASE = 'https://raw.githubusercontent.com/lec-cdmx/TecEconChallenge/main/';
 
     const MATERIALES_TABS = [
       {
         id: 'inicio', label: 'Empieza aquí',
         files: [
-          { archivo: 'convocatoria_oficial.pdf', folder: '00_Convocatoria', titulo: 'Convocatoria oficial', descripcion: 'Elegibilidad, fechas, formato, registro y reglas completas.', nivel: 'Obligatorio', tiempo: '15 min' },
-          { archivo: 'guia_participante.pdf', folder: '00_Convocatoria', titulo: 'Guía del participante', descripcion: 'Ruta para abordar el caso, preguntas, entregable y criterios de evaluación.', nivel: 'Obligatorio', tiempo: '20 min' },
-          { titulo: 'Mapa de materiales', descripcion: 'Orden de lectura, prioridad y tiempo estimado de cada archivo.', nivel: 'Obligatorio', estado: 'Próxima publicación' },
-          { titulo: 'Guía del coach', descripcion: 'Funciones, límites y declaración de acompañamiento.', nivel: 'Coach', estado: 'Próxima publicación' },
-          { titulo: 'Rúbricas completas', descripcion: 'Descriptores de desempeño para documento escrito y defensa final.', nivel: 'Obligatorio', estado: 'Próxima publicación' }
+          { archivo: 'convocatoria_oficial.pdf', folder: '00_Convocatoria', titulo: 'Convocatoria oficial', descripcion: 'Elegibilidad, formato, proceso de registro, reglas y condiciones generales.', nivel: 'Obligatorio', tiempo: '15 min' },
+          { archivo: 'guia_participante.pdf', folder: '00_Convocatoria', titulo: 'Guía del participante', descripcion: 'Cómo abordar el expediente, requisitos del entregable, integridad académica y defensa final.', nivel: 'Obligatorio', tiempo: '25 min' },
+          { archivo: 'rubrica.pdf', folder: '00_Convocatoria', titulo: 'Rúbrica oficial', descripcion: 'Ponderaciones y descriptores para el documento escrito y la defensa presencial.', nivel: 'Obligatorio', tiempo: '20 min' },
+          { archivo: 'guia_coach.pdf', folder: '00_Convocatoria', titulo: 'Guía del coach', descripcion: 'Funciones, límites de intervención, integridad y declaración de acompañamiento.', nivel: 'Coach', tiempo: '20 min' },
+          { archivo: 'nota_identificacion_causal.pdf', folder: '01_Contexto', titulo: 'Introducción a la identificación causal', descripcion: 'Correlación, contrafactual, factores de confusión y límites de la evidencia.', nivel: 'Marco conceptual', tiempo: '25 min' }
         ]
       },
       {
-        id: 'esenciales', label: 'Paquete esencial',
+        id: 'contexto', label: 'Contexto',
         files: [
-          { archivo: '01_reporte_CONASAM_balance_2018_2024.pdf', folder: '01_Contexto', titulo: 'Reporte técnico CONASAM', descripcion: 'Documento central de indicadores y antecedentes del caso.', nivel: 'Obligatorio', tiempo: '25 min' },
-          { archivo: '02_nota_favorable_recuperacion_salarial.pdf', folder: '01_Contexto', titulo: 'Nota: recuperación salarial', descripcion: 'Lectura favorable para contrastar argumentos.', nivel: 'Obligatorio', tiempo: '8 min' },
-          { archivo: '03_nota_critica_costos_ocultos.pdf', folder: '01_Contexto', titulo: 'Columna: costos ocultos', descripcion: 'Lectura crítica desde una perspectiva empresarial.', nivel: 'Obligatorio', tiempo: '8 min' },
-          { archivo: '07_informe_observatorio_trabajo_digno.pdf', folder: '01_Contexto', titulo: 'Policy brief independiente', descripcion: 'Hallazgos mixtos y discusión de limitaciones.', nivel: 'Obligatorio', tiempo: '15 min' }
+          { archivo: '01_reporte_CONASAM_balance_2018_2024.pdf', folder: '01_Contexto', titulo: '01 · Reporte técnico CONASAM', descripcion: 'Balance de indicadores 2018–2024 y documento central de referencia.', nivel: 'Esencial', tiempo: '25 min' },
+          { archivo: '02_nota_favorable_recuperacion_salarial.pdf', folder: '01_Contexto', titulo: '02 · Nota sobre recuperación salarial', descripcion: 'Cobertura favorable de los resultados de la política.', nivel: 'Esencial', tiempo: '8 min' },
+          { archivo: '03_nota_critica_costos_ocultos.pdf', folder: '01_Contexto', titulo: '03 · Columna sobre costos ocultos', descripcion: 'Lectura crítica desde una perspectiva empresarial.', nivel: 'Esencial', tiempo: '8 min' },
+          { archivo: '04_reportaje_textil_bajio.pdf', folder: '01_Contexto', titulo: '04 · Reportaje del sector textil', descripcion: 'Testimonios de trabajadores y empresas del Bajío.', nivel: 'Contexto', tiempo: '12 min' },
+          { archivo: '05_comunicado_CONAPYME.pdf', folder: '01_Contexto', titulo: '05 · Comunicado CONAPYME', descripcion: 'Posición oficial de la representación de pequeñas y medianas empresas.', nivel: 'Contexto', tiempo: '7 min' },
+          { archivo: '06_comunicado_FNT.pdf', folder: '01_Contexto', titulo: '06 · Comunicado FNT', descripcion: 'Posición oficial de la representación sindical.', nivel: 'Contexto', tiempo: '7 min' },
+          { archivo: '07_informe_observatorio_trabajo_digno.pdf', folder: '01_Contexto', titulo: '07 · Informe del Observatorio de Trabajo Digno', descripcion: 'Análisis independiente con hallazgos mixtos y discusión de limitaciones.', nivel: 'Esencial', tiempo: '18 min' },
+          { archivo: '08_resumen_encuesta_trabajadores_pymes.pdf', folder: '01_Contexto', titulo: '08 · Encuesta a trabajadores y PyMEs', descripcion: 'Síntesis de percepciones y condiciones observadas en campo.', nivel: 'Contexto', tiempo: '10 min' }
         ]
       },
       {
         id: 'datos', label: 'Datos',
         files: [
-          { archivo: '01_salario_minimo_mensual.xlsx', folder: '02_Datos', titulo: 'Salario mínimo, serie mensual', descripcion: 'Salario nominal, inflación y salario real, 2018–2024.', nivel: 'Base', tiempo: 'Variable' },
-          { archivo: '02_empleo_formal_trimestral.xlsx', folder: '02_Datos', titulo: 'Empleo formal, serie trimestral', descripcion: 'Empleo por sector con detalle del quiebre de 2020.', nivel: 'Base', tiempo: 'Variable' },
-          { archivo: '03_informalidad_trimestral.xlsx', folder: '02_Datos', titulo: 'Informalidad, serie trimestral', descripcion: 'Tasa de informalidad por sector.', nivel: 'Base', tiempo: 'Variable' },
-          { archivo: '04_panel_pymes_textiles.xlsx', folder: '02_Datos', titulo: 'Panel de empresas textiles', descripcion: '80 empresas, datos anuales 2018–2024.', nivel: 'Base', tiempo: 'Variable' },
-          { archivo: '05_encuesta_trabajadores_microdatos.xlsx', folder: '02_Datos', titulo: 'Microdatos de encuesta laboral', descripcion: '520 observaciones a nivel individuo.', nivel: 'Base', tiempo: 'Variable' }
+          { archivo: '01_salario_minimo_mensual.xlsx', folder: '02_Datos', titulo: '01 · Salario mínimo mensual', descripcion: 'Serie mensual utilizada para estudiar la magnitud y evolución real de la política.', nivel: 'Base de datos', tiempo: 'Variable' },
+          { archivo: '02_empleo_formal_trimestral.xlsx', folder: '02_Datos', titulo: '02 · Empleo formal trimestral', descripcion: 'Serie trimestral de empleo formal con desagregaciones pertinentes para el caso.', nivel: 'Base de datos', tiempo: 'Variable' },
+          { archivo: '03_informalidad_trimestral.xlsx', folder: '02_Datos', titulo: '03 · Informalidad trimestral', descripcion: 'Indicadores trimestrales de informalidad para examinar posibles márgenes de ajuste.', nivel: 'Base de datos', tiempo: 'Variable' },
+          { archivo: '04_panel_pymes_textiles.xlsx', folder: '02_Datos', titulo: '04 · Panel de PyMEs textiles', descripcion: 'Panel empresarial para analizar empleo, costos, productividad y heterogeneidad.', nivel: 'Base de datos', tiempo: 'Variable' },
+          { archivo: '05_encuesta_trabajadores_microdatos.xlsx', folder: '02_Datos', titulo: '05 · Microdatos de trabajadores', descripcion: 'Microdatos individuales para analizar resultados y diferencias entre grupos.', nivel: 'Base de datos', tiempo: 'Variable' },
         ]
       },
       {
-        id: 'profundizacion', label: 'Profundización',
+        id: 'institucionales', label: 'Institucionales',
         files: [
-          { titulo: 'Introducción a identificación causal', descripcion: 'Correlación, comparación, explicaciones alternativas y límites de inferencia.', nivel: 'Avanzado', estado: 'Próxima publicación' },
-          { archivo: '12_nota_tecnica_CEMEL.pdf', folder: '03_Documentos institucionales', titulo: 'Nota técnica CEMEL', descripcion: 'Documento académico sobre identificación causal.', nivel: 'Avanzado', tiempo: '30 min' },
-          { archivo: '09_dictamen_tecnico_interno_CONASAM.pdf', folder: '03_Documentos institucionales', titulo: 'Dictamen técnico interno', descripcion: 'Insumo institucional con información adicional.', nivel: 'Opcional', tiempo: '15 min' },
-          { archivo: '10_comparecencia_CONAPYME_comision_legislativa.pdf', folder: '03_Documentos institucionales', titulo: 'Comparecencia legislativa', descripcion: 'Argumentos presentados ante una comisión.', nivel: 'Opcional', tiempo: '15 min' },
-          { archivo: '11_solicitud_transparencia_respuesta_INDEEL.pdf', folder: '03_Documentos institucionales', titulo: 'Solicitud de transparencia', descripcion: 'Respuesta institucional y trazabilidad documental.', nivel: 'Opcional', tiempo: '12 min' },
-          { archivo: '13_minuta_mesa_dialogo_tripartita.pdf', folder: '03_Documentos institucionales', titulo: 'Minuta de diálogo tripartito', descripcion: 'Negociación entre autoridad, empresas y sindicato.', nivel: 'Opcional', tiempo: '12 min' }
+          { archivo: '09_dictamen_tecnico_interno_CONASAM.pdf', folder: '03_Documentos institucionales', titulo: '09 · Dictamen técnico interno CONASAM', descripcion: 'Documento técnico interno que amplía el razonamiento institucional.', nivel: 'Profundización', tiempo: '18 min' },
+          { archivo: '10_comparecencia_CONAPYME_comision_legislativa.pdf', folder: '03_Documentos institucionales', titulo: '10 · Comparecencia de CONAPYME', descripcion: 'Versión de la intervención ante una comisión legislativa.', nivel: 'Profundización', tiempo: '15 min' },
+          { archivo: '11_solicitud_transparencia_respuesta_INDEEL.pdf', folder: '03_Documentos institucionales', titulo: '11 · Solicitud de transparencia e INDEEL', descripcion: 'Solicitud, respuesta institucional y elementos de trazabilidad.', nivel: 'Profundización', tiempo: '15 min' },
+          { archivo: '12_nota_tecnica_CEMEL.pdf', folder: '03_Documentos institucionales', titulo: '12 · Nota técnica CEMEL', descripcion: 'Análisis técnico que discute identificación, comparación y alcance de resultados.', nivel: 'Profundización', tiempo: '25 min' },
+          { archivo: '13_minuta_mesa_dialogo_tripartita.pdf', folder: '03_Documentos institucionales', titulo: '13 · Minuta de diálogo tripartito', descripcion: 'Registro de la deliberación entre autoridad, empresas y representación laboral.', nivel: 'Profundización', tiempo: '12 min' }
         ]
       }
     ];
 
-    function matFileUrl(folder, archivo) { return MATERIALES_REPO_BASE + encodeURIComponent(folder) + '/' + encodeURIComponent(archivo); }
+    function matEncodedPath(folder, archivo) {
+      return [folder, archivo].join('/').split('/').map(encodeURIComponent).join('/');
+    }
+    function matFileUrl(folder, archivo) {
+      return MATERIALES_REPO_BASE + matEncodedPath(folder, archivo);
+    }
+    function matSiteUrl(folder, archivo) {
+      return matEncodedPath(folder, archivo);
+    }
     function matIsXlsx(name) { return /\.xlsx$/i.test(name || ''); }
-    function matIcon(name) { return matIsXlsx(name) ? '📊' : '📄'; }
+    function matIsPdf(name) { return /\.pdf$/i.test(name || ''); }
+    function matCanPreview(name) { return matIsPdf(name) || matIsXlsx(name); }
+    function matIcon(name) { return matIsXlsx(name) ? 'DATOS' : 'PDF'; }
     function matOfficeViewerUrl(rawUrl) { return 'https://view.officeapps.live.com/op/embed.aspx?src=' + encodeURIComponent(rawUrl); }
-    function matGoogleViewerUrl(rawUrl) { return 'https://docs.google.com/viewer?embedded=true&url=' + encodeURIComponent(rawUrl); }
-    function matEmbedUrl(rawUrl, isXlsx) { return isXlsx ? matOfficeViewerUrl(rawUrl) : matGoogleViewerUrl(rawUrl); }
 
     function matRenderExplorer() {
       const container = document.getElementById('materiales-explorer');
@@ -2623,7 +2711,11 @@
               + (file.tiempo ? '<span class="mat-meta-pill muted">' + file.tiempo + '</span>' : '')
             + '</div>'
             + (available
-              ? '<div class="mat-card-actions"><button class="mat-btn mat-btn-solid" onclick="matView(\'' + tab.id + '\', ' + idx + ')">Ver</button><a class="mat-btn" href="' + url + '" target="_blank" rel="noopener">Descargar</a></div>'
+              ? '<div class="mat-card-actions">'
+                + (matIsPdf(file.archivo)
+                  ? '<a class="mat-btn mat-btn-solid" href="' + matSiteUrl(file.folder, file.archivo) + '" target="_blank" rel="noopener">Ver</a>'
+                  : (matIsXlsx(file.archivo) ? '<button class="mat-btn mat-btn-solid" onclick="matView(\'' + tab.id + '\', ' + idx + ')">Ver</button>' : ''))
+                + '<a class="mat-btn" href="' + matSiteUrl(file.folder, file.archivo) + '" download>Descargar</a></div>'
               : '<div class="mat-coming">' + (file.estado || 'Próximamente') + '</div>')
           + '</div>';
         });
@@ -2640,11 +2732,20 @@
       const tab = MATERIALES_TABS.find(t => t.id === tabId);
       const file = tab.files[idx];
       if (!file || !file.archivo) return;
-      const url = matFileUrl(file.folder, file.archivo);
-      const embedSrc = matEmbedUrl(url, matIsXlsx(file.archivo));
+
+      if (matIsPdf(file.archivo)) {
+        window.open(matSiteUrl(file.folder, file.archivo), '_blank', 'noopener');
+        return;
+      }
+
+      if (!matIsXlsx(file.archivo)) return;
+
+      const rawUrl = matFileUrl(file.folder, file.archivo);
+      const embedSrc = matOfficeViewerUrl(rawUrl);
+      const downloadUrl = matSiteUrl(file.folder, file.archivo);
       const grid = document.getElementById('mat-grid-' + tabId);
       const viewer = document.getElementById('mat-viewer-' + tabId);
-      viewer.innerHTML = '<div class="mat-viewer-header"><button class="mat-btn" onclick="matBackToList(\'' + tabId + '\')">← Volver a la lista</button><div class="mat-viewer-title">' + file.titulo + '</div><a class="mat-btn mat-btn-solid" href="' + url + '" target="_blank" rel="noopener">Descargar</a></div><iframe class="mat-viewer-frame" src="' + embedSrc + '"></iframe>';
+      viewer.innerHTML = '<div class="mat-viewer-header"><button class="mat-btn" onclick="matBackToList(\'' + tabId + '\')">← Volver a la lista</button><div class="mat-viewer-title">' + file.titulo + '</div><a class="mat-btn mat-btn-solid" href="' + downloadUrl + '" download>Descargar</a></div><iframe class="mat-viewer-frame" src="' + embedSrc + '" title="Vista previa de ' + file.titulo + '"></iframe>';
       grid.style.display = 'none';
       viewer.style.display = 'block';
     }
@@ -2665,6 +2766,52 @@
       matRenderExplorer();
     }
     matInit();
+
+
+    async function sha256Hex(text) {
+      const bytes = new TextEncoder().encode(text);
+      const digest = await crypto.subtle.digest('SHA-256', bytes);
+      return Array.from(new Uint8Array(digest)).map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    async function unlockJuryFiles() {
+      const input = document.getElementById('jury-password');
+      const message = document.getElementById('jury-access-message');
+      const files = document.getElementById('jury-files');
+      const expectedHash = '92ebe2c0fc8e7ab027bf029dc18bf8431c33f2962aa13f7c069efbbe81c4dcac';
+      const value = input ? input.value : '';
+      if (!value) {
+        message.textContent = 'Ingresa la contraseña proporcionada por la coordinación.';
+        message.className = 'jury-access-message error';
+        return;
+      }
+      const actualHash = await sha256Hex(value);
+      if (actualHash === expectedHash) {
+        files.classList.add('visible');
+        message.textContent = 'Acceso habilitado para esta sesión.';
+        message.className = 'jury-access-message success';
+        sessionStorage.setItem('tecEconJuryAccess', '1');
+        input.value = '';
+      } else {
+        files.classList.remove('visible');
+        message.textContent = 'Contraseña incorrecta.';
+        message.className = 'jury-access-message error';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.getElementById('jury-password');
+      if (input) input.addEventListener('keydown', e => { if (e.key === 'Enter') unlockJuryFiles(); });
+      if (sessionStorage.getItem('tecEconJuryAccess') === '1') {
+        const files = document.getElementById('jury-files');
+        const message = document.getElementById('jury-access-message');
+        if (files) files.classList.add('visible');
+        if (message) {
+          message.textContent = 'Acceso habilitado para esta sesión.';
+          message.className = 'jury-access-message success';
+        }
+      }
+    });
 
     function switchPanel(panel, button) {
       document.querySelectorAll('.toggle-panel').forEach(p => p.classList.remove('active'));
