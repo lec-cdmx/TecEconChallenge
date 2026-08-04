@@ -1,0 +1,66 @@
+﻿[CARPETA] 00_Convocatoria
+[ARCHIVO] 00_Convocatoria\convocatoria_oficial.pdf	93 KB
+[ARCHIVO] 00_Convocatoria\guia_coach.pdf	42.2 KB
+[ARCHIVO] 00_Convocatoria\guia_participante.pdf	40.8 KB
+[ARCHIVO] 00_Convocatoria\rubrica.pdf	49 KB
+[ARCHIVO] 00_Convocatoria\Tec_Econ_Challenge_formato_operativo_evaluacion.xlsx	98.5 KB
+[CARPETA] 01_Contexto
+[ARCHIVO] 01_Contexto\00_canon_actores_y_voceros.md	19.1 KB
+[ARCHIVO] 01_Contexto\00_TecEconCase_DisenoV2_SalarioMinimo.md	11.4 KB
+[ARCHIVO] 01_Contexto\01_reporte_CONASAM_balance_2018_2024.pdf	283.1 KB
+[ARCHIVO] 01_Contexto\02_nota_favorable_recuperacion_salarial.pdf	118.2 KB
+[ARCHIVO] 01_Contexto\03_nota_critica_costos_ocultos.pdf	77.2 KB
+[ARCHIVO] 01_Contexto\04_reportaje_textil_bajio.pdf	91.8 KB
+[ARCHIVO] 01_Contexto\05_comunicado_CONAPYME.pdf	81.3 KB
+[ARCHIVO] 01_Contexto\06_comunicado_FNT.pdf	66.1 KB
+[ARCHIVO] 01_Contexto\07_informe_observatorio_trabajo_digno.pdf	175.9 KB
+[ARCHIVO] 01_Contexto\08_resumen_encuesta_trabajadores_pymes.pdf	67.2 KB
+[ARCHIVO] 01_Contexto\nota_identificacion_causal.pdf	46.6 KB
+[CARPETA] 02_Datos
+[ARCHIVO] 02_Datos\01_salario_minimo_mensual.xlsx	8.1 KB
+[ARCHIVO] 02_Datos\01_serie_mensual_salario_minimo.R	8.8 KB
+[ARCHIVO] 02_Datos\02_empleo_formal_trimestral.R	13.6 KB
+[ARCHIVO] 02_Datos\02_empleo_formal_trimestral.xlsx	12.3 KB
+[ARCHIVO] 02_Datos\03_informalidad_trimestral.R	12.3 KB
+[ARCHIVO] 02_Datos\03_informalidad_trimestral.xlsx	10.2 KB
+[ARCHIVO] 02_Datos\04_panel_pymes_textiles.R	23.8 KB
+[ARCHIVO] 02_Datos\04_panel_pymes_textiles.xlsx	30.3 KB
+[ARCHIVO] 02_Datos\05_encuesta_trabajadores_microdatos.R	21.5 KB
+[ARCHIVO] 02_Datos\05_encuesta_trabajadores_microdatos.xlsx	21.2 KB
+[CARPETA] 03_Documentos institucionales
+[ARCHIVO] 03_Documentos institucionales\09_dictamen_tecnico_interno_CONASAM.pdf	102.6 KB
+[ARCHIVO] 03_Documentos institucionales\10_comparecencia_CONAPYME_comision_legislativa.pdf	104.3 KB
+[ARCHIVO] 03_Documentos institucionales\11_solicitud_transparencia_respuesta_INDEEL.pdf	171.6 KB
+[ARCHIVO] 03_Documentos institucionales\12_nota_tecnica_CEMEL.pdf	162.1 KB
+[ARCHIVO] 03_Documentos institucionales\13_minuta_mesa_dialogo_tripartita.pdf	71 KB
+[CARPETA] 04_Marco conceptual
+[CARPETA] 05_Entregable
+[ARCHIVO] index.html	101.4 KB
+[ARCHIVO] LICENSE	1.1 KB
+[CARPETA] v0
+[CARPETA] v0\00_Convocatoria
+[CARPETA] v0\01_Contexto
+[ARCHIVO] v0\01_Contexto\01_Contexto_Comunicado_Prensa_Nexo.pdf	38.5 KB
+[ARCHIVO] v0\01_Contexto\01_Contexto_Comunicado_Prensa_Velo.pdf	133.4 KB
+[ARCHIVO] v0\01_Contexto\01_Contexto_Encuesta_Consumidores.pdf	63.8 KB
+[ARCHIVO] v0\01_Contexto\01_Contexto_Nota_Periodística_Crítica.pdf	63.2 KB
+[ARCHIVO] v0\01_Contexto\01_Contexto_Nota_Periodística_Pro.pdf	42.2 KB
+[ARCHIVO] v0\01_Contexto\01_Contexto_Reporte_COMECO.pdf	53.3 KB
+[CARPETA] v0\02_Datos
+[ARCHIVO] v0\02_Datos\Datos_Base1_Suscriptores.R	5 KB
+[ARCHIVO] v0\02_Datos\Datos_Base1_Suscriptores.xlsx	23.5 KB
+[ARCHIVO] v0\02_Datos\Datos_Base2_Precios.R	8.5 KB
+[ARCHIVO] v0\02_Datos\Datos_Base2_Precios.xlsx	34 KB
+[ARCHIVO] v0\02_Datos\Datos_Base3_Catalogo.R	10.1 KB
+[ARCHIVO] v0\02_Datos\Datos_Base3_Catalogo.xlsx	287.5 KB
+[ARCHIVO] v0\02_Datos\Datos_Base4_Financiero.R	9.3 KB
+[ARCHIVO] v0\02_Datos\Datos_Base4_Financiero.xlsx	12.8 KB
+[ARCHIVO] v0\02_Datos\Datos_Base5_Consumidor.R	10.4 KB
+[ARCHIVO] v0\02_Datos\Datos_Base5_Consumidor.xlsx	26.2 KB
+[CARPETA] v0\03_Documentos_legales
+[ARCHIVO] v0\03_Documentos_legales\03_Legales_Contrato_Exclusividad.pdf	53.2 KB
+[ARCHIVO] v0\03_Documentos_legales\03_Legales_Contrato_Exclusividad_Anexo.pdf	43.1 KB
+[ARCHIVO] v0\03_Documentos_legales\03_Legales_Queja.pdf	63.5 KB
+[ARCHIVO] v0\03_Documentos_legales\03_Legales_Respuesta.pdf	52.5 KB
+[CARPETA] v0\04_Marco_conceptual
+[CARPETA] v0\05_Entregable
