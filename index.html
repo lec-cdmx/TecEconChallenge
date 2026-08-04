@@ -1597,19 +1597,350 @@
       .hero-form input, .registro-form input { border-right: 1px solid rgba(201,168,76,0.3); border-bottom: none; border-radius: 2px 2px 0 0; }
       .hero-form button, .registro-form button { border-radius: 0 0 2px 2px; }
     }
+
+
+    /* ── REHAUL 2026: BRAND LOCKUP ── */
+    nav { padding-top: 0.85rem; padding-bottom: 0.85rem; }
+    .nav-brand-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 0.06rem;
+      text-decoration: none;
+      max-width: 310px;
+    }
+    .nav-brand-wrap .nav-logo { line-height: 1.05; }
+    .nav-subtitle {
+      font-size: 0.57rem;
+      line-height: 1.25;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(212,207,197,0.62);
+    }
+    .hero-descriptor {
+      font-size: 0.76rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cream-dim);
+      margin: 0.9rem 0 1.2rem;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.55s forwards;
+    }
+    .hero-subtitle { margin-top: 0; }
+    button.hero-pdf-btn { cursor: pointer; font-family: var(--sans); }
+
+    /* ── DECISION / FACT STRIPS ── */
+    .facts-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      margin-top: 2.2rem;
+      border: 1px solid rgba(201,168,76,0.12);
+      background: rgba(201,168,76,0.08);
+    }
+    .fact-card {
+      padding: 1.2rem 1.1rem;
+      background: var(--ink);
+    }
+    .fact-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.45rem;
+    }
+    .fact-value {
+      font-family: var(--serif);
+      font-size: 1rem;
+      color: var(--cream);
+      line-height: 1.35;
+    }
+
+    /* ── MATERIAL ROADMAP ── */
+    #materiales {
+      padding: 8rem 0;
+      background: var(--ink-mid);
+      border-top: 1px solid rgba(201,168,76,0.1);
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+    }
+    .section-lead {
+      max-width: 760px;
+      font-size: 1.02rem;
+      line-height: 1.8;
+      color: var(--cream-dim);
+      margin-top: 1.2rem;
+    }
+    .roadmap-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+    .roadmap-card {
+      position: relative;
+      padding: 1.6rem 1.4rem;
+      border: 1px solid rgba(201,168,76,0.14);
+      border-radius: 3px;
+      background: rgba(255,255,255,0.02);
+      min-height: 260px;
+    }
+    .roadmap-step {
+      font-family: var(--serif);
+      font-size: 2.4rem;
+      font-weight: 300;
+      color: rgba(201,168,76,0.25);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .roadmap-card h3 {
+      font-family: var(--serif);
+      font-size: 1.18rem;
+      color: var(--cream);
+      margin-bottom: 0.6rem;
+    }
+    .roadmap-card p {
+      font-size: 0.84rem;
+      color: var(--cream-dim);
+      line-height: 1.6;
+    }
+    .roadmap-meta {
+      display: flex;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.55rem;
+      border: 1px solid rgba(201,168,76,0.22);
+      border-radius: 999px;
+      font-size: 0.62rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .status-pill.muted { color: var(--cream-dim); border-color: rgba(212,207,197,0.16); }
+    .material-detail-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+    .causal-box, .coach-guide-box {
+      padding: 2rem;
+      border: 1px solid rgba(201,168,76,0.16);
+      border-radius: 4px;
+      background: rgba(11,15,26,0.45);
+    }
+    .causal-box h3, .coach-guide-box h3 {
+      font-family: var(--serif);
+      font-size: 1.45rem;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 0.8rem;
+    }
+    .causal-box p, .coach-guide-box p, .causal-box li, .coach-guide-box li {
+      color: var(--cream-dim);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+    .causal-box ul, .coach-guide-box ul { padding-left: 1.1rem; margin-top: 0.8rem; }
+    .causal-box li, .coach-guide-box li { margin-bottom: 0.35rem; }
+
+    /* ── TIMELINE OVERRIDE ── */
+    .timeline-items { grid-template-columns: repeat(5, 1fr); }
+    .timeline-note {
+      margin-top: 2rem;
+      padding: 1rem 1.2rem;
+      border-left: 2px solid var(--gold);
+      background: rgba(201,168,76,0.05);
+      color: var(--cream-dim);
+      font-size: 0.88rem;
+      line-height: 1.65;
+    }
+    .timeline-dot.pause {
+      border-style: dashed;
+      color: var(--cream-dim);
+      background: rgba(255,255,255,0.025);
+    }
+
+    /* ── RUBRICS ── */
+    .rubric-toggle {
+      display: inline-flex;
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 3px;
+      overflow: hidden;
+      margin: 2rem 0 1.5rem;
+    }
+    .rubric-btn {
+      padding: 0.8rem 1.5rem;
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--cream-dim);
+      background: transparent;
+      border: none;
+      border-right: 1px solid rgba(201,168,76,0.25);
+      cursor: pointer;
+    }
+    .rubric-btn:last-child { border-right: none; }
+    .rubric-btn.active { background: var(--gold); color: var(--ink); }
+    .rubric-panel { display: none; }
+    .rubric-panel.active { display: block; }
+    .rubric-table {
+      border-top: 1px solid rgba(201,168,76,0.13);
+    }
+    .rubric-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1.5rem;
+      align-items: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(201,168,76,0.11);
+    }
+    .rubric-name { color: var(--cream-dim); font-size: 0.92rem; }
+    .rubric-weight {
+      min-width: 58px;
+      text-align: center;
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      color: var(--gold);
+    }
+    .evaluation-principles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2.2rem;
+    }
+    .principle-card {
+      padding: 1.25rem;
+      border: 1px solid rgba(201,168,76,0.12);
+      border-radius: 3px;
+      background: rgba(255,255,255,0.018);
+    }
+    .principle-card h4 {
+      font-family: var(--serif);
+      color: var(--cream);
+      font-size: 1rem;
+      margin-bottom: 0.35rem;
+    }
+    .principle-card p { color: var(--cream-dim); font-size: 0.8rem; line-height: 1.55; }
+    .pending-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .pending-card {
+      padding: 1.2rem;
+      text-align: center;
+      border: 1px dashed rgba(201,168,76,0.25);
+      border-radius: 3px;
+    }
+    .pending-card h4 { font-family: var(--serif); color: var(--cream); margin-bottom: 0.35rem; }
+    .pending-card p { font-size: 0.76rem; color: var(--cream-dim); line-height: 1.5; }
+
+    /* ── DELIVERABLE & INTEGRITY ── */
+    #integridad {
+      padding: 8rem 0;
+      background: var(--ink-mid);
+      border-top: 1px solid rgba(201,168,76,0.1);
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+    }
+    .policy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+    .policy-card {
+      padding: 1.6rem;
+      border: 1px solid rgba(201,168,76,0.14);
+      border-radius: 3px;
+      background: rgba(255,255,255,0.02);
+    }
+    .policy-card h3 {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      color: var(--cream);
+      margin-bottom: 0.65rem;
+    }
+    .policy-card p, .policy-card li {
+      color: var(--cream-dim);
+      font-size: 0.84rem;
+      line-height: 1.65;
+    }
+    .policy-card ul { padding-left: 1.05rem; margin-top: 0.65rem; }
+    .policy-card li { margin-bottom: 0.35rem; }
+    .policy-alert {
+      margin-top: 1.5rem;
+      padding: 1.1rem 1.2rem;
+      border: 1px solid rgba(201,168,76,0.2);
+      background: rgba(201,168,76,0.055);
+      color: var(--cream-dim);
+      font-size: 0.86rem;
+      line-height: 1.65;
+    }
+
+    /* ── FINAL FACTS ── */
+    .final-facts { display: flex; flex-direction: column; gap: 0.8rem; }
+    .final-fact {
+      padding: 1rem 1.1rem;
+      border: 1px solid rgba(201,168,76,0.12);
+      border-radius: 3px;
+      background: rgba(255,255,255,0.018);
+    }
+    .final-fact strong { display: block; color: var(--cream); font-family: var(--serif); margin-bottom: 0.2rem; }
+    .final-fact span { color: var(--cream-dim); font-size: 0.8rem; line-height: 1.5; }
+
+    /* ── MATERIAL EXPLORER METADATA ── */
+    .mat-card-meta { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    .mat-meta-pill {
+      font-size: 0.59rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: 1px solid rgba(201,168,76,0.2);
+      color: var(--gold);
+      padding: 0.2rem 0.45rem;
+      border-radius: 999px;
+    }
+    .mat-meta-pill.muted { color: var(--cream-dim); border-color: rgba(212,207,197,0.14); }
+    .mat-coming { font-size: 0.72rem; color: var(--gold-dim); font-style: italic; }
+
+    @media (max-width: 1000px) {
+      .nav-links { gap: 1.25rem; }
+      .roadmap-grid { grid-template-columns: 1fr 1fr; }
+      .timeline-items { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .timeline-track { display: none; }
+    }
+    @media (max-width: 768px) {
+      .nav-brand-wrap { max-width: 220px; }
+      .nav-subtitle { font-size: 0.5rem; }
+      .facts-grid, .roadmap-grid, .evaluation-principles, .pending-grid, .policy-grid { grid-template-columns: 1fr; }
+      .material-detail-grid { grid-template-columns: 1fr; }
+      .timeline-items { grid-template-columns: 1fr; }
+      .rubric-toggle { display: flex; width: 100%; }
+      .rubric-btn { flex: 1; padding: 0.8rem 0.7rem; }
+    }
+
   </style>
 </head>
+
 <body>
 
   <!-- NAV -->
   <nav>
-    <a href="#hero" class="nav-logo">Tec Econ Challenge</a>
+    <a href="#hero" class="nav-brand-wrap" aria-label="Tec Econ Challenge, inicio">
+      <span class="nav-logo">Tec Econ Challenge</span>
+      <span class="nav-subtitle">Torneo Nacional de Análisis Económico para Preparatorias</span>
+    </a>
     <ul class="nav-links">
       <li><a href="#reto">El reto</a></li>
+      <li><a href="#materiales">Materiales</a></li>
       <li><a href="#cronograma">Cronograma</a></li>
-      <li><a href="#premios">Premios</a></li>
-      <li><a href="#coaches">Coaches</a></li>
-      <li><a href="#jurado">Jurado</a></li>
+      <li><a href="#jurado">Evaluación</a></li>
+      <li><a href="#final">Final</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
     <a href="#registro" class="nav-cta">Regístrate</a>
@@ -1622,7 +1953,8 @@
       Tec&nbsp;Econ
       <em><span class="line-indent">Challenge</span></em>
     </h1>
-    <p class="hero-subtitle">El reto de análisis económico más riguroso del país, abierto a estudiantes del último año de preparatoria de toda la República.</p>
+    <p class="hero-descriptor">Torneo Nacional de Análisis Económico para Preparatorias</p>
+    <p class="hero-subtitle">Un caso común, datos construidos para la competencia y una pregunta sin respuesta obvia. Tu equipo analiza, argumenta y defiende una postura.</p>
 
     <div class="hero-badges">
       <div class="badge">
@@ -1631,8 +1963,8 @@
       </div>
       <div class="badge-sep"></div>
       <div class="badge">
-        <div class="badge-num">6</div>
-        <div class="badge-label">meses de reto</div>
+        <div class="badge-num">3–5</div>
+        <div class="badge-label">Integrantes por equipo</div>
       </div>
       <div class="badge-sep"></div>
       <div class="badge">
@@ -1642,15 +1974,15 @@
     </div>
 
     <div class="hero-actions">
-      <a class="hero-pdf-btn" href="https://raw.githubusercontent.com/lec-cdmx/TecEconChallenge/main/00_Convocatoria/convocatoria_oficial.pdf" target="_blank" rel="noopener">
-        📄 Convocatoria oficial (PDF)
-      </a>
+      <button type="button" class="hero-pdf-btn" onclick="openModal('modal-materiales')">
+        Convocatoria y materiales · en preparación
+      </button>
       <form class="hero-form" onsubmit="handleForm(event, 'hero-email')">
         <input type="email" id="hero-email" placeholder="Tu correo electrónico" required />
         <button type="submit">Registro oficial</button>
       </form>
     </div>
-    <p class="hero-note"><strong>Cupo limitado.</strong> Convocatoria oficial: septiembre de 2026. Registra tu correo para recibir el aviso y completar la inscripción de tu equipo a tiempo.</p>
+    <p class="hero-note"><strong>Cupo limitado.</strong> La convocatoria oficial abre en septiembre de 2026. El registro de correo permite recibir el aviso; la participación se confirma al completar la inscripción oficial.</p>
   </section>
 
   <!-- INTRO TOGGLE -->
@@ -1659,91 +1991,89 @@
       <div class="toggle-header reveal">
         <p>¿Cuál es tu perfil?</p>
         <div class="toggle-buttons">
-          <button class="toggle-btn active" onclick="switchPanel('explorar')">Estoy explorando qué estudiar</button>
-          <button class="toggle-btn" onclick="switchPanel('economia')">Me interesa Economía</button>
+          <button class="toggle-btn active" onclick="switchPanel('explorar', this)">Estoy explorando qué estudiar</button>
+          <button class="toggle-btn" onclick="switchPanel('economia', this)">Me interesa Economía</button>
         </div>
       </div>
 
-      <!-- PANEL A: Explorador -->
       <div class="toggle-panel active" id="panel-explorar">
         <div class="intro-grid">
           <div class="intro-text reveal">
-            <h3>No necesitas saber de economía<br>para <em>ganar esto.</em></h3>
-            <p>El Tec Econ Challenge es un reto de razonamiento, argumentación y análisis. No se memoriza ni se resuelven fórmulas: se lee un caso real, se piensa con claridad y se defiende una postura ante un jurado de expertos.</p>
-            <p>Si te gusta debatir, entender por qué pasan las cosas, trabajar en equipo y resolver problemas complejos, este concurso es para ti, sin importar qué carrera tengas en mente.</p>
-            <p>Participar es <strong>completamente gratuito</strong>. Puedes ganar hasta <strong>$30,000 MXN</strong> y llegar a una final presencial en Ciudad de México con académicos y líderes del sector.</p>
+            <h3>No necesitas haber estudiado economía<br>para <em>participar y destacar.</em></h3>
+            <p>El Tec Econ Challenge evalúa razonamiento, argumentación y análisis. Trabajarás con un caso económico simulado, documentos con perspectivas distintas y datos preparados para la competencia.</p>
+            <p>Los materiales esenciales incluyen el marco conceptual necesario. No se espera que domines econometría avanzada: se espera que leas con atención, hagas preguntas pertinentes y sustentes tus conclusiones.</p>
+            <p>Participar es <strong>completamente gratuito</strong>. Los equipos finalistas defenderán su análisis presencialmente en Ciudad de México.</p>
             <button class="intro-cta" onclick="handleForm(event, '')">Quiero registrarme</button>
           </div>
           <div class="intro-highlights reveal">
             <div class="highlight-card">
               <div class="highlight-icon">🧠</div>
               <div class="highlight-text">
-                <h5>Sin conocimientos previos requeridos</h5>
-                <p>Los materiales del caso incluyen todo lo que necesitas para participar. Lo que se evalúa es tu razonamiento, no lo que ya sabes.</p>
-              </div>
-            </div>
-            <div class="highlight-card">
-              <div class="highlight-icon">🏆</div>
-              <div class="highlight-text">
-                <h5>Premios reales</h5>
-                <p>$30,000 MXN al primer lugar, $20,000 al segundo y $10,000 al tercero. Más reconocimiento formal para tu preparatoria.</p>
+                <h5>Marco conceptual incluido</h5>
+                <p>La ruta esencial explica los conceptos y el orden recomendado para abordar el caso.</p>
               </div>
             </div>
             <div class="highlight-card">
               <div class="highlight-icon">👥</div>
               <div class="highlight-text">
-                <h5>Compites en equipo</h5>
-                <p>De 3 a 5 integrantes. Pueden ser de distintos salones o turnos. Cada equipo puede tener un coach que los acompañe durante el proceso.</p>
+                <h5>Equipos de la misma preparatoria</h5>
+                <p>De 3 a 5 integrantes. Una misma preparatoria puede registrar más de un equipo.</p>
+              </div>
+            </div>
+            <div class="highlight-card">
+              <div class="highlight-icon">📊</div>
+              <div class="highlight-text">
+                <h5>Datos con propósito</h5>
+                <p>Cada entrega deberá usar al menos una base proporcionada y una visualización propia.</p>
               </div>
             </div>
             <div class="highlight-card">
               <div class="highlight-icon">📍</div>
               <div class="highlight-text">
                 <h5>Final presencial en CDMX</h5>
-                <p>Los 7 equipos finalistas son convocados a Ciudad de México para defender su caso ante un jurado de alto nivel.</p>
+                <p>Los 7 equipos finalistas presentan y responden preguntas ante un jurado.</p>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- PANEL B: Interesado en Economía -->
       <div class="toggle-panel" id="panel-economia">
         <div class="intro-grid">
           <div class="intro-text reveal">
-            <h3>El programa <em>#1 en México</em><br>te pone a prueba.</h3>
-            <p>El Tec Econ Challenge es la competencia de análisis económico del programa de Economía del Tec, el <a href="https://www.topuniversities.com/university-subject-rankings/economics-econometrics?countries=mx" target="_blank" class="ext-link">número 1 en México según el QS World Rankings 2026</a>.</p>
-            <p>El reto replica la forma en que trabajan los economistas: un caso con datos reales, actores en conflicto y una pregunta sin respuesta obvia. Tu equipo analiza, construye un argumento y lo defiende ante un jurado de investigadores y líderes del sector.</p>
-            <p>Es una oportunidad de conocer de cerca el programa, sus académicos y la red de <strong>egresados que ocupan posiciones relevantes en la economía mexicana</strong>, antes de cualquier proceso de admisión.</p>
+            <h3>Economía aplicada:<br><em>teoría, evidencia y decisiones.</em></h3>
+            <p>El reto replica una parte central del trabajo económico: entender un problema, distinguir argumentos plausibles, interpretar evidencia y reconocer lo que los datos sí y no permiten concluir.</p>
+            <p>Todos los equipos resuelven el mismo caso. La comparación se centra en la calidad del razonamiento, no en la cantidad de herramientas técnicas utilizadas.</p>
+            <p>Durante el proceso conocerás a profesores e investigadores del programa de Economía del Tec. La integración final de jurados, ExaTecs, socios e invitados será anunciada cuando esté confirmada.</p>
             <button class="intro-cta" onclick="handleForm(event, '')">Quiero registrarme</button>
           </div>
           <div class="intro-highlights reveal">
             <div class="highlight-card">
-              <div class="highlight-icon">📊</div>
+              <div class="highlight-icon">📚</div>
               <div class="highlight-text">
-                <h5>Economía aplicada, no memorística</h5>
-                <p>El reto evalúa razonamiento económico genuino: cómo lees un mercado, qué variables importan, cómo se construye un argumento con datos.</p>
+                <h5>Una ruta jerarquizada</h5>
+                <p>Materiales esenciales, bases obligatorias y documentos de profundización claramente separados.</p>
+              </div>
+            </div>
+            <div class="highlight-card">
+              <div class="highlight-icon">🔎</div>
+              <div class="highlight-text">
+                <h5>Correlación y causalidad</h5>
+                <p>Una sección accesible ayuda a interpretar evidencia causal sin exigir técnicas avanzadas.</p>
+              </div>
+            </div>
+            <div class="highlight-card">
+              <div class="highlight-icon">⚖️</div>
+              <div class="highlight-text">
+                <h5>Rúbricas publicadas</h5>
+                <p>Documento escrito y defensa final se evalúan con criterios y ponderaciones diferentes.</p>
               </div>
             </div>
             <div class="highlight-card">
               <div class="highlight-icon">🎓</div>
               <div class="highlight-text">
-                <h5>Sesiones con académicos del programa</h5>
-                <p>Durante el proceso tendrás acceso a sesiones mensuales con profesores e investigadores del programa de Economía del Tec.</p>
-              </div>
-            </div>
-            <div class="highlight-card">
-              <div class="highlight-icon">🌐</div>
-              <div class="highlight-text">
-                <h5>Una red que abre puertas</h5>
-                <p>Los finalistas conviven en la premiación con egresados que trabajan en Banxico, Barclays, El Colegio de México, el CIDE y otras instituciones. Es una oportunidad para conocer la red del programa en persona.</p>
-              </div>
-            </div>
-            <div class="highlight-card">
-              <div class="highlight-icon">🏅</div>
-              <div class="highlight-text">
-                <h5>Premios y reconocimiento</h5>
-                <p>Hasta $30,000 MXN para el equipo ganador, más constancia institucional y difusión pública para tu preparatoria.</p>
+                <h5>Acompañamiento con límites claros</h5>
+                <p>Los coaches orientan el proceso, pero el análisis y la autoría pertenecen al equipo.</p>
               </div>
             </div>
           </div>
@@ -1756,21 +2086,20 @@
   <section id="reto">
     <div class="container">
       <p class="section-label reveal">El reto</p>
-      <h2 class="section-title reveal">Economic Case<br><em>Challenge</em></h2>
+      <h2 class="section-title reveal">Un mismo caso.<br><em>Argumentos distintos.</em></h2>
       <div class="divider reveal"></div>
 
       <div class="reto-grid">
         <div class="reto-text reveal">
-          <p>El Tec Econ Challenge es una competencia nacional de análisis económico para estudiantes del último año de preparatoria. El reto entrega a cada equipo un <strong>caso económico hipotético simulado</strong>: datos, reportes y documentos construidos expresamente para la competencia.</p>
-          <p>Los equipos analizan el caso, construyen un argumento económico fundamentado y lo defienden ante un jurado compuesto por académicos e investigadores del Tec y de otras instituciones de prestigio.</p>
-          <p>El contenido es economía en sentido estricto: razonamiento sobre mercados, variables macroeconómicas y comportamiento de agentes.</p>
-          <p>La competencia está abierta a estudiantes del último año de preparatoria en México, independientemente de la carrera que aspiren a estudiar.</p>
-          <button class="materiales-cta" onclick="openModal('modal-materiales')">
+          <p>El Tec Econ Challenge es una competencia nacional para estudiantes del último año de preparatoria en México. Todos los equipos reciben el <strong>mismo caso económico hipotético simulado</strong>, con documentos, fuentes y bases de datos construidos expresamente para la competencia.</p>
+          <p>Cada equipo delimita el problema, interpreta la evidencia, construye una postura y presenta un documento escrito. Los equipos finalistas defienden su análisis presencialmente ante el jurado.</p>
+          <p>Los integrantes deben pertenecer a la <strong>misma preparatoria</strong>. Una institución puede registrar más de un equipo, sujeto al cupo general de la competencia.</p>
+          <button class="materiales-cta" onclick="document.getElementById('materiales').scrollIntoView({behavior:'smooth'})">
             <span class="materiales-cta-text">
-              <span class="materiales-cta-title">Ver materiales del caso</span>
-              <span class="materiales-cta-sub">Documento base, contexto, documentos institucionales y datos construidos para la competencia.</span>
+              <span class="materiales-cta-title">Conoce la ruta de materiales</span>
+              <span class="materiales-cta-sub">Qué leer primero, qué datos usar y qué documentos son opcionales.</span>
             </span>
-            <span class="materiales-cta-arrow">↗</span>
+            <span class="materiales-cta-arrow">↓</span>
           </button>
         </div>
 
@@ -1778,33 +2107,109 @@
           <div class="phase">
             <div class="phase-num">01</div>
             <div class="phase-content">
-              <h4>Introducción</h4>
-              <p>Acceso a materiales base: videos, lecturas y el caso simulado. Marco conceptual y conceptos clave del reto.</p>
+              <h4>Comprender</h4>
+              <p>Leer el caso, identificar actores, preguntas y conceptos económicos relevantes.</p>
             </div>
           </div>
           <div class="phase">
             <div class="phase-num">02</div>
             <div class="phase-content">
-              <h4>Análisis</h4>
-              <p>Trabajo con los datos del caso. Identificación de actores, tendencias y variables clave del escenario económico.</p>
+              <h4>Analizar</h4>
+              <p>Usar documentos y datos para reconocer patrones, tensiones y explicaciones alternativas.</p>
             </div>
           </div>
           <div class="phase">
             <div class="phase-num">03</div>
             <div class="phase-content">
-              <h4>Desarrollo</h4>
-              <p>Construcción del argumento económico justificado con evidencia del caso y fuentes externas.</p>
+              <h4>Argumentar</h4>
+              <p>Construir una respuesta coherente, sustentada y explícita sobre sus limitaciones.</p>
             </div>
           </div>
           <div class="phase">
             <div class="phase-num">04</div>
             <div class="phase-content">
-              <h4>Entrega y defensa</h4>
-              <p>Documento escrito más presentación ante jurado en la final presencial en Escuela de Gobierno y Transformación Pública del Tec de Monterrey.</p>
+              <h4>Defender</h4>
+              <p>Presentar el análisis y responder preguntas en la final presencial.</p>
             </div>
           </div>
         </div>
       </div>
+
+      <div class="facts-grid reveal">
+        <div class="fact-card"><div class="fact-label">Caso</div><div class="fact-value">El mismo para todos</div></div>
+        <div class="fact-card"><div class="fact-label">Equipo</div><div class="fact-value">3 a 5 estudiantes</div></div>
+        <div class="fact-card"><div class="fact-label">Institución</div><div class="fact-value">Todos de la misma preparatoria</div></div>
+        <div class="fact-card"><div class="fact-label">Registros</div><div class="fact-value">Más de un equipo por preparatoria</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MATERIALES -->
+  <section id="materiales">
+    <div class="container">
+      <p class="section-label reveal">Ruta de materiales</p>
+      <h2 class="section-title reveal">Lo esencial primero.<br><em>Profundiza después.</em></h2>
+      <div class="divider reveal"></div>
+      <p class="section-lead reveal">La página separa los materiales por función y nivel de prioridad. La ruta evita que los equipos confundan documentos obligatorios con lecturas complementarias y permite estimar mejor la carga de trabajo.</p>
+
+      <div class="roadmap-grid reveal">
+        <article class="roadmap-card">
+          <div class="roadmap-step">01</div>
+          <h3>Empieza aquí</h3>
+          <p>Convocatoria, guía del participante, mapa de materiales, preguntas centrales del caso y rúbricas.</p>
+          <div class="roadmap-meta"><span class="status-pill">Obligatorio</span><span class="status-pill muted">Orientación</span></div>
+        </article>
+        <article class="roadmap-card">
+          <div class="roadmap-step">02</div>
+          <h3>Paquete esencial</h3>
+          <p>Documento base y una selección breve de reportes y posturas que todos los equipos deben analizar.</p>
+          <div class="roadmap-meta"><span class="status-pill">Obligatorio</span><span class="status-pill muted">Lectura central</span></div>
+        </article>
+        <article class="roadmap-card">
+          <div class="roadmap-step">03</div>
+          <h3>Datos</h3>
+          <p>Bases del caso con notas metodológicas. Cada equipo debe utilizar al menos una base y crear una tabla o visualización propia.</p>
+          <div class="roadmap-meta"><span class="status-pill">Mínimo exigible</span><span class="status-pill muted">Evidencia</span></div>
+        </article>
+        <article class="roadmap-card">
+          <div class="roadmap-step">04</div>
+          <h3>Profundización</h3>
+          <p>Documentos institucionales, lecturas adicionales e identificación causal para equipos que quieran ampliar o contrastar su análisis.</p>
+          <div class="roadmap-meta"><span class="status-pill">Opcional</span><span class="status-pill muted">Nivel avanzado</span></div>
+        </article>
+      </div>
+
+      <div class="material-detail-grid reveal">
+        <div class="causal-box">
+          <span class="status-pill">Nueva sección</span>
+          <h3>Identificación causal, sin econometría avanzada</h3>
+          <p>El objetivo no es que los equipos apliquen una técnica sofisticada, sino que aprendan a distinguir entre una relación observada y una explicación causal.</p>
+          <ul>
+            <li>Separar correlación de causalidad.</li>
+            <li>Identificar explicaciones alternativas y factores simultáneos.</li>
+            <li>Preguntar qué comparación sería necesaria para sostener una afirmación.</li>
+            <li>Reconocer límites de los datos y evitar conclusiones más fuertes que la evidencia.</li>
+          </ul>
+        </div>
+        <div class="coach-guide-box">
+          <span class="status-pill">Documento por preparar</span>
+          <h3>Guía del coach</h3>
+          <p>La guía establecerá responsabilidades y límites comunes para reducir diferencias de acompañamiento entre equipos.</p>
+          <ul>
+            <li>Puede formular preguntas, revisar borradores y orientar métodos.</li>
+            <li>No puede escribir, analizar datos ni decidir la postura del equipo.</li>
+            <li>El equipo deberá declarar el acompañamiento recibido.</li>
+          </ul>
+        </div>
+      </div>
+
+      <button class="materiales-cta reveal" onclick="openModal('modal-materiales')">
+        <span class="materiales-cta-text">
+          <span class="materiales-cta-title">Abrir explorador de materiales</span>
+          <span class="materiales-cta-sub">Las descargas permanecerán bloqueadas hasta que la convocatoria, las guías y las rúbricas sean actualizadas.</span>
+        </span>
+        <span class="materiales-cta-arrow">↗</span>
+      </button>
     </div>
   </section>
 
@@ -1812,7 +2217,7 @@
   <section id="cronograma">
     <div class="container">
       <p class="section-label reveal">Cronograma</p>
-      <h2 class="section-title reveal">6 meses de <em>acompañamiento continuo</em></h2>
+      <h2 class="section-title reveal">Seis meses con <em>diciembre protegido</em></h2>
       <div class="divider reveal"></div>
 
       <div class="timeline reveal">
@@ -1822,27 +2227,34 @@
             <div class="timeline-dot active">1</div>
             <div class="timeline-period">Sep – Oct 2026</div>
             <div class="timeline-label">Convocatoria</div>
-            <div class="timeline-desc">Apertura de inscripciones en septiembre. El cupo es limitado, por lo que se recomienda registrar al equipo cuanto antes. Cierre de convocatoria y publicación de materiales en octubre.</div>
+            <div class="timeline-desc">Inscripción de equipos, confirmación de coach y publicación del paquete oficial.</div>
           </div>
           <div class="timeline-item">
             <div class="timeline-dot">2</div>
-            <div class="timeline-period">Oct – Dic 2026</div>
+            <div class="timeline-period">Oct – Nov 2026</div>
             <div class="timeline-label">Desarrollo</div>
-            <div class="timeline-desc">Trabajo en equipos con sesiones mensuales de acompañamiento y acceso a coaches.</div>
+            <div class="timeline-desc">Lectura, análisis de datos, sesiones académicas y trabajo con el coach.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot pause">—</div>
+            <div class="timeline-period">Diciembre 2026</div>
+            <div class="timeline-label">Periodo protegido</div>
+            <div class="timeline-desc">Sin entregas obligatorias ni sesiones programadas. El trabajo autónomo es opcional.</div>
           </div>
           <div class="timeline-item">
             <div class="timeline-dot">3</div>
-            <div class="timeline-period">Dic 2026 – Ene 2027</div>
-            <div class="timeline-label">Evaluación</div>
-            <div class="timeline-desc">Selección de los 7 equipos finalistas por el jurado.</div>
+            <div class="timeline-period">Enero 2027</div>
+            <div class="timeline-label">Entrega y evaluación</div>
+            <div class="timeline-desc">Entrega durante la primera mitad del mes y selección de los 7 finalistas en la segunda mitad.</div>
           </div>
           <div class="timeline-item">
             <div class="timeline-dot">4</div>
             <div class="timeline-period">Febrero 2027</div>
             <div class="timeline-label">Final y premiación</div>
-            <div class="timeline-desc">Defensa ante jurado y desayuno de premiación, el mismo día, en Escuela de Gobierno y Transformación Pública del Tec de Monterrey, Ciudad de México.</div>
+            <div class="timeline-desc">Defensa presencial y desayuno de cortesía en Ciudad de México.</div>
           </div>
         </div>
+        <div class="timeline-note"><strong>Fechas exactas por confirmar.</strong> La convocatoria oficial indicará el cierre de inscripciones, la fecha límite de entrega y el día de la final. No se aceptarán entregas posteriores a la fecha y hora establecidas.</div>
       </div>
     </div>
   </section>
@@ -1856,60 +2268,28 @@
 
       <div class="premios-grid">
         <div class="podium reveal">
-          <div class="prize-card first">
-            <div class="prize-place">🥇 Primer lugar</div>
-            <div class="prize-amount">$30,000 MXN</div>
-          </div>
-          <div class="prize-card">
-            <div class="prize-place">🥈 Segundo lugar</div>
-            <div class="prize-amount">$20,000 MXN</div>
-          </div>
-          <div class="prize-card">
-            <div class="prize-place">🥉 Tercer lugar</div>
-            <div class="prize-amount">$10,000 MXN</div>
-          </div>
-          <div class="prize-card">
-            <div class="prize-place">Coach del equipo ganador</div>
-            <div class="prize-amount">$5,000 MXN</div>
-          </div>
+          <div class="prize-card first"><div class="prize-place">🥇 Primer lugar</div><div class="prize-amount">$30,000 MXN</div></div>
+          <div class="prize-card"><div class="prize-place">🥈 Segundo lugar</div><div class="prize-amount">$20,000 MXN</div></div>
+          <div class="prize-card"><div class="prize-place">🥉 Tercer lugar</div><div class="prize-amount">$10,000 MXN</div></div>
+          <div class="prize-card"><div class="prize-place">Coach del equipo ganador</div><div class="prize-amount">$5,000 MXN</div></div>
         </div>
 
         <div class="recognitions reveal">
           <div class="recognition-item">
-            <div class="recognition-icon">
-              <svg viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-            </div>
-            <div class="recognition-text">
-              <h5>Constancia institucional</h5>
-              <p>Carta de reconocimiento del Tecnológico de Monterrey dirigida a la preparatoria de cada equipo finalista.</p>
-            </div>
+            <div class="recognition-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></div>
+            <div class="recognition-text"><h5>Constancia institucional</h5><p>Carta de reconocimiento para la preparatoria de cada equipo finalista.</p></div>
           </div>
           <div class="recognition-item">
-            <div class="recognition-icon">
-              <svg viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-            </div>
-            <div class="recognition-text">
-              <h5>Difusión pública</h5>
-              <p>Mención en redes y boletines del Tecnológico de Monterrey. Visibilidad para la preparatoria y sus estudiantes.</p>
-            </div>
+            <div class="recognition-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></div>
+            <div class="recognition-text"><h5>Difusión pública</h5><p>Mención en canales institucionales, sujeta a autorizaciones de imagen y participación.</p></div>
           </div>
           <div class="recognition-item">
-            <div class="recognition-icon">
-              <svg viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-            </div>
-            <div class="recognition-text">
-              <h5>Encuentro Nacional de Economistas</h5>
-              <p>Invitación exclusiva para los equipos ganadores al Encuentro Nacional organizado por las Sociedades de Alumnos de Economía del Tec en la región CDMX.</p>
-            </div>
+            <div class="recognition-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></div>
+            <div class="recognition-text"><h5>Encuentro académico</h5><p>Invitación para los equipos ganadores a una actividad de la comunidad de Economía del Tec, sujeta a confirmación.</p></div>
           </div>
           <div class="recognition-item">
-            <div class="recognition-icon">
-              <svg viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-            </div>
-            <div class="recognition-text">
-              <h5>Reconocimiento al coach</h5>
-              <p>Carta de reconocimiento del Tecnológico de Monterrey para el coach del equipo ganador.</p>
-            </div>
+            <div class="recognition-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></div>
+            <div class="recognition-text"><h5>Reconocimiento al coach</h5><p>Carta de reconocimiento para el coach del equipo ganador.</p></div>
           </div>
         </div>
       </div>
@@ -1925,104 +2305,104 @@
 
       <div class="coaches-grid">
         <div class="coaches-text reveal">
-          <p>Durante el período de desarrollo, cada equipo tiene acceso a dos formas de acompañamiento académico que no existen en ninguna otra competencia del país.</p>
-          <p>Las <strong>sesiones mensuales</strong> son encuentros virtuales con profesores e investigadores del programa de Economía del Tec: una presentación corta a cargo de un académico del programa, seguida de tiempo abierto para orientar a los equipos y resolver dudas sobre el caso.</p>
-          <p>El <strong>sistema de coaches</strong> permite a cada equipo designar a un asesor de su elección que actúa como guía metodológico: revisa borradores, da retroalimentación y orienta el análisis sin resolver el caso por el equipo.</p>
-          <button class="modal-trigger" onclick="openModal('modal-profesores')">Conoce a los académicos del programa ↗</button>
+          <p>Cada equipo elige y registra a su coach. Su función es acompañar el proceso con preguntas, orientación metodológica y retroalimentación, sin sustituir el trabajo intelectual de los estudiantes.</p>
+          <p>La <strong>guía del coach</strong> establecerá ejemplos concretos de acompañamiento permitido y no permitido. El equipo seguirá siendo responsable de las decisiones, el análisis, la redacción y la presentación.</p>
+          <p>Las sesiones académicas serán virtuales y comunes para todos los equipos. Las preguntas de interés general podrán incorporarse a la sección pública de aclaraciones.</p>
+          <button class="modal-trigger" onclick="openModal('modal-profesores')">Académicos participantes · por confirmar ↗</button>
         </div>
 
         <div class="sessions-list reveal">
-          <div class="session-item">
-            <div class="session-month">1</div>
-            <div class="session-info">
-              <h5>Sesión de apertura · Octubre</h5>
-              <p>Presentación del caso. Conceptos clave. Introducción al formato de evaluación.</p>
-            </div>
-          </div>
-          <div class="session-item">
-            <div class="session-month">2</div>
-            <div class="session-info">
-              <h5>Acompañamiento y avances · Noviembre</h5>
-              <p>Presentación académica y retroalimentación sobre el estado del análisis.</p>
-            </div>
-          </div>
-          <div class="session-item">
-            <div class="session-month">3</div>
-            <div class="session-info">
-              <h5>Acompañamiento y avances · Diciembre</h5>
-              <p>Presentación académica. Revisión de borradores y Q&amp;A abierto con el equipo.</p>
-            </div>
-          </div>
-          <div class="session-item">
-            <div class="session-month">4</div>
-            <div class="session-info">
-              <h5>Preparación para la final · Enero</h5>
-              <p>Tips para la defensa oral y simulacro ante jurado.</p>
-            </div>
-          </div>
+          <div class="session-item"><div class="session-month">1</div><div class="session-info"><h5>Apertura · Octubre</h5><p>Presentación del caso, ruta de materiales, reglas y rúbrica del documento escrito.</p></div></div>
+          <div class="session-item"><div class="session-month">2</div><div class="session-info"><h5>Análisis y datos · Noviembre</h5><p>Interpretación de evidencia, visualizaciones e introducción accesible a identificación causal.</p></div></div>
+          <div class="session-item"><div class="session-month">—</div><div class="session-info"><h5>Diciembre protegido</h5><p>Sin sesión obligatoria ni entrega programada.</p></div></div>
+          <div class="session-item"><div class="session-month">3</div><div class="session-info"><h5>Cierre y dudas · Enero</h5><p>Preguntas finales sobre formato, fuentes, integridad académica y entrega.</p></div></div>
+          <div class="session-item"><div class="session-month">4</div><div class="session-info"><h5>Preparación para la final · Febrero</h5><p>Sesión exclusiva para finalistas: estructura de presentación y práctica de preguntas.</p></div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- JURADO -->
+  <!-- EVALUACIÓN -->
   <section id="jurado">
     <div class="container">
       <p class="section-label reveal">Evaluación</p>
-      <h2 class="section-title reveal">Jurado y <em>socios estratégicos</em></h2>
+      <h2 class="section-title reveal">Dos etapas.<br><em>Dos rúbricas.</em></h2>
       <div class="divider reveal"></div>
 
       <div class="jurado-intro">
         <div class="jurado-text reveal">
-          <p>El jurado está integrado por profesores e investigadores del Tec de Monterrey, egresados con trayectoria destacada y líderes del sector público y privado. Esta composición garantiza rigor académico y perspectiva profesional en la evaluación.</p>
-          <p>Los trabajos son evaluados con una rúbrica publicada desde la convocatoria, sobre cinco criterios que priorizan el razonamiento económico sobre el conocimiento memorístico.</p>
+          <p>La evaluación del documento escrito y la defensa final usan criterios diferentes. Las ponderaciones se publicarán desde la convocatoria para que los equipos conozcan exactamente qué se espera en cada etapa.</p>
+          <p>La revisión preliminar se organizará por folio, sin mostrar el nombre de la preparatoria en el documento evaluado. La composición del jurado y de los invitados será publicada únicamente cuando esté confirmada.</p>
+          <div class="rubric-toggle">
+            <button class="rubric-btn active" onclick="switchRubric('escrita', this)">Documento escrito</button>
+            <button class="rubric-btn" onclick="switchRubric('final', this)">Defensa final</button>
+          </div>
         </div>
 
-        <div class="criterios reveal">
-          <div class="criterio">
-            <span class="criterio-num">01</span>
-            <span class="criterio-label">Coherencia económica con la teoría y el dato</span>
+        <div class="reveal">
+          <div class="rubric-panel active" id="rubric-escrita">
+            <div class="rubric-table">
+              <div class="rubric-row"><span class="rubric-name">Delimitación y comprensión del problema</span><span class="rubric-weight">15%</span></div>
+              <div class="rubric-row"><span class="rubric-name">Coherencia entre teoría, datos y conclusiones</span><span class="rubric-weight">25%</span></div>
+              <div class="rubric-row"><span class="rubric-name">Calidad del análisis de datos</span><span class="rubric-weight">25%</span></div>
+              <div class="rubric-row"><span class="rubric-name">Evidencia, fuentes y reconocimiento de limitaciones</span><span class="rubric-weight">20%</span></div>
+              <div class="rubric-row"><span class="rubric-name">Claridad, estructura y visualización</span><span class="rubric-weight">15%</span></div>
+            </div>
           </div>
-          <div class="criterio">
-            <span class="criterio-num">02</span>
-            <span class="criterio-label">Calidad y solidez del argumento</span>
-          </div>
-          <div class="criterio">
-            <span class="criterio-num">03</span>
-            <span class="criterio-label">Uso riguroso de evidencia y fuentes</span>
-          </div>
-          <div class="criterio">
-            <span class="criterio-num">04</span>
-            <span class="criterio-label">Claridad y fundamentación de la entrega</span>
-          </div>
-          <div class="criterio">
-            <span class="criterio-num">05</span>
-            <span class="criterio-label">Presentación y comunicación ante jurado</span>
+          <div class="rubric-panel" id="rubric-final">
+            <div class="rubric-table">
+              <div class="rubric-row"><span class="rubric-name">Solidez del argumento</span><span class="rubric-weight">25%</span></div>
+              <div class="rubric-row"><span class="rubric-name">Uso de evidencia y respuesta a objeciones</span><span class="rubric-weight">25%</span></div>
+              <div class="rubric-row"><span class="rubric-name">Claridad de la presentación</span><span class="rubric-weight">20%</span></div>
+              <div class="rubric-row"><span class="rubric-name">Defensa ante preguntas del jurado</span><span class="rubric-weight">20%</span></div>
+              <div class="rubric-row"><span class="rubric-name">Trabajo en equipo</span><span class="rubric-weight">10%</span></div>
+            </div>
           </div>
         </div>
+      </div>
+
+      <div class="evaluation-principles reveal">
+        <div class="principle-card"><h4>Comparabilidad</h4><p>Todos los equipos trabajan con el mismo caso y los mismos mínimos de evidencia.</p></div>
+        <div class="principle-card"><h4>Calibración</h4><p>El jurado recibirá criterios comunes y ejemplos de desempeño antes de evaluar.</p></div>
+        <div class="principle-card"><h4>Trazabilidad</h4><p>Las fuentes, datos, apoyos externos y usos de IA deberán declararse.</p></div>
       </div>
 
       <div class="socios-section reveal">
-        <p class="socios-title">Socios estratégicos · Primera edición 2026–2027</p>
-        <div class="socios-grid">
-          <div class="socio-card">
-            <div class="socio-sector">Gobierno</div>
-            <div class="socio-names">Banxico · SHCP · IMCO</div>
-          </div>
-          <div class="socio-card">
-            <div class="socio-sector">Industria</div>
-            <div class="socio-names">Barclays · Banorte · BBVA</div>
-          </div>
-          <div class="socio-card">
-            <div class="socio-sector">Think tanks</div>
-            <div class="socio-names">CEEY · IMCO · México Evalúa</div>
-          </div>
-          <div class="socio-card">
-            <div class="socio-sector">Egresados</div>
-            <div class="socio-names">G. Casillas · G. Yorio · E. Arceo · R. Campos</div>
-          </div>
+        <p class="socios-title">Jurado, socios, ExaTecs e invitados · por confirmar</p>
+        <div class="pending-grid">
+          <div class="pending-card"><h4>Jurado académico</h4><p>Profesores e investigadores del Tec y de otras instituciones. Integración en proceso.</p></div>
+          <div class="pending-card"><h4>Sector y ExaTecs</h4><p>Participantes con experiencia pública, privada y social. Invitaciones en proceso.</p></div>
+          <div class="pending-card"><h4>Anfitriones del desayuno</h4><p>Perfiles y mesas se anunciarán después de recibir confirmación formal.</p></div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ENTREGABLE E INTEGRIDAD -->
+  <section id="integridad">
+    <div class="container">
+      <p class="section-label reveal">Entregable e integridad académica</p>
+      <h2 class="section-title reveal">Evidencia propia.<br><em>Reglas claras.</em></h2>
+      <div class="divider reveal"></div>
+
+      <div class="policy-grid reveal">
+        <article class="policy-card">
+          <h3>Documento escrito</h3>
+          <p>La versión de trabajo contempla un máximo de <strong>15 páginas</strong>. La convocatoria definirá el conteo de portada, referencias y anexos, así como el formato de archivo.</p>
+          <ul><li>Entrega única dentro del plazo.</li><li>No se aceptan entregas tardías.</li><li>La versión enviada será la versión evaluada.</li></ul>
+        </article>
+        <article class="policy-card">
+          <h3>Mínimos de evidencia</h3>
+          <ul><li>Usar al menos una base proporcionada por la competencia.</li><li>Incluir al menos una tabla o visualización elaborada por el equipo.</li><li>Explicar qué muestran los datos y qué no permiten concluir.</li><li>Citar claramente todas las fuentes externas.</li></ul>
+        </article>
+        <article class="policy-card">
+          <h3>Plagio e inteligencia artificial</h3>
+          <p>La IA puede apoyar tareas delimitadas, pero no sustituir la autoría ni el razonamiento del equipo.</p>
+          <ul><li>Permitido: lluvia de ideas, revisión de redacción, apoyo técnico o programación.</li><li>No permitido: generar íntegramente el análisis, inventar datos o referencias, ni ocultar su uso.</li><li>El equipo declarará qué herramientas utilizó y para qué.</li></ul>
+        </article>
+      </div>
+
+      <div class="policy-alert reveal"><strong>Verificación académica.</strong> El equipo organizador podrá realizar revisiones de similitud, fuentes, trazabilidad de archivos y consistencia de autoría mediante software académico. Cualquier señal será revisada por la organización antes de determinar un incumplimiento.</div>
     </div>
   </section>
 
@@ -2035,54 +2415,17 @@
 
       <div class="final-grid">
         <div class="final-text reveal">
-          <p>Los 7 equipos finalistas serán convocados a la <strong>final presencial en Escuela de Gobierno y Transformación Pública del Tec de Monterrey</strong>, donde defenderán su caso ante el jurado en una sesión de preguntas y respuestas.</p>
-          <p>El mismo día se realiza el <strong>desayuno de premiación</strong>: un evento de alto nivel donde cada mesa tiene un anfitrión asignado del ecosistema de Economía del Tec, creando conversaciones genuinas entre los finalistas, sus familias y figuras de primer nivel del sector.</p>
-          <button class="modal-trigger" onclick="openModal('modal-anfitriones')">Ver perfil de anfitriones ↗</button>
+          <p>Los 7 equipos finalistas serán convocados a la <strong>Escuela de Gobierno y Transformación Pública del Tec de Monterrey</strong>, donde presentarán su análisis y responderán preguntas del jurado.</p>
+          <p>La defensa y el <strong>desayuno de premiación</strong> se realizarán el mismo día. El desayuno será de cortesía para los finalistas y sus familiares registrados; el número de acompañantes se confirmará por razones de capacidad.</p>
+          <p>La competencia <strong>no cubre traslado ni alojamiento</strong>. Estos gastos corresponden a los equipos, sus familias o sus instituciones.</p>
+          <button class="modal-trigger" onclick="openModal('modal-anfitriones')">Anfitriones e invitados · por confirmar ↗</button>
         </div>
 
-        <div class="anfitriones reveal">
-          <div class="anfitrion">
-            <div class="anfitrion-dot"></div>
-            <div>
-              <div class="anfitrion-name">Edna Jaime</div>
-              <div class="anfitrion-role">Decana Nacional, ECSG · Tec de Monterrey</div>
-            </div>
-          </div>
-          <div class="anfitrion">
-            <div class="anfitrion-dot"></div>
-            <div>
-              <div class="anfitrion-name">Josefina Cortés</div>
-              <div class="anfitrion-role">Decana Regional CDMX, ECSG · Tec de Monterrey</div>
-            </div>
-          </div>
-          <div class="anfitrion">
-            <div class="anfitrion-dot"></div>
-            <div>
-              <div class="anfitrion-name">Gabriel Casillas</div>
-              <div class="anfitrion-role">ExaTec · Economista en jefe, Barclays</div>
-            </div>
-          </div>
-          <div class="anfitrion">
-            <div class="anfitrion-dot"></div>
-            <div>
-              <div class="anfitrion-name">Gabriel Yorio</div>
-              <div class="anfitrion-role">ExaTec · Subsecretario de Hacienda</div>
-            </div>
-          </div>
-          <div class="anfitrion">
-            <div class="anfitrion-dot"></div>
-            <div>
-              <div class="anfitrion-name">Eva Arceo</div>
-              <div class="anfitrion-role">ExaTec · Directora de la División de Economía, CIDE</div>
-            </div>
-          </div>
-          <div class="anfitrion">
-            <div class="anfitrion-dot"></div>
-            <div>
-              <div class="anfitrion-name">Raymundo Campos</div>
-              <div class="anfitrion-role">ExaTec · Director del Centro de Estudios Económicos, El Colegio de México</div>
-            </div>
-          </div>
+        <div class="final-facts reveal">
+          <div class="final-fact"><strong>7 equipos finalistas</strong><span>Seleccionados mediante la evaluación del documento escrito.</span></div>
+          <div class="final-fact"><strong>Defensa y preguntas</strong><span>El formato, duración y orden de participación se publicarán en la convocatoria.</span></div>
+          <div class="final-fact"><strong>Desayuno sin costo</strong><span>Para finalistas y familiares previamente registrados.</span></div>
+          <div class="final-fact"><strong>Traslado no incluido</strong><span>La organización no cubre transporte, viáticos ni hospedaje.</span></div>
         </div>
       </div>
     </div>
@@ -2097,28 +2440,16 @@
 
       <div class="programa-grid">
         <div class="programa-stats reveal">
-          <div class="stat-card">
-            <div class="stat-num">#1</div>
-            <div class="stat-label">En México en Economía y Econometría, <a href="https://www.topuniversities.com/university-subject-rankings/economics-econometrics?countries=mx" target="_blank" class="ext-link">QS World Rankings by Subject 2026</a></div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-num">95-100%</div>
-            <div class="stat-label">Empleabilidad de egresados del programa</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-num">3</div>
-            <div class="stat-label">Campus coordinadores en la Región Ciudad de México</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-num">+</div>
-            <div class="stat-label">El programa de Economía más innovador de México</div>
-          </div>
+          <div class="stat-card"><div class="stat-num">#1</div><div class="stat-label">En México en Economía y Econometría, <a href="https://www.topuniversities.com/university-subject-rankings/economics-econometrics?countries=mx" target="_blank" class="ext-link">QS World Rankings by Subject 2026</a></div></div>
+          <div class="stat-card"><div class="stat-num">3</div><div class="stat-label">Campus coordinadores en la Región Ciudad de México</div></div>
+          <div class="stat-card"><div class="stat-num">1</div><div class="stat-label">Caso común para todos los equipos participantes</div></div>
+          <div class="stat-card"><div class="stat-num">MX</div><div class="stat-label">Convocatoria abierta a preparatorias de todo el país</div></div>
         </div>
 
         <div class="programa-text reveal">
-          <p>El Tec Econ Challenge es una iniciativa de la Dirección del Programa de Licenciatura en Economía de la Escuela de Ciencias Sociales y Gobierno, coordinada desde los campus Ciudad de México, Santa Fe y Estado de México.</p>
-          <p>El programa de Economía del Tec es el número 1 en México según el <a href="https://www.topuniversities.com/university-subject-rankings/economics-econometrics?countries=mx" target="_blank" class="ext-link">QS World University Rankings by Subject 2026</a>, con una empleabilidad de egresados superior al 95%.</p>
-          <p>La competencia está diseñada para mostrar lo que distingue al programa: rigor analítico, investigación de frontera y una red de egresados en los lugares más relevantes de la economía mexicana e internacional. <a href="https://tec.mx/es/ciencias-sociales-y-gobierno/licenciatura-en-economia?gclsrc=aw.ds&gad_source=1" target="_blank" class="ext-link">Conoce la licenciatura.</a></p>
+          <p>El Tec Econ Challenge es una iniciativa del Programa de Licenciatura en Economía de la Escuela de Ciencias Sociales y Gobierno, coordinada desde los campus Ciudad de México, Santa Fe y Estado de México.</p>
+          <p>La competencia busca acercar a estudiantes de preparatoria a una forma rigurosa y accesible de hacer economía: definir preguntas, utilizar evidencia, contrastar explicaciones y comunicar decisiones.</p>
+          <p>La integración de académicos, jurados, ExaTecs, socios e invitados será anunciada conforme existan confirmaciones formales. <a href="https://tec.mx/es/ciencias-sociales-y-gobierno/licenciatura-en-economia?gclsrc=aw.ds&gad_source=1" target="_blank" class="ext-link">Conoce la licenciatura.</a></p>
         </div>
       </div>
     </div>
@@ -2128,59 +2459,27 @@
   <section id="faq">
     <div class="container">
       <p class="section-label reveal">Preguntas frecuentes</p>
-      <h2 class="section-title reveal">Todo lo que <em>necesitas saber</em></h2>
+      <h2 class="section-title reveal">Reglas y <em>aclaraciones</em></h2>
       <div class="divider reveal"></div>
 
       <div class="faq-list">
-        <div class="faq-item reveal">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            ¿Quién puede participar?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">Cualquier estudiante que curse el último año de preparatoria en México, independientemente de la institución o de la carrera que aspire a estudiar. No es necesario querer estudiar Economía para participar.</div>
-        </div>
-        <div class="faq-item reveal">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            ¿Cuántas personas puede tener un equipo?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">Los equipos deben tener entre 3 y 5 integrantes. No se aceptan participantes individuales ni equipos de más de 5 personas. Todos los integrantes deben ser estudiantes activos del último año de preparatoria.</div>
-        </div>
-        <div class="faq-item reveal">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            ¿Se necesitan conocimientos avanzados de economía?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">No. El reto evalúa razonamiento económico, no conocimiento memorístico ni herramientas econométricas avanzadas. Los materiales base incluyen todo el marco conceptual necesario para abordar el caso. Lo que se valora es la capacidad de analizar, argumentar y comunicar con claridad.</div>
-        </div>
-        <div class="faq-item reveal">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            ¿Qué es el sistema de coaches?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">Cada equipo puede designar un coach de su elección que actúa como guía metodológico. El coach puede revisar borradores y dar retroalimentación, pero no puede resolver el caso por el equipo. El coach del equipo ganador recibe un reconocimiento formal y un premio de $5,000 MXN.</div>
-        </div>
-        <div class="faq-item reveal">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            ¿Tiene costo participar?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">No. La inscripción es completamente gratuita. Las sesiones de acompañamiento mensual también son sin costo para todos los equipos registrados.</div>
-        </div>
-        <div class="faq-item reveal">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            ¿Dónde es la final presencial?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">La final presencial y el desayuno de premiación se realizarán el mismo día, en el campus Escuela de Gobierno y Transformación Pública del Tec de Monterrey, en Ciudad de México, en febrero de 2027. Los 7 equipos finalistas recibirán todos los detalles con anticipación.</div>
-        </div>
-        <div class="faq-item reveal">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            ¿Cuándo abre la convocatoria?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">La convocatoria oficial se lanza en septiembre de 2026 y cierra en octubre. El cupo es limitado, por lo que conviene registrar el correo del equipo y completar la inscripción en cuanto se habilite el formulario.</div>
-        </div>
+        <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Quién puede participar?<span class="faq-icon">+</span></button><div class="faq-answer">Estudiantes activos del último año de preparatoria en México. No es necesario querer estudiar Economía ni haber cursado materias avanzadas de la disciplina.</div></div>
+        <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Los integrantes deben ser de la misma preparatoria?<span class="faq-icon">+</span></button><div class="faq-answer">Sí. Todos los integrantes de un equipo deben pertenecer a la misma preparatoria, aunque pueden cursar distintos grupos, salones o turnos.</div></div>
+        <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Puede una preparatoria registrar varios equipos?<span class="faq-icon">+</span></button><div class="faq-answer">Sí. Una misma preparatoria puede registrar más de un equipo, sujeto al cupo general y al cumplimiento de los requisitos de cada equipo.</div></div>
+        <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Todos resuelven el mismo caso?<span class="faq-icon">+</span></button><div class="faq-answer">Sí. Todos los equipos reciben el mismo caso, los mismos documentos base y las mismas bases de datos.</div></div>
+        <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Cuántas personas puede tener un equipo?<span class="faq-icon">+</span></button><div class="faq-answer">Entre 3 y 5 estudiantes. No se aceptan participantes individuales ni equipos de más de 5 integrantes.</div></div>
+        <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Cómo se asigna al coach?<span class="faq-icon">+</span></button><div class="faq-answer">El propio equipo elige y registra a su coach. El coach orienta el proceso y puede revisar avances, pero no puede resolver el caso, realizar el análisis ni escribir la entrega.</div></div>
+        <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Se necesitan conocimientos avanzados de economía?<span class="faq-icon">+</span></button><div class="faq-answer">No. La ruta esencial incluye el marco conceptual requerido. La evaluación premia la calidad del razonamiento y la interpretación de evidencia, no el uso de técnicas avanzadas por sí mismas.</div></div>
+        <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Qué extensión tendrá el documento?<span class="faq-icon">+</span></button><div class="faq-answer">La versión de trabajo contempla un máximo de 15 páginas. La convocatoria oficial definirá si la portada, referencias y anexos forman parte de ese límite, así como el formato del archivo.</div></div>
+        <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Qué uso de datos es obligatorio?<span class="faq-icon">+</span></button><div class="faq-answer">Cada equipo deberá utilizar al menos una base proporcionada e incluir al menos una tabla o visualización elaborada por el propio equipo, acompañada de una interpretación y de sus limitaciones.</div></div>
+        <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Se puede utilizar inteligencia artificial?<span class="faq-icon">+</span></button><div class="faq-answer">Sí, únicamente como apoyo delimitado, por ejemplo para lluvia de ideas, revisión de redacción o asistencia técnica. No puede sustituir el análisis ni la autoría del equipo. Todo uso deberá declararse y toda información deberá verificarse.</div></div>
+        <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Qué ocurre con el plagio o las fuentes inventadas?<span class="faq-icon">+</span></button><div class="faq-answer">El plagio, la fabricación de datos o referencias y la ocultación de ayuda externa constituyen incumplimientos. La organización podrá realizar verificaciones mediante software académico y revisión de fuentes y archivos.</div></div>
+        <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Se aceptan entregas tardías?<span class="faq-icon">+</span></button><div class="faq-answer">No. La plataforma cerrará en la fecha y hora establecidas. El equipo debe prever tiempo suficiente para completar la carga del archivo.</div></div>
+        <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Qué pasa si un integrante abandona el equipo?<span class="faq-icon">+</span></button><div class="faq-answer">El equipo debe comunicarse inmediatamente con la organización. Cualquier cambio deberá ser autorizado y mantener las condiciones de elegibilidad del equipo.</div></div>
+        <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Tiene costo participar?<span class="faq-icon">+</span></button><div class="faq-answer">No. La inscripción y las sesiones académicas son gratuitas. Para la final, la organización no cubre traslado, alojamiento ni viáticos.</div></div>
+        <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Los familiares pagan por asistir al desayuno?<span class="faq-icon">+</span></button><div class="faq-answer">No. El desayuno será de cortesía para los finalistas y familiares registrados. El número máximo de acompañantes se comunicará a los equipos finalistas.</div></div>
+        <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Cómo se resolverán las dudas generales?<span class="faq-icon">+</span></button><div class="faq-answer">Los equipos podrán escribir a <a href="mailto:marco.mendez@tec.mx" class="ext-link">marco.mendez@tec.mx</a>. Las aclaraciones que afecten a todos los participantes se publicarán en esta página, sin identificar al equipo que realizó la consulta.</div></div>
+        <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Cuándo abre la convocatoria?<span class="faq-icon">+</span></button><div class="faq-answer">La convocatoria oficial se publicará en septiembre de 2026 y cerrará en octubre. Las fechas exactas se anunciarán en esta página y en el formulario de inscripción.</div></div>
       </div>
     </div>
   </section>
@@ -2190,13 +2489,12 @@
     <div class="container">
       <p class="section-label reveal" style="text-align:center">Primera edición · 2026–2027</p>
       <h2 class="registro-title reveal">¿Tu equipo tiene <em>lo que se necesita?</em></h2>
-      <p class="registro-sub reveal">El cupo es limitado. Registra el correo de tu equipo para recibir la convocatoria oficial en septiembre de 2026 y completar la inscripción a tiempo.</p>
-
+      <p class="registro-sub reveal">Registra el correo del capitán para recibir la convocatoria oficial, las fechas definitivas y el aviso cuando se habiliten los materiales actualizados.</p>
       <form class="registro-form reveal" onsubmit="handleForm(event, 'registro-email')">
         <input type="email" id="registro-email" placeholder="Correo del capitán del equipo" required />
         <button type="submit">Registrarme</button>
       </form>
-      <p class="registro-note reveal">La convocatoria con el formulario completo de inscripción abre en septiembre de 2026. El registro de correo no garantiza un lugar; la participación se confirma al completar la inscripción oficial, sujeta a disponibilidad.</p>
+      <p class="registro-note reveal">El registro de correo no garantiza un lugar. La participación se confirma únicamente al completar la inscripción oficial, sujeta a disponibilidad.</p>
     </div>
   </section>
 
@@ -2204,16 +2502,9 @@
   <footer>
     <div class="container">
       <div class="footer-inner">
-        <div class="footer-brand">Tec Econ Challenge</div>
-        <div class="footer-info">
-          Escuela de Ciencias Sociales y Gobierno · Tec de Monterrey<br>
-          Región Ciudad de México · Primera edición 2026–2027
-        </div>
-        <div class="footer-contact">
-          Coordinación: Marco Méndez Atienza<br>
-          Director de Programa de LEC, Campus Ciudad de México<br>
-          <a href="mailto:marco.mendez@tec.mx">marco.mendez@tec.mx</a>
-        </div>
+        <div class="footer-brand">Tec Econ Challenge<br><span style="font-family:var(--sans);font-size:.58rem;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--cream-dim)">Torneo Nacional de Análisis Económico para Preparatorias</span></div>
+        <div class="footer-info">Escuela de Ciencias Sociales y Gobierno · Tec de Monterrey<br>Región Ciudad de México · Primera edición 2026–2027</div>
+        <div class="footer-contact">Coordinación: Marco Méndez Atienza<br>Director de Programa de LEC, Campus Ciudad de México<br><a href="mailto:marco.mendez@tec.mx">marco.mendez@tec.mx</a></div>
       </div>
     </div>
   </footer>
@@ -2222,36 +2513,20 @@
   <div class="modal-overlay" id="modal-materiales">
     <div class="modal" id="modal-materiales-inner">
       <button class="modal-close" onclick="closeModal('modal-materiales')">×</button>
-      <p class="modal-label">El reto</p>
-      <h3 class="modal-title">Materiales del caso</h3>
+      <p class="modal-label">Ruta de materiales</p>
+      <h3 class="modal-title">Convocatoria y documentos</h3>
       <div class="modal-divider"></div>
-
-      <!-- Estado "en preparación": visible mientras MATERIALES_DISPONIBLES es false -->
       <div id="materiales-wip">
-        <div class="modal-wip">Contenido en preparación</div>
+        <div class="modal-wip">Actualización en curso</div>
         <div class="modal-body">
-          <p>Cada equipo recibirá un paquete completo de materiales construidos expresamente para la competencia. El contenido será publicado en la convocatoria oficial de septiembre 2026.</p>
-          <p>El paquete incluirá:</p>
+          <p>Las descargas están temporalmente bloqueadas mientras se actualizan la convocatoria, la guía del participante, las rúbricas, la guía del coach y las políticas de integridad académica.</p>
+          <p>La versión pública se organizará en cuatro rutas: <strong>Empieza aquí</strong>, <strong>Paquete esencial</strong>, <strong>Datos</strong> y <strong>Profundización</strong>.</p>
         </div>
-        <div class="modal-section">
-          <h4>Documento base del caso</h4>
-          <p>Descripción del escenario económico, actores involucrados y la pregunta central que los equipos deben responder.</p>
-        </div>
-        <div class="modal-section">
-          <h4>Documentos de apoyo simulados</h4>
-          <p>Reportes, notas periodísticas y extractos de informes construidos para el caso, con posiciones e información complementaria.</p>
-        </div>
-        <div class="modal-section">
-          <h4>Paquete de datos</h4>
-          <p>Series de tiempo y tablas de indicadores de contexto con notas metodológicas para guiar el análisis.</p>
-        </div>
-        <div class="modal-section">
-          <h4>Guía de evaluación</h4>
-          <p>Rúbrica detallada publicada desde el inicio, con los cinco criterios de evaluación y su ponderación.</p>
-        </div>
+        <div class="modal-section"><h4>Mapa de materiales</h4><p>Orden de lectura, prioridad, propósito y tiempo estimado de cada documento, incorporados directamente en esta página.</p></div>
+        <div class="modal-section"><h4>Identificación causal</h4><p>Explicación accesible sobre correlación, causalidad, comparaciones y límites de la evidencia.</p></div>
+        <div class="modal-section"><h4>Guía del coach</h4><p>Funciones permitidas, límites de acompañamiento y declaración de apoyo recibido.</p></div>
+        <div class="modal-section"><h4>Rúbricas y políticas</h4><p>Ponderaciones del documento escrito y la final, mínimos de datos, fuentes, plagio y uso declarado de IA.</p></div>
       </div>
-
-      <!-- Explorador de materiales: construido dinámicamente solo si MATERIALES_DISPONIBLES es true -->
       <div id="materiales-explorer"></div>
     </div>
   </div>
@@ -2260,14 +2535,11 @@
   <div class="modal-overlay" id="modal-profesores">
     <div class="modal">
       <button class="modal-close" onclick="closeModal('modal-profesores')">×</button>
-      <p class="modal-label">Acompañamiento</p>
-      <h3 class="modal-title">Académicos del programa</h3>
+      <p class="modal-label">Acompañamiento académico</p>
+      <h3 class="modal-title">Académicos participantes</h3>
       <div class="modal-divider"></div>
-      <div class="modal-wip">Perfiles en preparación</div>
-      <div class="modal-body">
-        <p>Las sesiones mensuales estarán a cargo de profesores e investigadores del <a href="https://tec.mx/es/ciencias-sociales-y-gobierno/licenciatura-en-economia?gclsrc=aw.ds&gad_source=1" target="_blank" class="ext-link">programa de Licenciatura en Economía del Tec</a>, el programa número 1 en México según el <a href="https://www.topuniversities.com/university-subject-rankings/economics-econometrics?countries=mx" target="_blank" class="ext-link">QS World Rankings by Subject 2026</a>.</p>
-        <p>Los perfiles de los académicos participantes serán publicados en la convocatoria oficial de septiembre 2026.</p>
-      </div>
+      <div class="modal-wip">Por confirmar</div>
+      <div class="modal-body"><p>Las sesiones estarán a cargo de profesores e investigadores del programa de Economía del Tec. Los nombres, temas y fechas se publicarán únicamente después de contar con confirmación formal.</p></div>
     </div>
   </div>
 
@@ -2278,137 +2550,96 @@
       <p class="modal-label">Desayuno de premiación</p>
       <h3 class="modal-title">Anfitriones e invitados</h3>
       <div class="modal-divider"></div>
-      <div class="modal-wip">Perfiles en preparación</div>
-      <div class="modal-body">
-        <p>El desayuno de premiación reunirá a los equipos finalistas y sus familias con figuras destacadas del ecosistema de Economía del Tec: autoridades académicas, líderes de industria y gobierno, e investigadores de primer nivel.</p>
-        <p>Los perfiles completos de los anfitriones e invitados confirmados serán publicados conforme avance la organización del evento.</p>
-      </div>
+      <div class="modal-wip">Por confirmar</div>
+      <div class="modal-body"><p>La composición de anfitriones, ExaTecs, socios e invitados se anunciará conforme se reciban confirmaciones formales. La ausencia de nombres en esta versión evita presentar participaciones que todavía no están comprometidas.</p></div>
     </div>
   </div>
 
   <script>
-    // ====== CANDADO DE MATERIALES ======
-    // true  = muestra el explorador completo de materiales.
-    // false = muestra el mensaje "contenido en preparación" (estado actual del sitio).
-    // Cambiar manualmente esta línea antes de cada despliegue.
-    const MATERIALES_DISPONIBLES = true;
-
-    // Base de URLs raw del repo público del caso
+    // Mantener en false hasta que la segunda iteración de documentos esté publicada.
+    const MATERIALES_DISPONIBLES = false;
     const MATERIALES_REPO_BASE = 'https://raw.githubusercontent.com/lec-cdmx/TecEconChallenge/main/';
 
-    // Inventario de materiales, organizado por pestaña/carpeta.
-    // Editar esta lista (no el marcado) para agregar o modificar archivos.
     const MATERIALES_TABS = [
       {
-        id: 'convocatoria',
-        label: 'Convocatoria',
-        folder: '00_Convocatoria',
+        id: 'inicio', label: 'Empieza aquí',
         files: [
-          { archivo: 'convocatoria_oficial.pdf', titulo: 'Convocatoria oficial', descripcion: 'Bases completas del concurso: elegibilidad, fechas, formato y proceso de registro.' },
-          { archivo: 'guia_participante.pdf', titulo: 'Guía del participante', descripcion: 'Cómo abordar el caso, las cuatro preguntas del memo, formato del entregable y qué evalúa el jurado.' }
+          { archivo: 'convocatoria_oficial.pdf', folder: '00_Convocatoria', titulo: 'Convocatoria oficial', descripcion: 'Elegibilidad, fechas, formato, registro y reglas completas.', nivel: 'Obligatorio', tiempo: '15 min' },
+          { archivo: 'guia_participante.pdf', folder: '00_Convocatoria', titulo: 'Guía del participante', descripcion: 'Ruta para abordar el caso, preguntas, entregable y criterios de evaluación.', nivel: 'Obligatorio', tiempo: '20 min' },
+          { titulo: 'Mapa de materiales', descripcion: 'Orden de lectura, prioridad y tiempo estimado de cada archivo.', nivel: 'Obligatorio', estado: 'En preparación' },
+          { titulo: 'Guía del coach', descripcion: 'Funciones, límites y declaración de acompañamiento.', nivel: 'Coach', estado: 'En preparación' },
+          { titulo: 'Rúbricas completas', descripcion: 'Descriptores de desempeño para documento escrito y defensa final.', nivel: 'Obligatorio', estado: 'En preparación' }
         ]
       },
       {
-        id: 'contexto',
-        label: 'Contexto',
-        folder: '01_Contexto',
+        id: 'esenciales', label: 'Paquete esencial',
         files: [
-          { archivo: '01_reporte_CONASAM_balance_2018_2024.pdf', titulo: 'Reporte técnico CONASAM', descripcion: 'Balance oficial de indicadores 2018–2024. Fuente primaria de cifras del caso.' },
-          { archivo: '02_nota_favorable_recuperacion_salarial.pdf', titulo: 'Nota periodística: recuperación salarial', descripcion: 'Cobertura favorable del balance del incremento salarial.' },
-          { archivo: '03_nota_critica_costos_ocultos.pdf', titulo: 'Columna de opinión: costos ocultos', descripcion: 'Lectura crítica desde una perspectiva empresarial.' },
-          { archivo: '04_reportaje_textil_bajio.pdf', titulo: 'Reportaje de campo: textil del Bajío', descripcion: 'Crónica con testimonios directos de trabajadores y empresarios.' },
-          { archivo: '05_comunicado_CONAPYME.pdf', titulo: 'Comunicado de CONAPYME', descripcion: 'Postura oficial de la cámara empresarial de PyMEs.' },
-          { archivo: '06_comunicado_FNT.pdf', titulo: 'Comunicado del FNT', descripcion: 'Postura oficial del sindicato favorable al incremento.' },
-          { archivo: '07_informe_observatorio_trabajo_digno.pdf', titulo: 'Policy brief: Observatorio de Trabajo Digno', descripcion: 'Análisis independiente con hallazgos mixtos.' },
-          { archivo: '08_resumen_encuesta_trabajadores_pymes.pdf', titulo: 'Encuesta a trabajadores y PyMEs', descripcion: 'Resultados de percepción y condiciones laborales en campo.' }
+          { archivo: '01_reporte_CONASAM_balance_2018_2024.pdf', folder: '01_Contexto', titulo: 'Reporte técnico CONASAM', descripcion: 'Documento central de indicadores y antecedentes del caso.', nivel: 'Obligatorio', tiempo: '25 min' },
+          { archivo: '02_nota_favorable_recuperacion_salarial.pdf', folder: '01_Contexto', titulo: 'Nota: recuperación salarial', descripcion: 'Lectura favorable para contrastar argumentos.', nivel: 'Obligatorio', tiempo: '8 min' },
+          { archivo: '03_nota_critica_costos_ocultos.pdf', folder: '01_Contexto', titulo: 'Columna: costos ocultos', descripcion: 'Lectura crítica desde una perspectiva empresarial.', nivel: 'Obligatorio', tiempo: '8 min' },
+          { archivo: '07_informe_observatorio_trabajo_digno.pdf', folder: '01_Contexto', titulo: 'Policy brief independiente', descripcion: 'Hallazgos mixtos y discusión de limitaciones.', nivel: 'Obligatorio', tiempo: '15 min' }
         ]
       },
       {
-        id: 'institucionales',
-        label: 'Documentos institucionales',
-        folder: '03_Documentos institucionales',
+        id: 'datos', label: 'Datos',
         files: [
-          { archivo: '09_dictamen_tecnico_interno_CONASAM.pdf', titulo: 'Dictamen técnico interno, CONASAM', descripcion: 'Documento de trabajo no público, insumo del reporte oficial.' },
-          { archivo: '10_comparecencia_CONAPYME_comision_legislativa.pdf', titulo: 'Comparecencia legislativa', descripcion: 'Versión estenográfica ante comisión de trabajo.' },
-          { archivo: '11_solicitud_transparencia_respuesta_INDEEL.pdf', titulo: 'Solicitud de transparencia e INDEEL', descripcion: 'Trámite de acceso a información y respuesta institucional.' },
-          { archivo: '12_nota_tecnica_CEMEL.pdf', titulo: 'Nota técnica, CEMEL', descripcion: 'Working paper académico sobre identificación causal.' },
-          { archivo: '13_minuta_mesa_dialogo_tripartita.pdf', titulo: 'Minuta de mesa de diálogo', descripcion: 'Acta de negociación entre autoridad, empresas y sindicato.' }
+          { archivo: '01_salario_minimo_mensual.xlsx', folder: '02_Datos', titulo: 'Salario mínimo, serie mensual', descripcion: 'Salario nominal, inflación y salario real, 2018–2024.', nivel: 'Base', tiempo: 'Variable' },
+          { archivo: '02_empleo_formal_trimestral.xlsx', folder: '02_Datos', titulo: 'Empleo formal, serie trimestral', descripcion: 'Empleo por sector con detalle del quiebre de 2020.', nivel: 'Base', tiempo: 'Variable' },
+          { archivo: '03_informalidad_trimestral.xlsx', folder: '02_Datos', titulo: 'Informalidad, serie trimestral', descripcion: 'Tasa de informalidad por sector.', nivel: 'Base', tiempo: 'Variable' },
+          { archivo: '04_panel_pymes_textiles.xlsx', folder: '02_Datos', titulo: 'Panel de empresas textiles', descripcion: '80 empresas, datos anuales 2018–2024.', nivel: 'Base', tiempo: 'Variable' },
+          { archivo: '05_encuesta_trabajadores_microdatos.xlsx', folder: '02_Datos', titulo: 'Microdatos de encuesta laboral', descripcion: '520 observaciones a nivel individuo.', nivel: 'Base', tiempo: 'Variable' }
         ]
       },
       {
-        id: 'datos',
-        label: 'Datos',
-        folder: '02_Datos',
+        id: 'profundizacion', label: 'Profundización',
         files: [
-          { archivo: '01_salario_minimo_mensual.xlsx', titulo: 'Salario mínimo, serie mensual', descripcion: 'Salario nominal, inflación y salario real, 2018–2024.' },
-          { archivo: '02_empleo_formal_trimestral.xlsx', titulo: 'Empleo formal, serie trimestral', descripcion: 'Empleo por sector con detalle del quiebre de 2020.' },
-          { archivo: '03_informalidad_trimestral.xlsx', titulo: 'Informalidad, serie trimestral', descripcion: 'Tasa de informalidad por sector.' },
-          { archivo: '04_panel_pymes_textiles.xlsx', titulo: 'Panel de empresas textiles', descripcion: '80 empresas, datos anuales 2018–2024, PyMEs y grandes.' },
-          { archivo: '05_encuesta_trabajadores_microdatos.xlsx', titulo: 'Microdatos de encuesta laboral', descripcion: '520 encuestados, nivel individuo.' }
+          { titulo: 'Introducción a identificación causal', descripcion: 'Correlación, comparación, explicaciones alternativas y límites de inferencia.', nivel: 'Avanzado', estado: 'En preparación' },
+          { archivo: '12_nota_tecnica_CEMEL.pdf', folder: '03_Documentos institucionales', titulo: 'Nota técnica CEMEL', descripcion: 'Documento académico sobre identificación causal.', nivel: 'Avanzado', tiempo: '30 min' },
+          { archivo: '09_dictamen_tecnico_interno_CONASAM.pdf', folder: '03_Documentos institucionales', titulo: 'Dictamen técnico interno', descripcion: 'Insumo institucional con información adicional.', nivel: 'Opcional', tiempo: '15 min' },
+          { archivo: '10_comparecencia_CONAPYME_comision_legislativa.pdf', folder: '03_Documentos institucionales', titulo: 'Comparecencia legislativa', descripcion: 'Argumentos presentados ante una comisión.', nivel: 'Opcional', tiempo: '15 min' },
+          { archivo: '11_solicitud_transparencia_respuesta_INDEEL.pdf', folder: '03_Documentos institucionales', titulo: 'Solicitud de transparencia', descripcion: 'Respuesta institucional y trazabilidad documental.', nivel: 'Opcional', tiempo: '12 min' },
+          { archivo: '13_minuta_mesa_dialogo_tripartita.pdf', folder: '03_Documentos institucionales', titulo: 'Minuta de diálogo tripartito', descripcion: 'Negociación entre autoridad, empresas y sindicato.', nivel: 'Opcional', tiempo: '12 min' }
         ]
       }
     ];
 
-    function matFileUrl(folder, archivo) {
-      return MATERIALES_REPO_BASE + encodeURIComponent(folder) + '/' + encodeURIComponent(archivo);
-    }
-    function matIsXlsx(name) {
-      return /\.xlsx$/i.test(name);
-    }
-    function matIcon(name) {
-      return matIsXlsx(name) ? '📊' : '📄';
-    }
-    function matOfficeViewerUrl(rawUrl) {
-      return 'https://view.officeapps.live.com/op/embed.aspx?src=' + encodeURIComponent(rawUrl);
-    }
-    // raw.githubusercontent.com sirve los PDFs con cabeceras que fuerzan la
-    // descarga en vez de mostrarlos en un <iframe>; se usa el visor de Google
-    // Docs como proxy de renderizado, igual que Office Online para los .xlsx.
-    function matGoogleViewerUrl(rawUrl) {
-      return 'https://docs.google.com/viewer?embedded=true&url=' + encodeURIComponent(rawUrl);
-    }
-    function matEmbedUrl(rawUrl, isXlsx) {
-      return isXlsx ? matOfficeViewerUrl(rawUrl) : matGoogleViewerUrl(rawUrl);
-    }
+    function matFileUrl(folder, archivo) { return MATERIALES_REPO_BASE + encodeURIComponent(folder) + '/' + encodeURIComponent(archivo); }
+    function matIsXlsx(name) { return /\.xlsx$/i.test(name || ''); }
+    function matIcon(name) { return matIsXlsx(name) ? '📊' : '📄'; }
+    function matOfficeViewerUrl(rawUrl) { return 'https://view.officeapps.live.com/op/embed.aspx?src=' + encodeURIComponent(rawUrl); }
+    function matGoogleViewerUrl(rawUrl) { return 'https://docs.google.com/viewer?embedded=true&url=' + encodeURIComponent(rawUrl); }
+    function matEmbedUrl(rawUrl, isXlsx) { return isXlsx ? matOfficeViewerUrl(rawUrl) : matGoogleViewerUrl(rawUrl); }
 
-    // Construye pestañas, tarjetas y visores del explorador dentro de #materiales-explorer.
-    // Solo se invoca cuando MATERIALES_DISPONIBLES es true (ver matInit más abajo).
     function matRenderExplorer() {
       const container = document.getElementById('materiales-explorer');
       if (!container) return;
-
       let tabsHtml = '<div class="mat-tabs">';
       MATERIALES_TABS.forEach((tab, i) => {
         tabsHtml += '<button class="mat-tab-btn' + (i === 0 ? ' active' : '') + '" data-mat-tab="' + tab.id + '" onclick="matSwitchTab(\'' + tab.id + '\')">' + tab.label + '</button>';
       });
       tabsHtml += '</div>';
-
       let panelsHtml = '';
       MATERIALES_TABS.forEach((tab, i) => {
-        panelsHtml += '<div class="mat-panel' + (i === 0 ? ' active' : '') + '" id="mat-panel-' + tab.id + '">'
-          + '<div class="mat-grid" id="mat-grid-' + tab.id + '"></div>'
-          + '<div class="mat-viewer" id="mat-viewer-' + tab.id + '" style="display:none;"></div>'
-          + '</div>';
+        panelsHtml += '<div class="mat-panel' + (i === 0 ? ' active' : '') + '" id="mat-panel-' + tab.id + '"><div class="mat-grid" id="mat-grid-' + tab.id + '"></div><div class="mat-viewer" id="mat-viewer-' + tab.id + '" style="display:none;"></div></div>';
       });
-
       container.innerHTML = tabsHtml + panelsHtml;
 
       MATERIALES_TABS.forEach(tab => {
         const grid = document.getElementById('mat-grid-' + tab.id);
         let html = '';
         tab.files.forEach((file, idx) => {
-          const url = matFileUrl(tab.folder, file.archivo);
-          const icon = matIcon(file.archivo);
+          const available = Boolean(file.archivo);
+          const url = available ? matFileUrl(file.folder, file.archivo) : '';
           html += '<div class="mat-card">'
-            + '<div class="mat-card-top">'
-              + '<div class="mat-card-icon">' + icon + '</div>'
-              + '<div class="mat-card-title">' + file.titulo + '</div>'
-            + '</div>'
+            + '<div class="mat-card-top"><div class="mat-card-icon">' + (available ? matIcon(file.archivo) : '◌') + '</div><div class="mat-card-title">' + file.titulo + '</div></div>'
             + '<div class="mat-card-desc">' + file.descripcion + '</div>'
-            + '<div class="mat-card-actions">'
-              + '<button class="mat-btn mat-btn-solid" onclick="matView(\'' + tab.id + '\', ' + idx + ')">Ver</button>'
-              + '<a class="mat-btn" href="' + url + '" target="_blank" rel="noopener">Descargar</a>'
+            + '<div class="mat-card-meta">'
+              + (file.nivel ? '<span class="mat-meta-pill">' + file.nivel + '</span>' : '')
+              + (file.tiempo ? '<span class="mat-meta-pill muted">' + file.tiempo + '</span>' : '')
             + '</div>'
+            + (available
+              ? '<div class="mat-card-actions"><button class="mat-btn mat-btn-solid" onclick="matView(\'' + tab.id + '\', ' + idx + ')">Ver</button><a class="mat-btn" href="' + url + '" target="_blank" rel="noopener">Descargar</a></div>'
+              : '<div class="mat-coming">' + (file.estado || 'Próximamente') + '</div>')
           + '</div>';
         });
         grid.innerHTML = html;
@@ -2423,19 +2654,12 @@
     function matView(tabId, idx) {
       const tab = MATERIALES_TABS.find(t => t.id === tabId);
       const file = tab.files[idx];
-      const url = matFileUrl(tab.folder, file.archivo);
+      if (!file || !file.archivo) return;
+      const url = matFileUrl(file.folder, file.archivo);
       const embedSrc = matEmbedUrl(url, matIsXlsx(file.archivo));
-
       const grid = document.getElementById('mat-grid-' + tabId);
       const viewer = document.getElementById('mat-viewer-' + tabId);
-
-      viewer.innerHTML = '<div class="mat-viewer-header">'
-        + '<button class="mat-btn" onclick="matBackToList(\'' + tabId + '\')">← Volver a la lista</button>'
-        + '<div class="mat-viewer-title">' + file.titulo + '</div>'
-        + '<a class="mat-btn mat-btn-solid" href="' + url + '" target="_blank" rel="noopener">Descargar</a>'
-        + '</div>'
-        + '<iframe class="mat-viewer-frame" src="' + embedSrc + '"></iframe>';
-
+      viewer.innerHTML = '<div class="mat-viewer-header"><button class="mat-btn" onclick="matBackToList(\'' + tabId + '\')">← Volver a la lista</button><div class="mat-viewer-title">' + file.titulo + '</div><a class="mat-btn mat-btn-solid" href="' + url + '" target="_blank" rel="noopener">Descargar</a></div><iframe class="mat-viewer-frame" src="' + embedSrc + '"></iframe>';
       grid.style.display = 'none';
       viewer.style.display = 'block';
     }
@@ -2447,9 +2671,6 @@
       viewer.innerHTML = '';
     }
 
-    // Activa el explorador únicamente si el candado está abierto.
-    // Con MATERIALES_DISPONIBLES = false no se toca el DOM: el modal
-    // conserva exactamente el estado "en preparación" ya existente.
     function matInit() {
       if (!MATERIALES_DISPONIBLES) return;
       const modal = document.getElementById('modal-materiales-inner');
@@ -2460,15 +2681,20 @@
     }
     matInit();
 
-    // TOGGLE INTRO
-    function switchPanel(panel) {
+    function switchPanel(panel, button) {
       document.querySelectorAll('.toggle-panel').forEach(p => p.classList.remove('active'));
       document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
       document.getElementById('panel-' + panel).classList.add('active');
-      event.currentTarget.classList.add('active');
+      button.classList.add('active');
     }
 
-    // SCROLL REVEAL
+    function switchRubric(panel, button) {
+      document.querySelectorAll('.rubric-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.rubric-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('rubric-' + panel).classList.add('active');
+      button.classList.add('active');
+    }
+
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
@@ -2480,7 +2706,6 @@
     }, { threshold: 0.1 });
     reveals.forEach(el => observer.observe(el));
 
-    // FAQ TOGGLE
     function toggleFaq(btn) {
       const item = btn.parentElement;
       const isOpen = item.classList.contains('open');
@@ -2488,7 +2713,6 @@
       if (!isOpen) item.classList.add('open');
     }
 
-    // MODALS
     function openModal(id) {
       document.getElementById(id).classList.add('open');
       document.body.style.overflow = 'hidden';
@@ -2498,29 +2722,21 @@
       document.body.style.overflow = '';
     }
     document.querySelectorAll('.modal-overlay').forEach(overlay => {
-      overlay.addEventListener('click', function(e) {
-        if (e.target === this) closeModal(this.id);
-      });
+      overlay.addEventListener('click', function(e) { if (e.target === this) closeModal(this.id); });
     });
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        document.querySelectorAll('.modal-overlay.open').forEach(m => closeModal(m.id));
-      }
+      if (e.key === 'Escape') document.querySelectorAll('.modal-overlay.open').forEach(m => closeModal(m.id));
     });
 
-    // FORM HANDLER
     const FORM_URL = 'https://forms.office.com/r/kVN2psmqqz';
     function handleForm(e, inputId) {
-      e.preventDefault();
+      if (e) e.preventDefault();
       window.open(FORM_URL, '_blank');
     }
 
-    // NAV SCROLL
     window.addEventListener('scroll', () => {
       const nav = document.querySelector('nav');
-      nav.style.borderBottomColor = window.scrollY > 50
-        ? 'rgba(201,168,76,0.25)'
-        : 'rgba(201,168,76,0.15)';
+      nav.style.borderBottomColor = window.scrollY > 50 ? 'rgba(201,168,76,0.25)' : 'rgba(201,168,76,0.15)';
     });
   </script>
 </body>
