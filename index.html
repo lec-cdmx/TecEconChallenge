@@ -1930,55 +1930,6 @@
     }
 
 
-    /* ── ACCESO RESTRINGIDO PARA JURADO ── */
-    #acceso-jurado {
-      padding: 6rem 0;
-      background: var(--ink-mid);
-      border-top: 1px solid rgba(201,168,76,0.1);
-      border-bottom: 1px solid rgba(201,168,76,0.1);
-    }
-    .jury-access-card {
-      display: grid;
-      grid-template-columns: 1.4fr auto;
-      gap: 2rem;
-      align-items: center;
-      padding: 2rem 2.2rem;
-      border: 1px solid rgba(201,168,76,0.28);
-      border-radius: 4px;
-      background: rgba(201,168,76,0.05);
-      margin-top: 2rem;
-    }
-    .jury-access-card h3 {
-      font-family: var(--serif);
-      font-size: 1.45rem;
-      color: var(--cream);
-      margin-bottom: .45rem;
-    }
-    .jury-access-card p { color: var(--cream-dim); font-size: .92rem; line-height: 1.7; }
-    .jury-login { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: 1.2rem; }
-    .jury-login input {
-      min-width: 250px; flex: 1; padding: .8rem 1rem; font-family: var(--sans);
-      color: var(--cream); background: rgba(255,255,255,.06);
-      border: 1px solid rgba(201,168,76,.3); border-radius: 2px; outline: none;
-    }
-    .jury-login input:focus { border-color: var(--gold); }
-    .jury-access-message { min-height: 1.4rem; margin-top: .7rem; font-size: .8rem; color: var(--cream-dim); }
-    .jury-access-message.error { color: #efb0aa; }
-    .jury-access-message.success { color: #b9dfc9; }
-    .jury-files { display: none; margin-top: 1.4rem; gap: .8rem; flex-wrap: wrap; }
-    .jury-files.visible { display: flex; }
-    .lock-symbol {
-      width: 74px; height: 74px; border-radius: 50%; border: 1px solid rgba(201,168,76,.35);
-      display: flex; align-items: center; justify-content: center; color: var(--gold);
-      font-family: var(--serif); font-size: 1rem; letter-spacing: .08em;
-    }
-    @media (max-width: 768px) {
-      .jury-access-card { grid-template-columns: 1fr; }
-      .lock-symbol { display: none; }
-      .jury-login { flex-direction: column; }
-      .jury-login input { min-width: 0; width: 100%; }
-    }
-
   </style>
 </head>
 
@@ -1995,7 +1946,6 @@
       <li><a href="#materiales">Materiales</a></li>
       <li><a href="#cronograma">Cronograma</a></li>
       <li><a href="#jurado">Evaluación</a></li>
-      <li><a href="#acceso-jurado">Acceso jurado</a></li>
       <li><a href="#final">Final</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#entrega">Entrega de memo</a></li>
@@ -2417,59 +2367,6 @@
   </section>
 
 
-  <!-- ACCESO RESTRINGIDO PARA JURADO -->
-  <section id="acceso-jurado">
-    <div class="container">
-      <p class="section-label reveal">Acceso restringido</p>
-      <h2 class="section-title reveal">Instrumentos operativos<br><em>para el jurado.</em></h2>
-      <div class="divider reveal"></div>
-      <div class="jury-access-card reveal">
-        <div>
-          <h3>Documentos de evaluación</h3>
-          <p>Esta sección reúne los instrumentos de captura y consolidación destinados al jurado y al equipo organizador. La rúbrica oficial permanece disponible públicamente en la ruta de materiales.</p>
-          <div class="jury-login">
-            <input id="jury-password" type="password" autocomplete="current-password" placeholder="Contraseña de acceso" aria-label="Contraseña de acceso para jurado">
-            <button class="mat-btn mat-btn-solid" type="button" onclick="unlockJuryFiles()">Ingresar</button>
-          </div>
-          <div id="jury-access-message" class="jury-access-message" aria-live="polite"></div>
-          <div id="jury-files" class="jury-files">
-            <a class="mat-btn mat-btn-solid" href="00_Convocatoria/Tec_Econ_Challenge_formato_operativo_evaluacion.xlsx" target="_blank" rel="noopener">Descargar formato operativo</a>
-            <a class="mat-btn" href="00_Convocatoria/rubrica.pdf" target="_blank" rel="noopener">Consultar rúbrica oficial</a>
-          </div>
-        </div>
-        <div class="lock-symbol" aria-hidden="true">JURADO</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ENTREGABLE E INTEGRIDAD -->
-  <section id="integridad">
-    <div class="container">
-      <p class="section-label reveal">Entregable e integridad académica</p>
-      <h2 class="section-title reveal">Evidencia propia.<br><em>Reglas claras.</em></h2>
-      <div class="divider reveal"></div>
-
-      <div class="policy-grid reveal">
-        <article class="policy-card">
-          <h3>Documento escrito</h3>
-          <p>El memo debe entregarse en un único PDF, con un máximo de 8 páginas de contenido (incluidas tablas, gráficas y notas). Portada y referencias no cuentan; no se admiten anexos analíticos adicionales.</p>
-          <ul><li>Entrega única dentro del plazo.</li><li>No se aceptan entregas tardías.</li><li>La versión enviada será la versión evaluada.</li></ul>
-        </article>
-        <article class="policy-card">
-          <h3>Mínimos de evidencia</h3>
-          <ul><li>Usar al menos una base proporcionada por la competencia.</li><li>Incluir al menos una tabla o visualización elaborada por el equipo.</li><li>Explicar qué muestran los datos y qué no permiten concluir.</li><li>Citar claramente todas las fuentes externas.</li></ul>
-        </article>
-        <article class="policy-card">
-          <h3>Autoría e inteligencia artificial</h3>
-          <p>Las herramientas de inteligencia artificial podrán utilizarse únicamente como apoyo complementario y no podrán sustituir el análisis ni la autoría del equipo.</p>
-          <ul><li>Usos permitidos: lluvia de ideas, revisión de redacción, apoyo técnico o programación.</li><li>Usos no permitidos: generar íntegramente el análisis, fabricar datos o referencias, u ocultar el uso de estas herramientas.</li><li>El equipo deberá declarar qué herramientas utilizó y con qué propósito.</li></ul>
-        </article>
-      </div>
-
-      <div class="policy-alert reveal"><strong>Integridad académica.</strong> La organización podrá revisar la similitud del texto, la correspondencia de las fuentes, la trazabilidad de los archivos y la consistencia de autoría. Cualquier posible incumplimiento será analizado antes de emitir una resolución.</div>
-    </div>
-  </section>
-
   <!-- FINAL -->
   <section id="final">
     <div class="container">
@@ -2782,51 +2679,6 @@
     }
     matInit();
 
-
-    async function sha256Hex(text) {
-      const bytes = new TextEncoder().encode(text);
-      const digest = await crypto.subtle.digest('SHA-256', bytes);
-      return Array.from(new Uint8Array(digest)).map(b => b.toString(16).padStart(2, '0')).join('');
-    }
-
-    async function unlockJuryFiles() {
-      const input = document.getElementById('jury-password');
-      const message = document.getElementById('jury-access-message');
-      const files = document.getElementById('jury-files');
-      const expectedHash = '92ebe2c0fc8e7ab027bf029dc18bf8431c33f2962aa13f7c069efbbe81c4dcac';
-      const value = input ? input.value : '';
-      if (!value) {
-        message.textContent = 'Ingresa la contraseña proporcionada por la coordinación.';
-        message.className = 'jury-access-message error';
-        return;
-      }
-      const actualHash = await sha256Hex(value);
-      if (actualHash === expectedHash) {
-        files.classList.add('visible');
-        message.textContent = 'Acceso habilitado para esta sesión.';
-        message.className = 'jury-access-message success';
-        sessionStorage.setItem('tecEconJuryAccess', '1');
-        input.value = '';
-      } else {
-        files.classList.remove('visible');
-        message.textContent = 'Contraseña incorrecta.';
-        message.className = 'jury-access-message error';
-      }
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const input = document.getElementById('jury-password');
-      if (input) input.addEventListener('keydown', e => { if (e.key === 'Enter') unlockJuryFiles(); });
-      if (sessionStorage.getItem('tecEconJuryAccess') === '1') {
-        const files = document.getElementById('jury-files');
-        const message = document.getElementById('jury-access-message');
-        if (files) files.classList.add('visible');
-        if (message) {
-          message.textContent = 'Acceso habilitado para esta sesión.';
-          message.className = 'jury-access-message success';
-        }
-      }
-    });
 
     function switchPanel(panel, button) {
       document.querySelectorAll('.toggle-panel').forEach(p => p.classList.remove('active'));
