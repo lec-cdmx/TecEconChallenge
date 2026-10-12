@@ -2057,6 +2057,11 @@
     :root[data-theme="dark"] .causal-box,
     :root[data-theme="dark"] .coach-guide-box { background:#202a40; }
 
+
+    /* Materiales: acceso breve a la biblioteca, sin duplicar su contenido. */
+    .materiales-compact { max-width:790px; text-align:center; }
+    .materiales-compact .section-lead { margin:1rem auto 1.5rem; }
+    .materiales-compact .materiales-cta { width:100%; max-width:600px; margin:1.3rem auto 0; text-align:left; }
   </style>
 </head>
 
@@ -2277,74 +2282,21 @@
 
   <!-- MATERIALES -->
   <section id="materiales">
-    <div class="container">
-      <p class="section-label reveal">Ruta de materiales</p>
-      <h2 class="section-title reveal">Lo esencial primero.<br><em>Profundiza después.</em></h2>
-      <div class="divider reveal"></div>
-      <p class="section-lead reveal">Los materiales están organizados por función y nivel de prioridad. Cada documento indica si es obligatorio, complementario o de profundización, así como su propósito y tiempo estimado de revisión.</p>
-
-      <div class="roadmap-grid reveal">
-        <article class="roadmap-card">
-          <div class="roadmap-step">01</div>
-          <h3>Empieza aquí</h3>
-          <p>Convocatoria, guía del participante, mapa de materiales, preguntas centrales del caso y rúbricas.</p>
-          <div class="roadmap-meta"><span class="status-pill">Obligatorio</span><span class="status-pill muted">Orientación</span></div>
-        </article>
-        <article class="roadmap-card">
-          <div class="roadmap-step">02</div>
-          <h3>Paquete esencial</h3>
-          <p>Reporte técnico CONASAM, documentos de contexto y posturas institucionales del expediente.</p>
-          <div class="roadmap-meta"><span class="status-pill">Obligatorio</span><span class="status-pill muted">Lectura central</span></div>
-        </article>
-        <article class="roadmap-card">
-          <div class="roadmap-step">03</div>
-          <h3>Datos</h3>
-          <p>Bases del caso con notas metodológicas. Cada equipo debe utilizar al menos una base y crear una tabla o visualización propia.</p>
-          <div class="roadmap-meta"><span class="status-pill">Requisito</span><span class="status-pill muted">Evidencia</span></div>
-        </article>
-        <article class="roadmap-card">
-          <div class="roadmap-step">04</div>
-          <h3>Profundización</h3>
-          <p>Documentos institucionales, lecturas adicionales e identificación causal para equipos que quieran ampliar o contrastar su análisis.</p>
-          <div class="roadmap-meta"><span class="status-pill">Opcional</span><span class="status-pill muted">Ampliación</span></div>
-        </article>
-      </div>
-
-      <div class="material-detail-grid reveal">
-        <div class="causal-box">
-          <span class="status-pill">Concepto clave</span>
-          <h3>Correlación e identificación causal</h3>
-          <p>Esta sección ofrece criterios para distinguir entre una relación observada y una explicación causal, sin requerir herramientas econométricas avanzadas.</p>
-          <ul>
-            <li>Separar correlación de causalidad.</li>
-            <li>Identificar explicaciones alternativas y factores simultáneos.</li>
-            <li>Preguntar qué comparación sería necesaria para sostener una afirmación.</li>
-            <li>Reconocer límites de los datos y evitar conclusiones más fuertes que la evidencia.</li>
-          </ul>
-        </div>
-        <div class="coach-guide-box">
-          <span class="status-pill">Acompañamiento académico</span>
-          <h3>Guía del coach</h3>
-          <p>La guía del coach establece responsabilidades y límites comunes para asegurar condiciones de acompañamiento comparables entre los equipos.</p>
-          <ul>
-            <li>Puede formular preguntas, revisar borradores y orientar métodos.</li>
-            <li>No puede escribir, analizar datos ni decidir la postura del equipo.</li>
-            <li>El equipo deberá declarar el acompañamiento recibido.</li>
-          </ul>
-        </div>
-      </div>
-
+    <div class="container materiales-compact">
+      <p class="section-label reveal">Materiales del reto</p>
+      <h2 class="section-title reveal">Todo lo que necesitas <em>para empezar.</em></h2>
+      <p class="section-lead reveal">Consulta y descarga el expediente, las guías y las bases de datos del caso.</p>
       <button class="materiales-cta reveal" onclick="openModal('modal-materiales')">
         <span class="materiales-cta-text">
-          <span class="materiales-cta-title">Consultar ruta de materiales</span>
-          <span class="materiales-cta-sub">Consulta y descarga la convocatoria, las guías, los documentos del caso y las bases de datos.</span>
+          <span class="materiales-cta-title">Explorar materiales</span>
+          <span class="materiales-cta-sub">Documentos y bases de datos disponibles</span>
         </span>
         <span class="materiales-cta-arrow">↗</span>
       </button>
     </div>
   </section>
 
-  <!-- CRONOGRAMA -->
+    <!-- CRONOGRAMA -->
   <section id="cronograma">
     <div class="container">
       <p class="section-label reveal">Cronograma</p>
@@ -2404,31 +2356,10 @@
             <div class="recognition-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></div>
             <div class="recognition-text"><h5>Reconocimiento al coach</h5><p>Carta de reconocimiento para el coach del equipo ganador.</p></div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- COACHES -->
-  <section id="coaches">
-    <div class="container">
-      <p class="section-label reveal">Acompañamiento</p>
-      <h2 class="section-title reveal">Sesiones y <em>sistema de coaches</em></h2>
-      <div class="divider reveal"></div>
-
-      <div class="coaches-grid">
-        <div class="coaches-text reveal">
-          <p>Cada equipo elige y registra a su coach. Su función es acompañar el proceso con preguntas, orientación metodológica y retroalimentación, sin sustituir el trabajo intelectual de los estudiantes.</p>
-          <p>La <strong>guía del coach</strong> presenta ejemplos concretos de acompañamiento permitido y no permitido. El equipo seguirá siendo responsable de las decisiones, el análisis, la redacción y la presentación.</p>
-          <p>Las sesiones académicas serán virtuales y comunes para todos los equipos. Las preguntas de interés general podrán incorporarse a la sección pública de aclaraciones.</p>
-          <button class="modal-trigger" onclick="openModal('modal-profesores')">Información sobre las sesiones académicas ↗</button>
-        </div>
-
-        <div class="sessions-list reveal">
-          <div class="session-item"><div class="session-month">1</div><div class="session-info"><h5>Apertura · Octubre</h5><p>Presentación del caso, ruta de materiales, reglas y rúbrica del documento escrito.</p></div></div>
-          <div class="session-item"><div class="session-month">2</div><div class="session-info"><h5>Análisis y datos · Noviembre</h5><p>Interpretación de evidencia, visualizaciones e introducción accesible a identificación causal.</p></div></div>
-          <div class="session-item"><div class="session-month">3</div><div class="session-info"><h5>Cierre y entrega · Enero</h5><p>Preguntas finales sobre formato, fuentes, integridad académica y entrega al cierre del periodo de trabajo.</p></div></div>
-          <div class="session-item"><div class="session-month">4</div><div class="session-info"><h5>Preparación para la final · Marzo</h5><p>Sesión exclusiva para finalistas: estructura de presentación y práctica de preguntas.</p></div></div>
+          <div class="recognition-item">
+            <div class="recognition-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></div>
+            <div class="recognition-text"><h5>Reconocimiento a las preparatorias finalistas</h5><p>Las preparatorias representadas por los seis equipos finalistas recibirán reconocimiento por su participación en la etapa final.</p></div>
+          </div>
         </div>
       </div>
     </div>
@@ -2627,18 +2558,6 @@
         <div class="modal-section"><h4>Rúbricas y políticas</h4><p>Ponderaciones del documento escrito y la final, mínimos de datos, fuentes, plagio y uso declarado de IA.</p></div>
       </div>
       <div id="materiales-explorer"></div>
-    </div>
-  </div>
-
-  <!-- MODAL: PROFESORES -->
-  <div class="modal-overlay" id="modal-profesores">
-    <div class="modal">
-      <button class="modal-close" onclick="closeModal('modal-profesores')">×</button>
-      <p class="modal-label">Acompañamiento académico</p>
-      <h3 class="modal-title">Académicos participantes</h3>
-      <div class="modal-divider"></div>
-      <div class="modal-wip">Próxima publicación</div>
-      <div class="modal-body"><p>Las sesiones estarán a cargo de profesores e investigadores del programa de Economía del Tec. El programa de sesiones, con nombres, temas y fechas, se publicará en esta página conforme se confirmen las participaciones.</p></div>
     </div>
   </div>
 
