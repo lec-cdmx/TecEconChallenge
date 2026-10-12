@@ -6,7 +6,7 @@
   <title>Tec Econ Challenge</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -2031,6 +2031,31 @@
       .hero-primary-btn,.hero-secondary-btn { min-width:unset; width:100%; flex:auto; }
       .container { padding:0 1.25rem; }
     }
+
+
+    /* ── Typography refinement and light-theme card contrast ── */
+    :root { --serif: 'Manrope', 'DM Sans', system-ui, sans-serif; }
+    .hero-title, .section-title, .registro-title, .intro-text h3,
+    .modal-title { font-family:var(--serif); font-weight:800; letter-spacing:-.045em; line-height:1.12; }
+    .hero-title { font-weight:800; letter-spacing:-.06em; }
+    .hero-title em, .section-title em, .registro-title em,
+    .intro-text h3 em, .modal-title em { font-style:normal; font-weight:800; }
+    .hero-subtitle, .socios-title { font-family:var(--sans); font-style:normal; font-weight:400; letter-spacing:normal; }
+    .badge-num, .prize-amount, .phase-num, .timeline-dot { font-family:var(--serif); font-weight:700; }
+    .causal-box, .coach-guide-box {
+      background:var(--card-surface);
+      border:1px solid var(--outline-soft);
+      border-radius:10px;
+    }
+    .causal-box h3,.coach-guide-box h3 { font-family:var(--serif); font-weight:750; color:var(--cream); letter-spacing:-.025em; }
+    :root:not([data-theme="dark"]) .causal-box,
+    :root:not([data-theme="dark"]) .coach-guide-box { background:#fff; box-shadow:0 4px 18px rgba(20,42,73,.06); }
+    :root:not([data-theme="dark"]) .causal-box p,
+    :root:not([data-theme="dark"]) .coach-guide-box p,
+    :root:not([data-theme="dark"]) .causal-box li,
+    :root:not([data-theme="dark"]) .coach-guide-box li { color:#42536d; }
+    :root[data-theme="dark"] .causal-box,
+    :root[data-theme="dark"] .coach-guide-box { background:#202a40; }
 
   </style>
 </head>
