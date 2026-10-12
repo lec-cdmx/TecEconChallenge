@@ -1930,6 +1930,108 @@
     }
 
 
+
+    /* ── 2026 LAUNCH REFRESH: LIGHT DEFAULT + DARK SWITCH ── */
+    :root {
+      --ink: #f7f8fb; --ink-mid: #eef2f8; --ink-light: #dfe7f1;
+      --cream: #18263b; --cream-dim: #42536d;
+      --white: #102a4b; --gold: #a27720; --gold-dim: #8b651b;
+      --blue: #194ea3; --blue-mid: #2b63b9;
+      --card-surface: #ffffff; --nav-surface: rgba(250,252,255,.95);
+      --outline-soft: rgba(35,65,105,.17);
+    }
+    :root[data-theme="dark"] {
+      --ink: #0b0f1a; --ink-mid: #1a2035; --ink-light: #2a3352;
+      --cream: #f5f0e8; --cream-dim: #d4cfc5;
+      --white: #ffffff; --gold: #c9a84c; --gold-dim: #8a6f30;
+      --blue: #1e3a8a; --blue-mid: #2a4fa0;
+      --card-surface: #202a40; --nav-surface: rgba(11,15,26,.94);
+      --outline-soft: rgba(201,168,76,.2);
+    }
+    body { transition: background .25s ease, color .25s ease; }
+    body::before { opacity: .3; }
+    nav { background: var(--nav-surface); padding: .7rem clamp(1.1rem,3vw,3rem); gap: 1.3rem; box-shadow: 0 3px 18px rgba(17,35,62,.06); }
+    .nav-logo { color: var(--white); font-size: 1.08rem; }
+    .nav-subtitle { color: var(--cream-dim); }
+    .nav-links { gap: clamp(.6rem,1.5vw,1.4rem); margin-left: auto; }
+    .nav-links a { color: var(--cream-dim); font-size: .69rem; letter-spacing: .055em; }
+    .nav-actions { display:flex; align-items:center; gap:.55rem; flex-shrink:0; }
+    .theme-toggle { display:flex; align-items:center; gap:.4rem; background:transparent; border:1px solid var(--outline-soft); border-radius:99px; color:var(--cream); padding:.53rem .8rem; cursor:pointer; font:500 .74rem var(--sans); }
+    .theme-toggle:hover { background:var(--ink-mid); }
+    .nav-convocatoria { text-decoration:none; font:600 .72rem var(--sans); color:var(--blue); background:var(--card-surface); border:1px solid currentColor; padding:.64rem .85rem; border-radius:6px; }
+    .nav-cta { color:#fff; background:#2058a6; font-weight:700; border-radius:6px; padding:.69rem 1rem; }
+    .nav-cta:hover { background:#123f80; }
+    #hero { min-height: min(810px, 92svh); padding: 8.4rem 1.4rem 5rem; background:radial-gradient(circle at 50% 22%,rgba(54,118,205,.13),transparent 52%), var(--ink); }
+    #hero::after { opacity:.35; }
+    .hero-eyebrow { color:var(--blue); font-weight:700; }
+    .hero-title { font-size:clamp(4rem,8vw,7.3rem); letter-spacing:-.025em; }
+    .hero-title em { color:var(--blue); }
+    .hero-descriptor { color:var(--cream-dim); }
+    .hero-subtitle { max-width:720px; font-size:clamp(1.25rem,2.5vw,1.7rem); color:var(--cream-dim); margin-bottom:2.1rem; }
+    .hero-badges { margin-bottom:2.2rem; gap:1.3rem; }
+    .badge-num { color:var(--blue); }
+    .badge-label { color:var(--cream-dim); }
+    .hero-actions-primary { max-width:630px; gap:.8rem; }
+    .hero-primary-btn,.hero-secondary-btn { flex:1; min-width:225px; text-align:center; display:inline-flex; align-items:center; justify-content:center; gap:.6rem; border-radius:8px; padding:1rem 1.4rem; font:700 .92rem var(--sans); text-decoration:none; transition:transform .2s, box-shadow .2s; }
+    .hero-primary-btn { background:#2058a6; color:#fff; box-shadow:0 9px 22px rgba(32,88,166,.23); }
+    .hero-secondary-btn { color:var(--blue); background:var(--card-surface); border:2px solid #2058a6; }
+    .hero-primary-btn:hover,.hero-secondary-btn:hover { transform:translateY(-2px); box-shadow:0 12px 25px rgba(32,88,166,.13); }
+    .hero-note { color:var(--cream-dim); opacity:1; font-size:.76rem; }
+    .hero-explore-link { display:inline-block; margin-top:1.25rem; text-decoration:none; color:var(--blue); font-size:.79rem; font-weight:600; position:relative; z-index:2; }
+    .scroll-indicator { display:none; }
+    section { scroll-margin-top:85px; }
+    #intro-toggle,#reto,#materiales,#cronograma,#premios,#coaches,#jurado,#final,#programa,#faq,#registro,#entrega { padding-top:clamp(3rem,5vw,4.6rem) !important; padding-bottom:clamp(3rem,5vw,4.6rem) !important; }
+    .reto-grid,.coaches-grid,.jurado-intro,.final-grid,.programa-grid,.premios-grid { gap:clamp(1.8rem,4vw,3.6rem); margin-top:2.3rem; }
+    .jurado-intro { margin-bottom:2.8rem; }
+    .timeline,.premios-grid,.final-grid,.coaches-grid,.programa-grid { margin-top:2rem; }
+    .toggle-header { margin-bottom:1.8rem; }
+    .socios-section { padding-top:2.2rem; }
+    .section-title { font-size:clamp(2rem,3.5vw,3.1rem); }
+    .divider { margin:1rem 0; }
+    .intro-text p,.reto-text p,.coaches-text p,.jurado-text p,.final-text p { font-size:.96rem; line-height:1.7; }
+    .prize-card,.session-item,.socio-card,.highlight-card,.stat-card,.fact-card { border-radius:9px; }
+    :root:not([data-theme="dark"]) .prize-card,
+    :root:not([data-theme="dark"]) .session-item,
+    :root:not([data-theme="dark"]) .socio-card,
+    :root:not([data-theme="dark"]) .highlight-card,
+    :root:not([data-theme="dark"]) .stat-card,
+    :root:not([data-theme="dark"]) .fact-card,
+    :root:not([data-theme="dark"]) .mat-card { background:var(--card-surface); border-color:var(--outline-soft); box-shadow:0 3px 15px rgba(20,42,73,.045); }
+    :root:not([data-theme="dark"]) .toggle-btn.active { background:#2058a6; color:#fff; }
+    :root:not([data-theme="dark"]) .nav-convocatoria { color:#174e9b; }
+    :root:not([data-theme="dark"]) .mat-meta-pill { background:#edf2f8; }
+    :root:not([data-theme="dark"]) input { color:var(--cream); }
+    :root:not([data-theme="dark"]) .hero-title, :root:not([data-theme="dark"]) .section-title { color:var(--white); }
+    :root:not([data-theme="dark"]) .section-label { color:var(--blue); }
+    :root:not([data-theme="dark"]) .registro-title em { color:var(--blue); }
+    @media (max-width: 1180px) {
+      .nav-subtitle { display:none; }
+      .nav-links { gap:.75rem; }
+      .nav-links a { font-size:.65rem; }
+    }
+    @media (max-width: 900px) {
+      .nav-links { display:none; }
+      nav { justify-content:space-between; }
+    }
+    @media (max-width: 600px) {
+      nav { padding:.65rem .8rem; gap:.3rem; }
+      .nav-logo { font-size:.92rem; }
+      .nav-actions { gap:.3rem; }
+      .theme-toggle { padding:.5rem; }
+      .theme-label { display:none; }
+      .nav-convocatoria { font-size:.62rem; padding:.55rem .48rem; }
+      .nav-cta { font-size:.62rem; padding:.6rem .55rem; }
+      #hero { min-height:auto; padding:8.1rem 1.25rem 3.6rem; }
+      .hero-title { font-size:clamp(3.45rem,13vw,5rem); }
+      .hero-title .line-indent { margin-left:.5em; }
+      .hero-badges { gap:.65rem; }
+      .badge-num { font-size:1.6rem; }
+      .badge-label { font-size:.58rem; }
+      .hero-actions-primary { flex-direction:column; width:100%; }
+      .hero-primary-btn,.hero-secondary-btn { min-width:unset; width:100%; flex:auto; }
+      .container { padding:0 1.25rem; }
+    }
+
   </style>
 </head>
 
@@ -1944,13 +2046,14 @@
     <ul class="nav-links">
       <li><a href="#reto">El reto</a></li>
       <li><a href="#materiales">Materiales</a></li>
-      <li><a href="#cronograma">Cronograma</a></li>
+      <li><a href="#cronograma">Fechas</a></li>
       <li><a href="#jurado">Evaluación</a></li>
-      <li><a href="#final">Final</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#entrega">Entrega de memo</a></li>
     </ul>
-    <a href="#registro" class="nav-cta">Regístrate</a>
+    <div class="nav-actions">
+      <button class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Cambiar a modo oscuro" aria-pressed="false" title="Cambiar tema"><span class="theme-icon" aria-hidden="true">☾</span><span class="theme-label">Oscuro</span></button>
+      <a href="00_Convocatoria/convocatoria_oficial.pdf" target="_blank" rel="noopener" class="nav-convocatoria">Convocatoria</a>
+      <a href="https://forms.cloud.microsoft/r/kVN2psmqqz" target="_blank" rel="noopener" class="nav-cta">Registro</a>
+    </div>
   </nav>
 
   <!-- HERO -->
@@ -1980,16 +2083,12 @@
       </div>
     </div>
 
-    <div class="hero-actions">
-      <button type="button" class="hero-pdf-btn" onclick="openModal('modal-materiales')">
-        Consultar convocatoria y materiales
-      </button>
-      <form class="hero-form" onsubmit="handleForm(event, 'hero-email')">
-        <input type="email" id="hero-email" placeholder="Tu correo electrónico" required />
-        <button type="submit">Registro oficial</button>
-      </form>
+    <div class="hero-actions hero-actions-primary">
+      <a class="hero-primary-btn" href="00_Convocatoria/convocatoria_oficial.pdf" target="_blank" rel="noopener">Leer convocatoria <span aria-hidden="true">↗</span></a>
+      <a class="hero-secondary-btn" href="https://forms.cloud.microsoft/r/kVN2psmqqz" target="_blank" rel="noopener">Registrar equipo <span aria-hidden="true">↗</span></a>
     </div>
-    <p class="hero-note"><strong>Consulta la convocatoria oficial.</strong> Revisa las reglas, la ruta de materiales y los requisitos de participación antes de registrar a tu equipo.</p>
+    <p class="hero-note"><strong>Participación gratuita · Equipos de 3 a 5 estudiantes.</strong> Consulta las bases y completa tu inscripción en el formulario oficial.</p>
+    <a class="hero-explore-link" href="#materiales">Explorar expediente y bases de datos ↓</a>
   </section>
 
   <!-- INTRO TOGGLE -->
@@ -2531,6 +2630,31 @@
   </div>
 
   <script>
+
+    // Tema claro de inicio; preferencia local solo después de cambiarla.
+    (function initializeTheme() {
+      let chosen = 'light';
+      try { chosen = localStorage.getItem('tecEconTheme') === 'dark' ? 'dark' : 'light'; } catch (_) {}
+      document.documentElement.dataset.theme = chosen;
+      updateThemeToggle();
+    })();
+    function updateThemeToggle() {
+      const button = document.querySelector('.theme-toggle');
+      if (!button) return;
+      const dark = document.documentElement.dataset.theme === 'dark';
+      button.setAttribute('aria-pressed', String(dark));
+      button.setAttribute('aria-label', dark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
+      button.querySelector('.theme-icon').textContent = dark ? '☀' : '☾';
+      const label = button.querySelector('.theme-label');
+      if (label) label.textContent = dark ? 'Claro' : 'Oscuro';
+    }
+    function toggleTheme() {
+      const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+      document.documentElement.dataset.theme = next;
+      try { localStorage.setItem('tecEconTheme', next); } catch (_) {}
+      updateThemeToggle();
+    }
+
     const MATERIALES_DISPONIBLES = true;
     const MATERIALES_REPO_BASE = 'https://raw.githubusercontent.com/lec-cdmx/TecEconChallenge/main/';
 
