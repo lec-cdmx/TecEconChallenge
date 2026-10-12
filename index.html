@@ -2062,6 +2062,21 @@
     .materiales-compact { max-width:790px; text-align:center; }
     .materiales-compact .section-lead { margin:1rem auto 1.5rem; }
     .materiales-compact .materiales-cta { width:100%; max-width:600px; margin:1.3rem auto 0; text-align:left; }
+
+    /* Acceso directo y cuenta regresiva de entrega en portada */
+    .hero-deadline-btn {
+      position:relative; z-index:2; display:flex; flex-direction:column; align-items:center;
+      width:min(100%,630px); padding:1rem 1.4rem; margin:1rem auto 0;
+      border:1px solid var(--outline-soft); background:var(--card-surface);
+      border-radius:10px; text-align:center; text-decoration:none;
+      box-shadow:0 5px 22px rgba(20,42,73,.07); transition:transform .2s,border-color .2s;
+    }
+    .hero-deadline-btn:hover { transform:translateY(-2px); border-color:var(--blue); }
+    .deadline-label { color:var(--cream-dim); font-size:.72rem; font-weight:700; letter-spacing:.035em; }
+    .deadline-timer { color:var(--white); font-family:var(--serif); font-size:clamp(1.2rem,3vw,1.65rem); font-weight:800; letter-spacing:-.035em; margin:.25rem 0; font-variant-numeric:tabular-nums; }
+    .deadline-link { color:var(--blue); font-size:.75rem; font-weight:700; }
+    @media (max-width:600px) { .hero-deadline-btn { padding:1rem .65rem; } .deadline-label { font-size:.65rem; } }
+
   </style>
 </head>
 
@@ -2117,6 +2132,11 @@
       <a class="hero-primary-btn" href="00_Convocatoria/convocatoria_oficial.pdf" target="_blank" rel="noopener">Leer convocatoria <span aria-hidden="true">↗</span></a>
       <a class="hero-secondary-btn" href="https://forms.cloud.microsoft/r/kVN2psmqqz" target="_blank" rel="noopener">Registrar equipo <span aria-hidden="true">↗</span></a>
     </div>
+    <a class="hero-deadline-btn" href="#entrega" aria-label="Ver instrucciones y fecha límite de entrega del memo">
+      <span class="deadline-label">Entrega del memo · 26 febrero 2027, 23:59 h (CDMX)</span>
+      <span class="deadline-timer" id="memo-countdown" role="timer" aria-live="off">Calculando tiempo restante…</span>
+      <span class="deadline-link">Ver instrucciones de entrega ↗</span>
+    </a>
     <p class="hero-note"><strong>Participación gratuita · Equipos de 3 a 5 estudiantes.</strong> Consulta las bases y completa tu inscripción en el formulario oficial.</p>
     <a class="hero-explore-link" href="#materiales">Explorar expediente y bases de datos ↓</a>
   </section>
@@ -2598,6 +2618,31 @@
       try { localStorage.setItem('tecEconTheme', next); } catch (_) {}
       updateThemeToggle();
     }
+
+
+    // Fecha límite: 26 de febrero de 2027, 23:59, tiempo de Ciudad de México (UTC-6).
+    (function setupMemoCountdown() {
+      const element = document.getElementById('memo-countdown');
+      if (!element) return;
+      const deadline = Date.parse('2027-02-26T23:59:00-06:00');
+      function render() {
+        const remaining = Math.max(0, deadline - Date.now());
+        if (remaining === 0) {
+          element.textContent = 'Plazo de entrega finalizado';
+          return;
+        }
+        const days = Math.floor(remaining / 86400000);
+        const hours = Math.floor((remaining % 86400000) / 3600000);
+        const minutes = Math.floor((remaining % 3600000) / 60000);
+        const seconds = Math.floor((remaining % 60000) / 1000);
+        element.textContent = days + ' días · ' +
+          String(hours).padStart(2,'0') + ' h · ' +
+          String(minutes).padStart(2,'0') + ' min · ' +
+          String(seconds).padStart(2,'0') + ' s';
+      }
+      render();
+      setInterval(render, 1000);
+    })();
 
     const MATERIALES_DISPONIBLES = true;
     const MATERIALES_REPO_BASE = 'https://raw.githubusercontent.com/lec-cdmx/TecEconChallenge/main/';
