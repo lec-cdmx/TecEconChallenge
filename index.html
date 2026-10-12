@@ -2084,6 +2084,25 @@
     .qs-hero-links a:hover { text-decoration-color:currentColor; }
     :root[data-theme="dark"] .qs-hero-links a { color:#e2c36d; }
     @media (max-width:600px) { .qs-hero-links { gap:.2rem .45rem; } .qs-hero-links a { font-size:.61rem; } }
+
+    /* FAQ más compacto, manteniendo todo el texto de las 17 respuestas. */
+    #faq .faq-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 1.8rem; max-width:none; margin-top:2rem; align-items:start; }
+    #faq .faq-item { border-bottom:1px solid var(--outline-soft); min-width:0; }
+    #faq .faq-question { font-size:.92rem; padding:1rem 0; line-height:1.35; }
+    #faq .faq-answer { font-size:.88rem; line-height:1.65; padding-bottom:1.15rem; }
+    #faq .faq-extra { display:none; }
+    #faq.faq-expanded .faq-extra { display:block; }
+    #faq .faq-more-btn { display:block; margin:1.5rem auto 0; padding:.8rem 1.3rem; border:1px solid var(--outline-soft); border-radius:8px; color:var(--blue); background:var(--card-surface); font:700 .82rem var(--sans); cursor:pointer; }
+    #faq .faq-more-btn:hover { border-color:var(--blue); }
+    /* Texto de sección y pie: contraste específico para ambos temas. */
+    :root:not([data-theme="dark"]) #faq .section-label { color:#1d559e; }
+    :root:not([data-theme="dark"]) #faq .section-title,
+    :root:not([data-theme="dark"]) #faq .section-title em { color:#182b47; }
+    :root:not([data-theme="dark"]) .footer-info { color:#42536d; }
+    :root:not([data-theme="dark"]) .footer-brand { color:#173d70; }
+    :root:not([data-theme="dark"]) .footer-contact { color:#42536d; }
+    :root[data-theme="dark"] .footer-info { color:#d4cfc5; }
+    @media(max-width:740px) { #faq .faq-list { grid-template-columns:1fr; gap:0; } }
   </style>
 </head>
 
@@ -2472,25 +2491,26 @@
       <h2 class="section-title reveal">Reglas y <em>aclaraciones</em></h2>
       <div class="divider reveal"></div>
 
-      <div class="faq-list">
+      <div class="faq-list" id="faq-list">
         <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Quién puede participar?<span class="faq-icon">+</span></button><div class="faq-answer">Estudiantes activos del último año de preparatoria en México. No es necesario querer estudiar Economía ni haber cursado materias avanzadas de la disciplina.</div></div>
         <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Los integrantes deben ser de la misma preparatoria?<span class="faq-icon">+</span></button><div class="faq-answer">Sí. Todos los integrantes de un equipo deben pertenecer a la misma preparatoria, aunque pueden cursar distintos grupos, salones o turnos.</div></div>
         <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Puede una preparatoria registrar varios equipos?<span class="faq-icon">+</span></button><div class="faq-answer">Sí. Una misma preparatoria puede registrar más de un equipo, sujeto al cupo general y al cumplimiento de los requisitos de cada equipo.</div></div>
         <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Todos resuelven el mismo caso?<span class="faq-icon">+</span></button><div class="faq-answer">Sí. Todos tienen acceso al mismo expediente del caso y a las mismas bases de datos, disponibles públicamente desde el 16 de octubre de 2026.</div></div>
         <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Cuántas personas puede tener un equipo?<span class="faq-icon">+</span></button><div class="faq-answer">Entre 3 y 5 estudiantes. No se aceptan participantes individuales ni equipos de más de 5 integrantes.</div></div>
         <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Cómo se asigna al coach?<span class="faq-icon">+</span></button><div class="faq-answer">El propio equipo elige y registra a su coach. El coach orienta el proceso y puede revisar avances, pero no puede resolver el caso, realizar el análisis ni escribir la entrega.</div></div>
-        <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Se necesitan conocimientos avanzados de economía?<span class="faq-icon">+</span></button><div class="faq-answer">No. La ruta esencial incluye el marco conceptual requerido. La evaluación premia la calidad del razonamiento y la interpretación de evidencia, no el uso de técnicas avanzadas por sí mismas.</div></div>
-        <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Qué extensión tendrá el documento?<span class="faq-icon">+</span></button><div class="faq-answer">El memo debe entregarse en un único PDF, con un máximo de 8 páginas de contenido (incluidas tablas, gráficas y notas). Portada y referencias no cuentan; no se admiten anexos analíticos adicionales.</div></div>
-        <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Qué uso de datos es obligatorio?<span class="faq-icon">+</span></button><div class="faq-answer">Cada equipo deberá utilizar al menos una base proporcionada e incluir al menos una tabla o visualización elaborada por el propio equipo, acompañada de una interpretación y de sus limitaciones.</div></div>
-        <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Se puede utilizar inteligencia artificial?<span class="faq-icon">+</span></button><div class="faq-answer">Sí, únicamente como apoyo delimitado, por ejemplo para lluvia de ideas, revisión de redacción o asistencia técnica. No puede sustituir el análisis ni la autoría del equipo. Todo uso deberá declararse y toda información deberá verificarse.</div></div>
-        <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Qué ocurre con el plagio o las fuentes inventadas?<span class="faq-icon">+</span></button><div class="faq-answer">El plagio, la fabricación de datos o referencias y la ocultación de ayuda externa constituyen incumplimientos. La organización podrá revisar la similitud del texto, las fuentes y los archivos entregados.</div></div>
-        <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Se aceptan entregas tardías?<span class="faq-icon">+</span></button><div class="faq-answer">No. La fecha límite es el 26 de febrero de 2027 a las 23:59 h, hora de Ciudad de México. La recepción se realiza mediante el enlace «Entregar memo» de esta página. El equipo debe prever tiempo suficiente para completar la carga del PDF.</div></div>
-        <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Qué pasa si un integrante abandona el equipo?<span class="faq-icon">+</span></button><div class="faq-answer">El equipo debe comunicarse inmediatamente con la organización. Cualquier cambio deberá ser autorizado y mantener las condiciones de elegibilidad del equipo.</div></div>
-        <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Tiene costo participar?<span class="faq-icon">+</span></button><div class="faq-answer">No. La inscripción y las sesiones académicas son gratuitas. Para la final, la organización no cubre traslado, alojamiento ni viáticos.</div></div>
-        <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Los familiares pagan por asistir al desayuno?<span class="faq-icon">+</span></button><div class="faq-answer">No. El desayuno será de cortesía para los finalistas y familiares registrados. El número máximo de acompañantes se comunicará a los equipos finalistas.</div></div>
-        <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Cómo se resolverán las dudas generales?<span class="faq-icon">+</span></button><div class="faq-answer">Los equipos podrán escribir a <a href="mailto:marco.mendez@tec.mx" class="ext-link">marco.mendez@tec.mx</a>. Las aclaraciones que afecten a todos los participantes se publicarán en esta página, sin identificar al equipo que realizó la consulta.</div></div>
-        <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">¿Cuándo abre la convocatoria?<span class="faq-icon">+</span></button><div class="faq-answer">La convocatoria y el expediente se publican el 16 de octubre de 2026. El registro permanece abierto hasta el 19 de febrero de 2027 a las 23:59 h (Ciudad de México). El memo se entrega a más tardar el 26 de febrero de 2027.</div></div>
+        <div class="faq-item reveal faq-extra"><button class="faq-question" onclick="toggleFaq(this)">¿Se necesitan conocimientos avanzados de economía?<span class="faq-icon">+</span></button><div class="faq-answer">No. La ruta esencial incluye el marco conceptual requerido. La evaluación premia la calidad del razonamiento y la interpretación de evidencia, no el uso de técnicas avanzadas por sí mismas.</div></div>
+        <div class="faq-item reveal faq-extra"><button class="faq-question" onclick="toggleFaq(this)">¿Qué extensión tendrá el documento?<span class="faq-icon">+</span></button><div class="faq-answer">El memo debe entregarse en un único PDF, con un máximo de 8 páginas de contenido (incluidas tablas, gráficas y notas). Portada y referencias no cuentan; no se admiten anexos analíticos adicionales.</div></div>
+        <div class="faq-item reveal faq-extra"><button class="faq-question" onclick="toggleFaq(this)">¿Qué uso de datos es obligatorio?<span class="faq-icon">+</span></button><div class="faq-answer">Cada equipo deberá utilizar al menos una base proporcionada e incluir al menos una tabla o visualización elaborada por el propio equipo, acompañada de una interpretación y de sus limitaciones.</div></div>
+        <div class="faq-item reveal faq-extra"><button class="faq-question" onclick="toggleFaq(this)">¿Se puede utilizar inteligencia artificial?<span class="faq-icon">+</span></button><div class="faq-answer">Sí, únicamente como apoyo delimitado, por ejemplo para lluvia de ideas, revisión de redacción o asistencia técnica. No puede sustituir el análisis ni la autoría del equipo. Todo uso deberá declararse y toda información deberá verificarse.</div></div>
+        <div class="faq-item reveal faq-extra"><button class="faq-question" onclick="toggleFaq(this)">¿Qué ocurre con el plagio o las fuentes inventadas?<span class="faq-icon">+</span></button><div class="faq-answer">El plagio, la fabricación de datos o referencias y la ocultación de ayuda externa constituyen incumplimientos. La organización podrá revisar la similitud del texto, las fuentes y los archivos entregados.</div></div>
+        <div class="faq-item reveal faq-extra"><button class="faq-question" onclick="toggleFaq(this)">¿Se aceptan entregas tardías?<span class="faq-icon">+</span></button><div class="faq-answer">No. La fecha límite es el 26 de febrero de 2027 a las 23:59 h, hora de Ciudad de México. La recepción se realiza mediante el enlace «Entregar memo» de esta página. El equipo debe prever tiempo suficiente para completar la carga del PDF.</div></div>
+        <div class="faq-item reveal faq-extra"><button class="faq-question" onclick="toggleFaq(this)">¿Qué pasa si un integrante abandona el equipo?<span class="faq-icon">+</span></button><div class="faq-answer">El equipo debe comunicarse inmediatamente con la organización. Cualquier cambio deberá ser autorizado y mantener las condiciones de elegibilidad del equipo.</div></div>
+        <div class="faq-item reveal faq-extra"><button class="faq-question" onclick="toggleFaq(this)">¿Tiene costo participar?<span class="faq-icon">+</span></button><div class="faq-answer">No. La inscripción y las sesiones académicas son gratuitas. Para la final, la organización no cubre traslado, alojamiento ni viáticos.</div></div>
+        <div class="faq-item reveal faq-extra"><button class="faq-question" onclick="toggleFaq(this)">¿Los familiares pagan por asistir al desayuno?<span class="faq-icon">+</span></button><div class="faq-answer">No. El desayuno será de cortesía para los finalistas y familiares registrados. El número máximo de acompañantes se comunicará a los equipos finalistas.</div></div>
+        <div class="faq-item reveal faq-extra"><button class="faq-question" onclick="toggleFaq(this)">¿Cómo se resolverán las dudas generales?<span class="faq-icon">+</span></button><div class="faq-answer">Los equipos podrán escribir a <a href="mailto:marco.mendez@tec.mx" class="ext-link">marco.mendez@tec.mx</a>. Las aclaraciones que afecten a todos los participantes se publicarán en esta página, sin identificar al equipo que realizó la consulta.</div></div>
+        <div class="faq-item reveal faq-extra"><button class="faq-question" onclick="toggleFaq(this)">¿Cuándo abre la convocatoria?<span class="faq-icon">+</span></button><div class="faq-answer">La convocatoria y el expediente se publican el 16 de octubre de 2026. El registro permanece abierto hasta el 19 de febrero de 2027 a las 23:59 h (Ciudad de México). El memo se entrega a más tardar el 26 de febrero de 2027.</div></div>
       </div>
+      <button type="button" id="faq-more" class="faq-more-btn" aria-expanded="false" aria-controls="faq-list" onclick="toggleMoreFaqs()">Ver todas las preguntas (17) ↓</button>
     </div>
   </section>
 
@@ -2792,6 +2812,17 @@
     }, { threshold: 0.1 });
     reveals.forEach(el => observer.observe(el));
 
+
+    function toggleMoreFaqs() {
+      const section=document.getElementById('faq');
+      const button=document.getElementById('faq-more');
+      const expanded=section.classList.toggle('faq-expanded');
+      button.setAttribute('aria-expanded', String(expanded));
+      button.textContent=expanded?'Ver menos preguntas ↑':'Ver todas las preguntas (17) ↓';
+      if (!expanded) {
+        section.querySelectorAll('.faq-extra.open').forEach(el=>el.classList.remove('open'));
+      }
+    }
     function toggleFaq(btn) {
       const item = btn.parentElement;
       const isOpen = item.classList.contains('open');
