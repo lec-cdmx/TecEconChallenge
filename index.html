@@ -2126,6 +2126,46 @@
       .nav-brand-icon { width: 46px; height: 22px; }
       .nav-brand-wrap .nav-logo { font-size: .72rem; }
     }
+
+    /* Título del hero inspirado en el logo original. Solo afecta el H1 principal. */
+    #hero .hero-wordmark {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: min(100%, 900px);
+      margin: 0 0 .14em;
+      font-family: 'Manrope', 'DM Sans', system-ui, sans-serif;
+      font-size: clamp(4rem, 8vw, 7.3rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -.055em;
+      color: #06244d;
+    }
+    #hero .hero-wordmark-tec,
+    #hero .hero-wordmark-econ,
+    #hero .hero-wordmark-challenge { display: block; white-space: nowrap; }
+    #hero .hero-wordmark-tec { font-size: .88em; line-height: .99; }
+    #hero .hero-wordmark-econ { font-size: 1em; line-height: 1.04; }
+    #hero .hero-wordmark-c {
+      background: linear-gradient(160deg, #0765ff 0%, #0765ff 50%, #00bdd5 51%, #00bdd5 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: #0765ff;
+    }
+    #hero .hero-wordmark-challenge {
+      margin-top: .26em;
+      padding-left: .42em;
+      font-size: .245em;
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: .42em;
+    }
+    :root[data-theme="dark"] #hero .hero-wordmark { color: #f5f7ff; }
+    @media (max-width: 600px) {
+      #hero .hero-wordmark { font-size: clamp(3.15rem, 13vw, 4.7rem); }
+      #hero .hero-wordmark-challenge { font-size: .245em; letter-spacing: .32em; padding-left: .32em; }
+    }
   </style>
 </head>
 
@@ -2156,9 +2196,10 @@
   <!-- HERO -->
   <section id="hero">
     <p class="hero-eyebrow">Escuela de Ciencias Sociales y Gobierno · Tec de Monterrey</p>
-    <h1 class="hero-title">
-      Tec&nbsp;Econ
-      <em><span class="line-indent">Challenge</span></em>
+    <h1 class="hero-title hero-wordmark" aria-label="Tec Econ Challenge">
+      <span class="hero-wordmark-tec"><span>TE</span><span class="hero-wordmark-c">C</span></span>
+      <span class="hero-wordmark-econ">ECON</span>
+      <span class="hero-wordmark-challenge">CHALLENGE</span>
     </h1>
     <p class="hero-descriptor">Torneo Nacional de Análisis Económico para Preparatorias</p>
     <p class="hero-subtitle">Un caso común, datos construidos para la competencia y una pregunta sin respuesta obvia. Tu equipo analiza, argumenta y defiende una postura.</p>
