@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="738" height="304" viewBox="315 200 738 304" role="img" aria-label="TEC">
+<defs>
+<linearGradient id="navy" x1="0" y1="0" x2="0.1" y2="1"><stop stop-color="#052C5B"/><stop offset="1" stop-color="#06244D"/></linearGradient>
+<linearGradient id="electric" x1="0.1" y1="0" x2="0.8" y2="1"><stop stop-color="#0463FF"/><stop offset="1" stop-color="#0868FD"/></linearGradient>
+<linearGradient id="cyan" x1="0.1" y1="0" x2="0.9" y2="1"><stop stop-color="#00B9D9"/><stop offset="1" stop-color="#00C4DD"/></linearGradient>
+</defs>
+<path fill="url(#navy)" d="M316 213 H555 V278 H466 V492 H400 V278 H316 Z"/>
+<path fill="url(#navy)" d="M578 213 H817 L763 279 H578 Z M578 321 H752 L750 385 H578 Z M578 427 H763 L817 492 H578 Z"/>
+<path fill="url(#electric)" d="M1050 254 L1000 302 C982 283 956 269 925 269 C877 269 845 299 835 352 C812 353 791 360 770 372 C765 283 822 218 894 204 C960 193 1019 220 1050 254 Z"/>
+<path fill="url(#cyan)" d="M778 394 L836 373 C847 412 880 435 928 435 C956 435 980 422 1001 402 L1050 448 C1022 481 976 502 927 502 C858 502 803 468 778 394 Z"/>
+</svg>
