@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tec Econ Challenge</title>
+  <link rel="icon" type="image/svg+xml" href="assets/tec-econ-icon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
@@ -2107,6 +2108,23 @@
     /* Aviso de registro legible sobre el tema claro. */
     :root:not([data-theme="dark"]) .registro-note { color:#42536d; opacity:1; }
     :root[data-theme="dark"] .registro-note { color:#d4cfc5; }
+    /* Identidad Tec Econ Challenge: icono en cabecera, sin alterar la navegación. */
+    .nav-brand-wrap { flex-direction: row; align-items: center; gap: .6rem; max-width: 360px; }
+    .nav-brand-icon { display: block; width: 40px; height: 40px; flex-shrink: 0; }
+    .nav-brand-copy { display: flex; flex-direction: column; gap: .06rem; min-width: 0; }
+    @media (max-width: 768px) {
+      .nav-brand-wrap { max-width: 250px; }
+      .nav-brand-icon { width: 32px; height: 32px; }
+    }
+    @media (max-width: 600px) {
+      .nav-brand-wrap { gap: .32rem; }
+      .nav-brand-icon { width: 26px; height: 26px; }
+      .nav-brand-wrap .nav-logo { font-size: .8rem; letter-spacing: .018em; white-space: nowrap; }
+    }
+    @media (max-width: 390px) {
+      .nav-brand-icon { width: 22px; height: 22px; }
+      .nav-brand-wrap .nav-logo { font-size: .72rem; }
+    }
   </style>
 </head>
 
@@ -2115,8 +2133,11 @@
   <!-- NAV -->
   <nav>
     <a href="#hero" class="nav-brand-wrap" aria-label="Tec Econ Challenge, inicio">
-      <span class="nav-logo">Tec Econ Challenge</span>
-      <span class="nav-subtitle">Torneo Nacional de Análisis Económico para Preparatorias</span>
+      <img class="nav-brand-icon" src="assets/tec-econ-icon.svg" width="40" height="40" alt="" aria-hidden="true" />
+      <span class="nav-brand-copy">
+        <span class="nav-logo">Tec Econ Challenge</span>
+        <span class="nav-subtitle">Torneo Nacional de Análisis Económico para Preparatorias</span>
+      </span>
     </a>
     <ul class="nav-links">
       <li><a href="#reto">El reto</a></li>
