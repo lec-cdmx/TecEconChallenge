@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" role="img" aria-label="Tec Econ Challenge">
+<defs><linearGradient id="blue" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#0057FF"/><stop offset="1" stop-color="#0872F7"/></linearGradient><linearGradient id="cyan" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#00C6D7"/><stop offset="1" stop-color="#00B7D7"/></linearGradient></defs>
+<path d="M290.9,68.3 L278.1,55.6 L258,41 L239.8,31.9 L217.9,24.6 L196.9,20.9 L170.5,20 L145,23.6 L118.5,31.9 L103,39.2 L80.2,54.7 L62,72.9 L48.3,92.1 L39.2,110.3 L31.9,133.1 L29.1,149.5 L30,177.8 L48.3,167.8 L61,163.2 L88.4,158.6 L93.9,137.7 L104.8,117.6 L121.2,101.2 L142.2,89.3 L167.8,82.9 L197.9,84.8 L225.2,95.7 L245.3,112.1 Z" fill="url(#blue)"/>
+<path d="M35.5,201.5 L48.3,230.7 L62,249.8 L78.4,266.3 L95.7,279 L113,288.1 L145.9,298.2 L157.7,300 L190.6,300 L221.6,293.6 L238.9,287.2 L258,277.2 L277.2,263.5 L290.9,250.7 L246.2,207.9 L228.9,221.6 L206.1,233.4 L188.7,238 L167.8,238.9 L144,234.3 L129.4,227.9 L114.9,217.9 L98.4,198.8 L90.2,180.5 L64.7,186.9 Z" fill="url(#cyan)"/>
+</svg>
